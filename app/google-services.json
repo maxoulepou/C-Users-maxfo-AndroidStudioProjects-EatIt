@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "323386653015",
+    "firebase_url": "https://eatit-ba589.firebaseio.com",
+    "project_id": "eatit-ba589",
+    "storage_bucket": "eatit-ba589.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323386653015:android:108005ccf3004e3e2aa612",
+        "android_client_info": {
+          "package_name": "com.example.eatit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323386653015-d0gcoe0p4saoob1el005djoqntj854fd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeV68Pq9Rwv4bw0icOOVeK8MEsOwHcgcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323386653015-d0gcoe0p4saoob1el005djoqntj854fd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
