@@ -1,5 +1,11 @@
 package Model;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+import com.example.eatit.R;
+
 public class Repas {
     private int duree, niveauFaim;
     private TypeRepas repas; // a modifier

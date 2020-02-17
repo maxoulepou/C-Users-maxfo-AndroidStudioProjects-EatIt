@@ -37,7 +37,7 @@
         android:layout_width="97dp"
         android:layout_height="14dp"
         android:layout_marginEnd="160dp"
-        android:text="@string/mes_contacts"
+        android:text="@string/mes_objectifs"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -54,47 +54,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="115dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MesObjectifs"
+    android:orientation="vertical"
+    android:layout_marginTop="80dp">
 
-        <TextView
-            android:id="@+id/infoUtilisateurs2"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:text="nom prenom"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            app:tabIndicatorColor="@color/yellow"
+            app:tabSelectedTextColor="@color/blue">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="wrap_content"
-            android:contentDescription="TODO"
-            tools:srcCompat="@tools:sample/avatars" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/Tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_text1" />
 
-    </RelativeLayout>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/Tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_text2" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></RelativeLayout>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/Tab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_text3" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_contact_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="261dp" />
+        </com.google.android.material.tabs.TabLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/rechercher"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp" />
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
