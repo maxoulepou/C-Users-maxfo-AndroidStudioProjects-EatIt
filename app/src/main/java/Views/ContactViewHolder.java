@@ -11,11 +11,11 @@ import Model.Contact;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class UserViewHolder extends RecyclerView.ViewHolder {
+public class ContactViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.fragment_contact_recycler_view) TextView mTextView;
 
-    public UserViewHolder(View itemView){
+    public ContactViewHolder(View itemView){
         super(itemView);
         ButterKnife.bind(this, itemView);
     }

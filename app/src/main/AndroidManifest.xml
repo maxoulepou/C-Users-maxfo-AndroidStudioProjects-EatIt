@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="Controleur.ConnexionActivity"/>
+        <activity android:name="Controleur.AccueilActivity"/>
+        <activity android:name="Controleur.CreationCompteActivity"/>
+        <activity android:name="Controleur.ContactActivity"/>
     </application>
 
 </manifest>

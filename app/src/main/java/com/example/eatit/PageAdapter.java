@@ -22,8 +22,8 @@ public PageAdapter(FragmentManager fm, int numberoftabs) {
                 return new tab1();
             case 1:
                 return new tab2();
-            case 2:
-                return new tab3();
+            //case 2:
+             //   return new tab3();
             default:
                 return null;
         }

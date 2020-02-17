@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textview1"
+        android:id="@+id/activity_connexion_textview_createCompte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/activity_connexion_button_connexion"
         android:layout_width="162dp"
         android:layout_height="40dp"
         android:layout_marginTop="27dp"
@@ -76,7 +76,7 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_Password" />
 
     <TextView
         android:id="@+id/textView2"
@@ -102,7 +102,7 @@
         android:layout_marginBottom="3dp"
         android:text="@string/identifiant"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/editText_PersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,14 +118,14 @@
         android:layout_marginBottom="7dp"
         android:text="@string/mdp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/editText_Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_PersonName" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText_PersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="111dp"
@@ -142,7 +142,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editText_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"

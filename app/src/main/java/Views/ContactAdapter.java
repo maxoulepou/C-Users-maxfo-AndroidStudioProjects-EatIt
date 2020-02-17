@@ -12,23 +12,23 @@ import com.example.eatit.R;
 import java.util.List;
 import Model.Contact;
 
-public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
+public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
     private List<Contact> lContact;
 
-    public UserAdapter(List<Contact> lContact){
+    public ContactAdapter(List<Contact> lContact){
         this.lContact = lContact;
     }
 
     // Méthode pour créer un ViewHolder représentant chaque ligne du RecyclerView
-    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.activity_mes_contacts_item, parent, false);
-        return new UserViewHolder(view);
+        return new ContactViewHolder(view);
     }
 
     // Méthode pour mettre à jour l'apparence de chaque ligne
-    public void onBindViewHolder(UserViewHolder viewHolder, int i){
+    public void onBindViewHolder(ContactViewHolder viewHolder, int i){
         viewHolder.updateWithContact(this.lContact.get(i));
     }
 
