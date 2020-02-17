@@ -1,4 +1,29 @@
 <resources>
     <string name="app_name">EatIt</string>
     <string name="rechercher">Rechercher</string>
+    <string name="vous_n_avez_pas_de_compte">Vous n\'avez pas de compte ?</string>
+    <string name="creez_le">Créez-le !</string>
+    <string name="bienvenue_sur_eatie">Bienvenue sur EATIE !</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="mdp_oublie">Mot de passe oublié ?</string>
+    <string name="identifiant">IDENTIFIANT</string>
+    <string name="mdp">MOT DE PASSE</string>
+    <string name="todo">TODO</string>
+    <string name="creation_compte">CRÉATION DE COMPTE</string>
+    <string name="email">E-MAIL</string>
+    <string name="vous_etes">VOUS ETES</string>
+    <string name="une_femme">UNE FEMME</string>
+    <string name="un_homme">UN HOMME</string>
+    <string name="date_de_naissance">DATE DE NAISSANCE</string>
+    <string name="creer_son_compte">Créer son compte</string>
+    <string name="mes_objectifs">MES OBJECTIFS</string>
+    <string name="mes_contacts">MES CONTACTS</string>
+    <string name="tab_text1">Personnels</string>
+    <string name="tab_text2">Partagés</string>
+    <string name="tab_text3">Atteints</string>
+    <string name="mes_repas">MES REPAS</string>
+    <string name="date">DATE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="definissez_vos_objs">Définissez vos propres objectifs !</string>
 </resources>

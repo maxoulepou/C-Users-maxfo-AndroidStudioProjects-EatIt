@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
-    maven{
+    maven {
         url "https://repository-acgartengine.forge.cloudbees.com/snapshot/"
     }
 }
@@ -17,7 +17,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        compileOptions{
+        compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
         }
@@ -31,7 +31,6 @@ android {
 }
 
 
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -43,6 +42,7 @@ dependencies {
     //dependencie for Snackbar
     implementation 'com.android.support:design:29.0.2'
     implementation 'com.jakewharton:butterknife:10.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
     implementation 'com.jakewharton:butterknife:8.8.1'

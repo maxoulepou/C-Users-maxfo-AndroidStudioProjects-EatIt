@@ -34,13 +34,24 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="97dp"
+        android:layout_width="70dp"
         android:layout_height="14dp"
-        android:layout_marginEnd="160dp"
-        android:text="@string/mes_contacts"
+        android:layout_marginStart="175dp"
+        android:text="@string/mes_repas"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="35dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/date"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <LinearLayout
         android:id="@+id/lll"
@@ -48,50 +59,21 @@
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="710dp"
-        android:background="@drawable/menu"
+        android:background="@drawable/ajout"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/jourRepas"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="115dp">
-
-        <TextView
-            android:id="@+id/infoUtilisateurs2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:text="nom prenom"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="wrap_content"
-            android:contentDescription="TODO"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/rechercher" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></RelativeLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_contact_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="261dp" />
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="118dp"
+        android:autofillHints=""
+        android:background="@drawable/rectanglebleujaune"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
