@@ -3,6 +3,8 @@ package Controleur;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,8 +18,13 @@ import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.material.snackbar.Snackbar;
-import java.util.Arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import Model.Contact;
+import Views.UserAdapter;
 import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
     //Get coordinator layout
     @BindView(R.id.main_activity_coordinator_layout) CoordinatorLayout coordinatorLayout;
+    @BindView(R.id.fragment_contact_recycler_view) RecyclerView recyclerView; // 1 - Declare RecyclerView
+
+    private List<Contact> mContactList;
+    private UserAdapter mUserAdapter;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -52,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 startSignInActivity();
             }
         });
+    }
+
+    //Configuration du recyclerView
+    private void configureRecyclerView(){
+        this.mContactList = new ArrayList<>();
+        this.mUserAdapter = new UserAdapter(this.mContactList);
+        this.recyclerView.setAdapter(this.mUserAdapter);
+        //this.recyclerView.setLayoutManager( new LinearLayoutManager(getActivity()));
     }
 
     private void startSignInActivity(){

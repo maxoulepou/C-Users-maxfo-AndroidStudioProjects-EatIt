@@ -28,11 +28,6 @@
             android:contentDescription="TODO"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/rechercher" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -45,5 +40,13 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="19dp"
         tools:layout_editor_absoluteY="261dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/rechercher"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
