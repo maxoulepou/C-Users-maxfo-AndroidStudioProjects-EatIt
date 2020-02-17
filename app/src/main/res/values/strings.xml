@@ -23,6 +23,9 @@
     <string name="tab_text3">Atteints</string>
     <string name="mes_repas">MES REPAS</string>
     <string name="date">DATE</string>
+    <string name="ajouter_contact">AJOUTER UN CONTACT</string>
+    <string name="enregistrer">Enregistrer</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="definissez_vos_objs">Définissez vos propres objectifs !</string>
