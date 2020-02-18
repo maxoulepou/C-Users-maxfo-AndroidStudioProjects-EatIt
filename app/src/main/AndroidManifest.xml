@@ -25,4 +25,9 @@
         <activity android:name="Controleur.ContactActivity"/>
     </application>
 
+    <uses-feature android:name="android.hardware.camera2"
+                  android:required="false" />
+    <uses-feature android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                  android:maxSdkVersion="18" />
+
 </manifest>
