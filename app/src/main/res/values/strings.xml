@@ -31,4 +31,7 @@
     <string name="definissez_vos_objs">Définissez vos propres objectifs !</string>
     <string name="nom_prenom">nom prenom</string>
     <string name="ajouter_contact">Ajouter Contact</string>
+    <string name="popup_message_confirmation_delete_account">Êtes-vous sur de vouloir supprimer votre compte ? Cette action est irréversible</string>
+    <string name="popup_message_choice_yes">Yess</string>
+    <string name="popup_message_choice_no">Nooo</string>
 </resources>
