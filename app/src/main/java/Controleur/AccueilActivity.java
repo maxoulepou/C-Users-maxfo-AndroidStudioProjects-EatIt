@@ -2,18 +2,27 @@ package Controleur;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.eatit.R;
+import android.widget.TextView;
 
-public class AccueilActivity extends AppCompatActivity {
+public class AccueuilActivity extends AppCompatActivity {
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.activity_mes_repas);
+    private TextView infoUtilisateur;
+   // private DataBase bd;
 
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_accueil);
+
+        infoUtilisateur = (TextView) findViewById(R.id.infoUtilisateurs);
+/**     bd = new DataBase(this);
+
+        bd.nouveauProfil("Anne","Onymous","patient","annie","mdp");
+        bd.nouveauProfil("Pierre","Caillou","Dieteticien","pierro","mdp");
+
+        bd.close();
+ **/
     }
 }
