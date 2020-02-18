@@ -37,7 +37,7 @@
         android:layout_width="138dp"
         android:layout_height="18dp"
         android:layout_marginStart="136dp"
-        android:text="@string/ajouter_contact"
+        android:text="@string/ajouter_un_contact"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />

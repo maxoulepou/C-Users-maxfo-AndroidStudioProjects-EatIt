@@ -134,7 +134,5 @@ public class BD_Contact extends SQLiteOpenHelper {
             return false;
         else
             return true;
-
-
     }
 }
