@@ -1,6 +1,5 @@
 package Controleur;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.eatit.R;
-
 import Model.BD_Contact;
+
 
 public class AjouterContactActivity extends AppCompatActivity {
 
@@ -38,9 +37,10 @@ public class AjouterContactActivity extends AppCompatActivity {
         boutonAjouter = (Button) findViewById(R.id.but_contact_enregistrer);
 
         ajouterContact();
+
     }
 
-    public void ajouterContact () {
+    public void ajouterContact() {
         boutonAjouter.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -54,8 +54,29 @@ public class AjouterContactActivity extends AppCompatActivity {
                             Toast.makeText(AjouterContactActivity.this, "Contact ajouté", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(AjouterContactActivity.this, "Contact pas ajouté", Toast.LENGTH_SHORT).show();
+
+                        System.out.println("Nombre de ligne : " + bdc.getNombre());
+
+
+
+
+//                        String prenom = "prenom";
+//                        String nom = "nom";
+//                        String profession = "profession";
+//                        String email = "email";
+//                        String telephone = "telephone";
+//
+//                        bdc.getIdContact(prenom,nom,profession,email,telephone);
                     }
                 }
         );
+
     }
+
+
+    public void modifierContact() {
+
+    }
+
+
 }
