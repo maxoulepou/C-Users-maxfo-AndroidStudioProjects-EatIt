@@ -2,6 +2,7 @@ package Controleur;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Intent;
@@ -27,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView mCreateCompte;
     private static final int ACCUEIL_ACTIVITY_REQUEST_CODE = 1;
     private static final int RC_SIGN_IN = 123;
-
-    //Get coordinator layout
-    @BindView(R.id.main_activity_coordinator_layout) CoordinatorLayout coordinatorLayout;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

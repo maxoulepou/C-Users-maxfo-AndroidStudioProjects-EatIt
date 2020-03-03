@@ -12,6 +12,7 @@
         <activity android:name=".MesRepas"></activity>
         <activity android:name=".MesObjectifs" />
         <activity android:name="Controleur.AjouterContactActivity" />
+        <activity android:name="Controleur.AjouterRepasActivity"/>
         <activity android:name="Controleur.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

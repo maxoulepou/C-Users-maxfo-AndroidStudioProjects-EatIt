@@ -1,15 +1,18 @@
 package Controleur;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
 
 import com.example.eatit.R;
@@ -18,13 +21,49 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MesRepasActivity extends AppCompatActivity {
+public class AjouterRepasActivity extends AppCompatActivity {
 
     private String currentPhotoPath;
+    private ConstraintLayout mLayout;
+    private Button mButtonTakePhoto;
+    private Button mButtonEnregister;
+    private String typeRepas;
+    private ImageView petitDej, dejeuner, collation, diner, autre;
+    private EditText mDate, mHeure, mDuree, mCommentaire;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mes_repas);
+        setContentView(R.layout.activity_ajouter_repas);
+
+        mButtonTakePhoto = (Button) findViewById(R.id.button_take_photo);
+        mButtonEnregister = (Button) findViewById(R.id.button_enregister_ajout_repas);
+        petitDej = (ImageView) findViewById(R.id.imageView5);
+        dejeuner = (ImageView) findViewById(R.id.imageView7);
+        collation = (ImageView) findViewById(R.id.imageView6);
+        diner = (ImageView) findViewById(R.id.imageView8);
+        autre = (ImageView) findViewById(R.id.imageView3);
+        mDate = (EditText) findViewById(R.id.editTextDate);
+        mHeure = (EditText) findViewById(R.id.editTextHeure);
+        mDuree = (EditText) findViewById(R.id.editTextDuree);
+        mCommentaire = (EditText) findViewById(R.id.editTextComm);
+
+        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("test image boutton");
+            }
+        });
+
+        mButtonEnregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("repas enregister");
+            }
+        });
+    }
+
+    public void addPhoto(){
+        System.out.println("it works !");
     }
 
     //fonction pour appeller un intent pour prendre une photo
@@ -88,7 +127,8 @@ public class MesRepasActivity extends AppCompatActivity {
         this.sendBroadcast(mediaScanIntent);
     }
 
-    //Decode a scaled image     Error: static method/non static ccntext. imageview doit être le containers de l'image a afficher ?
+    //Decode a scaled image --> pour sauvegarder des images davec un format moins lourd
+    // Error: static method/non static ccntext. imageview doit être le containers de l'image a afficher ?
 //    private void setPic() {
 //        // Get the dimensions of the View
 //        int targetW = imageView.getWidth();

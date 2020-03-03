@@ -147,7 +147,7 @@
         android:contentDescription="@string/todo" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextDate"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="49dp"
@@ -161,7 +161,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editTextHeure"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -194,10 +194,10 @@
         android:text="@string/duree"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextDuree"
         android:layout_width="300px"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -205,7 +205,7 @@
         android:background="@drawable/rectanglebleu"
         android:ems="10"
         app:layout_constraintEnd_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     <TextView
         android:id="@+id/textView17"
@@ -216,7 +216,7 @@
         android:text="@string/min"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextHeure" />
 
     <TextView
         android:id="@+id/textView18"
@@ -229,7 +229,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDuree" />
 
     <TextView
         android:id="@+id/textView19"
@@ -245,7 +245,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_enregister_ajout_repas"
         android:layout_width="400px"
         android:layout_height="wrap_content"
         android:layout_marginStart="132dp"
@@ -259,7 +259,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextComm"
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginStart="37dp"
@@ -269,7 +269,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="      Décrivez votre repas et vos ressentis."
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/button_enregister_ajout_repas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -280,7 +280,7 @@
         android:layout_marginStart="184dp"
         android:layout_marginEnd="164dp"
         android:layout_marginBottom="33dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText7"
+        app:layout_constraintBottom_toTopOf="@+id/editTextComm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/addphoto" />

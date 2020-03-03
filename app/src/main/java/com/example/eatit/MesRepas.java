@@ -4,9 +4,12 @@ import Controleur.MainActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,12 +20,13 @@ public class MesRepas extends AppCompatActivity {
     private static final String TAG="MesRepas";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateListener;
+    private EditText jourRepas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mes_repas);
-        jourRepas=(EditText)findViewById(R.id.jourRepas);
+        jourRepas = (EditText)findViewById(R.id.jourRepas);
 
         jourRepas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +39,7 @@ public class MesRepas extends AppCompatActivity {
                 DatePickerDialog dialog = new DatePickerDialog(
                         MesRepas.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateListener;
+                        mDateListener,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
