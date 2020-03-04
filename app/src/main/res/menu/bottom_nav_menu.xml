@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_profil"
+        android:icon="@drawable/iconprofil"
+        android:title="@string/titreprofil" />
+
+    <item
+        android:id="@+id/navigation_repas"
+        android:icon="@drawable/iconrepas"
+        android:title="@string/titrerepas" />
+
+    <item
+        android:id="@+id/navigation_accueil"
+        android:icon="@drawable/iconcahier"
+        android:title="@string/titrecahier" />
+
+    <item
+        android:id="@+id/navigation_objectifs"
+        android:icon="@drawable/iconobjectifs"
+        android:title="@string/titreobj" />
+
+    <item
+        android:id="@+id/navigation_poids"
+        android:icon="@drawable/iconpoids"
+        android:title="@string/titrepoids" />
+
+</menu>

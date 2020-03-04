@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MaTete">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/mess_ma_tete"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="7sp"
+            android:background="@drawable/heureux" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/calme"
+            android:layout_marginLeft="80sp"/>
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="153dp"
+            android:layout_weight="1"
+            android:background="@drawable/serein"/>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="226sp"
+            android:background="@drawable/fier"/>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="310dp"
+            android:layout_weight="1"
+            android:background="@drawable/reconnaissant" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45sp"
+            android:text="@string/heureux" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45sp"
+            android:layout_marginLeft="80sp"
+            android:text="@string/calme" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="155sp"
+            android:layout_marginTop="45sp"
+            android:text="@string/serein" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="235sp"
+            android:layout_marginTop="45sp"
+            android:text="@string/fier" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="290sp"
+            android:layout_marginTop="45sp"
+            android:text="@string/reconnaissant" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/pensif"
+            android:layout_marginLeft="7sp"
+            android:layout_marginTop="80dp"/>
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/confiant"
+            android:layout_marginLeft="80sp"
+            android:layout_marginTop="80dp"/>
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/anxieux"
+            android:layout_marginLeft="153sp"
+            android:layout_marginTop="80dp"/>
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/triste"
+            android:layout_marginLeft="226sp"
+            android:layout_marginTop="80dp"/>
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/deprime"
+            android:layout_marginLeft="310sp"
+            android:layout_marginTop="80dp"/>
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7sp"
+            android:layout_marginTop="125dp"
+            android:text="@string/pensif" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="74sp"
+            android:layout_marginTop="125dp"
+            android:text="@string/confiant" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150sp"
+            android:layout_marginTop="125dp"
+            android:text="@string/anxieux" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="227sp"
+            android:layout_marginTop="125dp"
+            android:text="@string/triste" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deprime"
+            android:layout_marginLeft="301sp"
+            android:layout_marginTop="125dp"/>
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/perdu"
+            android:layout_marginLeft="7sp"
+            android:layout_marginTop="160dp"/>
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/mefiant"
+            android:layout_marginLeft="80sp"
+            android:layout_marginTop="160dp"/>
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="153sp"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/coupable" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="226sp"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/surpris" />
+
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="310sp"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/enerve" />
+
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="202dp"
+            android:text="@string/perdu" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78sp"
+            android:layout_marginTop="202dp"
+            android:text="@string/mefiant" />
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="143sp"
+            android:layout_marginTop="202dp"
+            android:text="@string/coupable" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="225sp"
+            android:layout_marginTop="202dp"
+            android:text="@string/surpris" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="310sp"
+            android:layout_marginTop="202dp"
+            android:text="@string/enerve" />
+
+        <Button
+            android:id="@+id/button18"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="7sp"
+            android:layout_marginTop="235dp"
+            android:background="@drawable/apeure" />
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="235dp"
+            android:background="@drawable/embarasse"/>
+
+        <Button
+            android:id="@+id/button20"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="153sp"
+            android:layout_marginTop="235dp"
+            android:background="@drawable/autree" />
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8sp"
+            android:layout_marginTop="277dp"
+            android:text="@string/apeure" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="62sp"
+            android:layout_marginTop="277dp"
+            android:text="@string/embarrasse" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="158sp"
+            android:layout_marginTop="277dp"
+            android:text="@string/autree" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:autofillHints="@string/commentaires"
+        android:background="@drawable/rectanglenoir"
+        android:layout_marginTop="380dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="162dp"
+        android:layout_height="40dp"
+        android:text="@string/enregistrer"
+        android:background="@drawable/rectanglejaune"
+        android:layout_marginTop="550dp"
+        android:layout_gravity="center_horizontal"/>
+
+</FrameLayout>

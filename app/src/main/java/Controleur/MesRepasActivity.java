@@ -24,7 +24,7 @@ public class MesRepasActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mes_repas);
+        setContentView(R.layout.activity_ajouter_un_repas);
     }
 
     //fonction pour appeller un intent pour prendre une photo

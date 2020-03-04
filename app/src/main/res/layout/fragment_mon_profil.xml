@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MonProfil">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20sp"
+                android:layout_marginStart="10sp">
+
+                <TextView
+                    android:id="@+id/nompatient"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/nom"/>
+
+                <TextView
+                    android:id="@+id/prenompatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prenom"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/sexepatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sexe"
+                    android:layout_marginTop="46sp"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emailbis"
+                    android:layout_marginTop="48sp"/>
+
+                <TextView
+                    android:id="@+id/telephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telephone"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/datenaissancepatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/datedenaissancebis"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/adressepatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/adresse"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/codepostalpatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/codepostal"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/villepatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ville"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/adressepostalepatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/adressepostale"
+                    android:layout_marginTop="42sp"/>
+
+                <TextView
+                    android:id="@+id/contacturgancepatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contacturgence"
+                    android:layout_marginTop="42sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/rentrernom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentrerprenom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectbleu"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/rentrerfeminin"
+                        android:layout_width="120dp"
+                        android:layout_height="70dp"
+                        android:text="@string/feminin"
+                        android:background="@drawable/rectbleu"/>
+
+                    <Button
+                        android:id="@+id/rentrermasculin"
+                        android:layout_width="120dp"
+                        android:layout_height="70dp"
+                        android:text="@string/masculin"
+                        android:background="@drawable/rectbleu"/>
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/rentreremail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentrertelephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentrerdatenaissance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentreradresse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentrercodepostal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectbleu"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"/>
+
+                <EditText
+                    android:id="@+id/rentrerville"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentreradressepostale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectbleu"/>
+
+                <EditText
+                    android:id="@+id/rentrercontacturgence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectbleu"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <Button
+                android:id="@+id/boutonenregistrer"
+                android:layout_width="162dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="700dp"
+                android:layout_marginStart="235dp"
+                android:background="@drawable/rectanglejaune"
+                android:text="@string/enregistrer" />
+
+            <TextView
+                android:id="@+id/modifiermdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modifiermdp"
+                android:layout_marginTop="695dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/suppcompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suppcompte"
+                android:layout_marginTop="720dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/deconnexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/deconnexion"
+                android:layout_marginTop="745dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

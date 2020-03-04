@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.eatit.MenuBas;
 import com.example.eatit.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,16 +41,16 @@ public class ConnexionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAuth.signInWithEmailAndPassword(mTextEmail.getText().toString(), mTextPassword.getText().toString());
-                Intent AccueilActivity = new Intent(ConnexionActivity.this, AccueilActivity.class);
-                startActivity(AccueilActivity);
+                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBas.class);
+                startActivity(MenuBas);
             }
         });
 
         mCreateCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent CreationCompteActivity = new Intent(ConnexionActivity.this, CreationCompteActivity.class);
-                startActivity(CreationCompteActivity);
+                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBas.class);
+                startActivity(MenuBas);
             }
         });
 

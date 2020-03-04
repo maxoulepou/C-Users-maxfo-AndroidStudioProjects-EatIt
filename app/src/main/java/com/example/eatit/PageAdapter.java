@@ -19,9 +19,9 @@ public PageAdapter(FragmentManager fm, int numberoftabs) {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new tab1();
+                return new MesObjPersonnels();
             case 1:
-                return new tab2();
+                return new MesObjPartages();
             //case 2:
              //   return new tab3();
             default:
