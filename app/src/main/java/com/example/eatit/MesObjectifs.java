@@ -1,12 +1,9 @@
 package com.example.eatit;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
-import android.widget.TableLayout;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -21,7 +18,7 @@ public class MesObjectifs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mes_objectifs2);
+        setContentView(R.layout.fragment_objectifs);
 
         tabLayout=(TabLayout) findViewById(R.id.tablayout);
         tab1=(TabItem) findViewById(R.id.Tab1);
@@ -35,6 +32,7 @@ public class MesObjectifs extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
                 if (tab.getPosition() ==0) {
                     pageradapter.notifyDataSetChanged();
                 }

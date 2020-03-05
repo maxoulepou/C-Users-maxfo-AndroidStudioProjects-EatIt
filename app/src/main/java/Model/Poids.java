@@ -1,62 +1,75 @@
 package Model;
 
-import java.util.Date;
 
 public class Poids {
 
-    private Date date;
-    private double tourTaille, taille, imc, poidsDomicile;
-    private PoidsDiet poidsDiet;
+    private double poids;
+    private double taille;
+    private String date;
+    private double imc;
+    private double muscle;
+    private double graisse;
+    private double tt;
 
-    public Poids(Date date){
+    /**
+     * Constructeur initialisant tous les attributs de la classe.
+     *
+     * @param poids
+     * @param taille
+     * @param date
+     * @param muscle
+     * @param graisse
+     * @param tt
+     */
+    public Poids(double poids, double taille, String date, double muscle, double graisse, double tt) {
+        this.poids = poids;
+        this.taille = taille;
+        this.setImc();
         this.date = date;
+        this.muscle = muscle;
+        this.graisse = graisse;
+        this.tt = tt;
     }
 
-    public Date getDate() {
-        return date;
+
+
+    public double getPoids() {
+        return poids;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public double getTourTaille() {
-        return tourTaille;
-    }
-
-    public void setTourTaille(double tourTaille) {
-        this.tourTaille = tourTaille;
+    public void setPoids(int poids) {
+        this.poids = poids;
     }
 
     public double getTaille() {
         return taille;
     }
 
-    public void setTaille(double taille) {
+    public void setTaille(int taille) {
         this.taille = taille;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public double getImc() {
         return imc;
     }
 
-    public void setImc(double imc) {
-        this.imc = imc;
+    public void setImc() {
+        this.imc = this.poids / Math.pow(this.taille,2);
     }
 
-    public double getPoidsDomicile() {
-        return poidsDomicile;
+    public double getMuscle() {
+        return muscle;
     }
 
-    public void setPoidsDomicile(double poidsDomicile) {
-        this.poidsDomicile = poidsDomicile;
+    public double getGraisse() {
+        return graisse;
     }
 
-    public PoidsDiet getPoidsDiet() {
-        return poidsDiet;
-    }
-
-    public void setPoidsDiet(PoidsDiet poidsDiet) {
-        this.poidsDiet = poidsDiet;
+    public double getTt() {
+        return tt;
     }
 }

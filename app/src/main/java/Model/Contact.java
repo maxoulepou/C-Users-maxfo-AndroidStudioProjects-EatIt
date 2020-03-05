@@ -2,10 +2,9 @@ package Model;
 
 public class Contact {
 
-    private String nom, prenom, profession, email;
-    private long numTel;
+    private String nom, prenom, profession, email, numTel;
 
-    public Contact( String nom, String prenom, String profession, String email, long numTel){
+    public Contact(String nom, String prenom, String profession, String email, String numTel) {
         this.nom = nom;
         this.prenom = prenom;
         this.profession = profession;
@@ -45,11 +44,11 @@ public class Contact {
         this.email = email;
     }
 
-    public long getNumTel() {
+    public String getNumTel() {
         return numTel;
     }
 
-    public void setNumTel(long numTel) {
+    public void setNumTel(String numTel) {
         this.numTel = numTel;
     }
 }

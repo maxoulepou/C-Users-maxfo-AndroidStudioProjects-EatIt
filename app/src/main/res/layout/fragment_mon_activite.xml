@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MonActivite">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/mess_mon_activite"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:autofillHints="@string/commentaires"
+        android:background="@drawable/rectanglenoir"
+        android:layout_marginTop="530dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="162dp"
+        android:layout_height="40dp"
+        android:text="@string/enregistrer"
+        android:background="@drawable/rectanglejaune"
+        android:layout_marginTop="675dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intensite"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35sp">
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:drawableLeft="@drawable/bonhommesport"
+        android:background="@drawable/rectanglegrisbiss" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:drawableLeft="@drawable/horloge"
+        android:background="@drawable/dureeactivite"
+        android:layout_marginTop="15sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="220sp"
+        android:layout_marginLeft="20sp">
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/aucuneffort"
+        android:background="@color/turquoise"/>
+
+    <Button
+        android:id="@+id/button23"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/trestresfacile"
+        android:background="@color/turquoisebis"/>
+
+        <Button
+            android:id="@+id/button24"
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:text="@string/tresfacile"
+            android:background="@color/vert" />
+
+        <Button
+            android:id="@+id/button25"
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:text="@string/facile"
+            android:background="@color/vert" />
+
+        <Button
+            android:id="@+id/button26"
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:text="@string/effortmodere"
+            android:background="@color/jaune" />
+
+        <Button
+            android:id="@+id/button27"
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:text="@string/moyen"
+            android:background="@color/jaune" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="243sp"
+        android:layout_marginLeft="220sp">
+    <Button
+        android:id="@+id/button28"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/unpeudifficile"
+        android:background="@color/orange" />
+
+    <Button
+        android:id="@+id/button29"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/difficile"
+        android:background="@color/orange" />
+
+    <Button
+        android:id="@+id/button30"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/tresdifficile"
+        android:background="@color/orange" />
+
+    <Button
+        android:id="@+id/button31"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/trestresdifficile"
+        android:background="@color/rouge" />
+
+    <Button
+        android:id="@+id/button32"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="@string/maximal"
+        android:background="@color/bordeaux" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
