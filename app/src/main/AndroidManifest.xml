@@ -19,7 +19,7 @@
         <activity android:name=".MenuBas"></activity>
         <activity android:name=".MesObjectifs" />
         <activity android:name="Controleur.AjouterContactActivity" />
-        <activity android:name="Controleur.MainActivity">
+        <activity android:name="Controleur.AfficherDonneesPoids">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +30,10 @@
         <activity android:name="Controleur.AccueilActivity" />
         <activity android:name="Controleur.CreationCompteActivity" />
         <activity android:name="Controleur.ContactActivity" />
+        <activity android:name="Controleur.Poids_SuiviActivity" />
+        <activity android:name="Controleur.MainActivity" />
+        <activity android:name="Controleur.AjouterPoidsActivity"/>
+
 
         <provider
             android:name="androidx.core.content.FileProvider"
