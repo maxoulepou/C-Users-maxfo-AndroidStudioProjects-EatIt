@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         mConnexionButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent ConnexionActivity = new Intent(MainActivity.this, MenuBas.class);
+                Intent ConnexionActivity = new Intent(MainActivity.this, ConnexionActivity.class);
                 startActivity(ConnexionActivity);
             }
         });

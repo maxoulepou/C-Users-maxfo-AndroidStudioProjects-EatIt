@@ -1,5 +1,9 @@
 package Model;
 
-public class TypeRepas {
-    //a faire
+public enum TypeRepas {
+    Petit_dejeuner,
+    Dejeuner,
+    Collation,
+    Diner,
+    Autre;
 }

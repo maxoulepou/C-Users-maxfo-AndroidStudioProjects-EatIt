@@ -114,7 +114,7 @@ public class Patient {
         return lIntervention;
     }
 
-    public void setlIntervention(ArrayList lIntervention) {
+    public void setlIntervention(ArrayList<Intervention> lIntervention) {
         this.lIntervention = lIntervention;
     }
 
@@ -122,7 +122,7 @@ public class Patient {
         return lContact;
     }
 
-    public void setlContact(ArrayList lContact) {
+    public void setlContact(ArrayList<Contact> lContact) {
         this.lContact = lContact;
     }
 
@@ -130,7 +130,7 @@ public class Patient {
         return lObjectif;
     }
 
-    public void setlObjectif(ArrayList lObjectif) {
+    public void setlObjectif(ArrayList<Objectifs> lObjectif) {
         this.lObjectif = lObjectif;
     }
 
@@ -138,7 +138,7 @@ public class Patient {
         return lCarnetRepas;
     }
 
-    public void setlCarnetRepas(ArrayList lCarnetRepas) {
+    public void setlCarnetRepas(ArrayList<Repas> lCarnetRepas) {
         this.lCarnetRepas = lCarnetRepas;
     }
 
@@ -146,7 +146,7 @@ public class Patient {
         return lCarnetEmotion;
     }
 
-    public void setlCarnetEmotion(ArrayList lCarnetEmotion) {
+    public void setlCarnetEmotion(ArrayList<Ressenti> lCarnetEmotion) {
         this.lCarnetEmotion = lCarnetEmotion;
     }
 
@@ -154,7 +154,7 @@ public class Patient {
         return lPoids;
     }
 
-    public void setlPoids(ArrayList lPoids) {
+    public void setlPoids(ArrayList<Poids> lPoids) {
         this.lPoids = lPoids;
     }
 }

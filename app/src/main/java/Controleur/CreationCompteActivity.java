@@ -22,7 +22,6 @@ public class CreationCompteActivity extends AppCompatActivity {
 
         mButtonCreationCompte = (Button) findViewById(R.id.activity_creation_button_creatCompte);
 
-
         mButtonCreationCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

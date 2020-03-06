@@ -10,16 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
 
+import com.example.eatit.MesRepasActivity;
 import com.example.eatit.R;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import Model.BD_Repas;
 
 public class AjouterRepasActivity extends AppCompatActivity {
 
@@ -30,10 +34,13 @@ public class AjouterRepasActivity extends AppCompatActivity {
     private String typeRepas;
     private ImageView petitDej, dejeuner, collation, diner, autre;
     private EditText mDate, mHeure, mDuree, mCommentaire;
+    private SeekBar mNiveauFaim;
+    public BD_Repas mBD_repas;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter_repas);
+        mBD_repas = new BD_Repas(this);
 
         mButtonTakePhoto = (Button) findViewById(R.id.button_take_photo);
         mButtonEnregister = (Button) findViewById(R.id.button_enregister_ajout_repas);
@@ -46,6 +53,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
         mHeure = (EditText) findViewById(R.id.editTextHeure);
         mDuree = (EditText) findViewById(R.id.editTextDuree);
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
+        mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
 
         mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +66,17 @@ public class AjouterRepasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("repas enregister");
+                boolean isEnregistre = mBD_repas.addRepas(mDate.getText().toString(),
+                        mDuree.getText().toString(), mNiveauFaim.getProgress(),
+                        mCommentaire.getText().toString(),typeRepas);
+                System.out.println("enregistré");
+                System.out.println(mDate.getText().toString());
+                System.out.println(mDuree.getText().toString());
+                System.out.println(mNiveauFaim.getProgress());
+                System.out.println(mCommentaire.getText().toString());
+                System.out.println(typeRepas);
+                Intent MesRepas = new Intent(AjouterRepasActivity.this, MesRepasActivity.class);
+                startActivity(MesRepas);
             }
         });
     }
