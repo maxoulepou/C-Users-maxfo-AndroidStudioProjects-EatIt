@@ -8,7 +8,6 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.eatit.MenuBasActivity;
 import com.example.eatit.R;
 
 public class CreationCompteActivity extends AppCompatActivity {

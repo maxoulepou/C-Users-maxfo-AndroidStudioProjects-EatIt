@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
-import com.example.eatit.MenuBasActivity;
+
 import com.example.eatit.R;
 
 public class MainActivity extends AppCompatActivity {

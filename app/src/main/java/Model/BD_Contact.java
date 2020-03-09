@@ -5,13 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
 public class BD_Contact extends SQLiteOpenHelper {
+
 
 //    -------------- NOM DE LA BD ET DE LA TABLE DANS CETTE BD ---------------------
 
@@ -26,11 +26,12 @@ public class BD_Contact extends SQLiteOpenHelper {
     public static final String col_profession = "profession";
     public static final String col_email = "email";
     public static final String col_telephone = "telephone";
+    public static final String col_adresse = "adresse";
 
+    //    ---------------- LISTE DE CONTACTS -------------------------------------------
 
-//    ---------------- LISTE DE CONTACTS -------------------------------------------
+    private ArrayList<Contact> liste_contacts;
 
-    private ArrayList<Contact> contacts;
 
 //    ---------------------- BASE DE DONNEES----------------------------------------
 
@@ -52,20 +53,18 @@ public class BD_Contact extends SQLiteOpenHelper {
 
         String strSQL = "create table " + TABLE_NAME + "("
                 + col_idContact + " integer primary key autoincrement,"
-                + col_prenom + " text not null check (length(" + col_prenom + ">= 1)),"
-                + col_nom + " text not null check (length(" + col_nom + ">= 1)),"
-                + col_profession + " text not null check (length(" + col_profession + ">= 1)),"
-                + col_email + " text not null check (length(" + col_email + ">= 1)),"
-                + col_telephone + " text not null check (length(" + col_telephone + ">= 1))"
+                + col_prenom + " text not null check (length(" + col_prenom + ")>= 1),"
+                + col_nom + " text not null check (length(" + col_nom + ")>= 1),"
+                + col_profession + " text not null check (length(" + col_profession + ")>= 1),"
+                + col_email + " text,"
+                + col_telephone + " text,"
+                + col_adresse + " text "
                 + ")";
 
         db.execSQL(strSQL);
 
     }
 
-    // La méthode onUpgrade est une émthode dont on hérite du coup je suis obligée de la définir ici
-    // même si on l'utilise jamais. C'est dans le cas où on a une nouvelle version de BD et qu'il
-    // faut écraser l'ancienne.
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
@@ -73,30 +72,45 @@ public class BD_Contact extends SQLiteOpenHelper {
     }
 
 
-    //Méthode pour insérer un nouveau contact dans la BD, typiquement quand on appuie sur "enregistrer"
-    //sur la page pour l'ajout d'un nouveau contact.
-    public boolean insererContact(String prenom, String nom, String profession, String email, String telephone) {
+    public boolean insererContact(String prenom, String nom, String profession, String email, String telephone, String adresse) {
 
         ContentValues cv = new ContentValues();
 
+        //Variables obligatoires, ne peuvent pas être NULL.
         cv.put(col_prenom, prenom);
         cv.put(col_nom, nom);
         cv.put(col_profession, profession);
-        cv.put(col_email, email);
-        cv.put(col_telephone, telephone);
+
+        //Dans le cas où les variables qui peuvent être NULL le sont, on introduit "NULL" dans la BD si le String qui est entré par l'utilisateur est vide.
+        if (email.isEmpty()) {
+            cv.putNull(col_email);
+        } else {
+            cv.put(col_email, email);
+        }
+
+        if (telephone.isEmpty()) {
+            cv.putNull(col_telephone);
+        } else {
+            cv.put(col_telephone, telephone);
+        }
+
+        if (adresse.isEmpty()) {
+            cv.putNull(col_adresse);
+        } else {
+            cv.put(col_adresse, adresse);
+        }
 
         long result = this.getWritableDatabase().insert(TABLE_NAME, null, cv);
 
-//  Autre méthode pour insérer :
+//        En faisant this.getWritableDatabase, on récupère la base de données qu'on a créée. La
+//        méthode insert renvoie par défaut un numéro : -1 ou un autre truc. Quand c'est -1 ça
+//        veut dire que l'insertion ne s'est pas bien déroulée.
+
 //        String sql = "INSERT INTO " + TABLE_NAME + "(" + col_prenom + " , " + col_nom +" , " + col_profession + " , " + col_email + " , " + col_email + ")"
 //                   + "VALUES(" + "'" + prenom + "'," + "'" + nom + "'," + "'" + profession + "'," + "'" + email + "'," + "'" + telephone + "')" ;
 //
 //        this.getWritableDatabase().execSQL(sql);
 //        this.getWritableDatabase().close();
-//
-//        En faisant this.getWritableDatabase, on récupère la base de données qu'on a créée. La
-//        méthode insert renvoie par défaut un numéro : -1 ou un autre truc. Quand c'est -1 ça
-//        veut dire que l'insertion ne s'est pas bien déroulée.
 
         if (result == -1) {
             return false;
@@ -107,62 +121,33 @@ public class BD_Contact extends SQLiteOpenHelper {
     }
 
 
-    // C'est une méthode pour avoir le nombre de ligne dans la BD des contacts.
-    public int getNombre() {
-        //Un Cursor c'est le résultat de la requete qui est écrite dans la fonction rawQuery juste en dessous.
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
+    public ArrayList<Contact> getTousLesContacts() {
 
-        //Le while il me sert dans les tests à récupérer les données de la colonne 2 + connaitre leur longueur.
-        //C'était pour voir si quand on insérait des chaines de caractères vides ça ajoutait qd même à la BD ou pas.
-        //Eh oui, ça ajoute une ligne à la BD même quand on écrit rien comme information de contact et qu'on clique sur "enregistrer"
-        //Je comprends toujours pas pq...
-        while (result.moveToNext()) {
-            System.out.println("test : " + result.getString(2));
-            System.out.println("longueur : " + result.getString(2).length());
+        liste_contacts = new ArrayList<Contact>();
+
+        String requete = "select " + col_idContact + "," + col_prenom + "," + col_nom + "," + col_profession + "," + col_email + "," + col_telephone + "," + col_adresse + " from " + TABLE_NAME + " order by " + col_profession + " asc";
+
+        Cursor touslescontacts = this.getWritableDatabase().rawQuery(requete, null);
+
+        for (touslescontacts.moveToFirst(); !touslescontacts.isAfterLast(); touslescontacts.moveToNext()) {
+
+            int idContact = touslescontacts.getInt(0);
+            String prenom = touslescontacts.getString(1);
+            String nom = touslescontacts.getString(2);
+            String profession = touslescontacts.getString(3);
+            String email = touslescontacts.getString(4);
+            String telephone = touslescontacts.getString(5);
+            String adresse = touslescontacts.getString(6);
+
+            liste_contacts.add(new Contact(idContact, nom, prenom, profession, email, telephone, adresse));
         }
 
-        return result.getCount();
-
+        return liste_contacts;
 
     }
 
-    //C'est une méthode pour avoir tous les contacts de la BD.
-    //Ca remplit une liste de Contacts en initialisant chaque Contact avec les données de la BD.
-    //C'est pour ça qu'on fait un "new Contact(...)" à la ligne 152.
 
-    public ArrayList<Contact> getContacts() {
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
-        while (!result.isAfterLast()) {
-
-            String nom = result.getString(result.getColumnIndex(col_nom));
-            System.out.println("nom : " + nom);
-
-            String prenom = result.getString(result.getColumnIndex(col_prenom));
-            System.out.println("prenom : " + prenom);
-
-            String profession = result.getString(result.getColumnIndex(col_profession));
-            System.out.println("profession : " + profession);
-
-            String email = result.getString(result.getColumnIndex(col_email));
-            System.out.println("email : " + email);
-
-            String telephone = result.getString(result.getColumnIndex(col_prenom));
-            System.out.println("nom : " + nom);
-            System.out.println("-------------------------");
-
-            contacts.add(new Contact(nom, prenom, profession, email, telephone));
-
-            result.moveToNext();
-        }
-
-        result.close();
-
-        return contacts;
-    }
-
-
-    // Méthode pour modifier un contact mais je l'ai pas encore testé.
-    public boolean modifierContact(String idContact, String prenom, String nom, String profession, String email, String telephone) {
+    public boolean modifierContact(int idContact, String prenom, String nom, String profession, String email, String telephone, String adresse) {
 
         ContentValues cv = new ContentValues();
 
@@ -172,8 +157,9 @@ public class BD_Contact extends SQLiteOpenHelper {
         cv.put(col_profession, profession);
         cv.put(col_email, email);
         cv.put(col_telephone, telephone);
+        cv.put(col_adresse, adresse);
 
-        int nombre = this.getWritableDatabase().update(TABLE_NAME, cv, col_idContact + "= ?", new String[]{idContact});
+        int nombre = this.getWritableDatabase().update(TABLE_NAME, cv, col_idContact + "= ?", new String[]{String.valueOf(idContact)});
 
         if (nombre == 1) {
             return true;
@@ -183,34 +169,15 @@ public class BD_Contact extends SQLiteOpenHelper {
 
     }
 
-    // Méthode pour avoir l'ID d'un contact mais je l'ai pas encore testé.
-    public int getIdContact(String prenom, String nom, String profession, String email, String telephone) {
 
-        String strSQL = "select " + col_idContact + " from " + TABLE_NAME
-                + " where "
-                + col_prenom + " = " + "'" + prenom + "'" + " and "
-                + col_nom + " = " + "'" + nom + "'" + " and "
-                + col_email + " = " + "'" + email + "'" + " and "
-                + col_telephone + " = " + "'" + telephone + "'";
+    public boolean supprimerContact(int idContact) {
 
-        Cursor result = this.getWritableDatabase().rawQuery(strSQL, null);
+        int nombre = this.getWritableDatabase().delete(TABLE_NAME, col_idContact + "=?", new String[]{String.valueOf(idContact)});
 
-        // On est censé récupérer l'ID à partir du Cursor mais j'ai moi même imposé l'Id pour voir si
-        // j'arrivais à appeler la méthode. Normalement l'ID est trouvé en cherchant dans la BD.
-        int ID = 12222;
-
-        if (result.moveToFirst()) {
-            ID = result.getInt(0);
+        if (nombre == 1) {
+            return true;
+        } else {
+            return false;
         }
-
-        System.out.println("L'ID SELECTIONNE" + ID);
-
-        return ID;
-
     }
-
-
-    //    public boolean supprimerContact (String idContact){
-//
-//    }
 }

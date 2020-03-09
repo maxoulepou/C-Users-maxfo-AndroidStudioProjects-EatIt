@@ -41,7 +41,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MesObjectifsActivity"
+        tools:context="Controleur.MesObjectifsActivity"
         android:orientation="vertical"
         android:layout_marginTop="80dp">
 

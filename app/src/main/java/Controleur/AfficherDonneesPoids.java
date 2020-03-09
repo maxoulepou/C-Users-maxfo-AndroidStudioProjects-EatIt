@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import Model.BD_Poids;
 import Model.Poids;
-import Views.PoidsAdapter;
+import Fragment.PoidsAdapter;
 
 
 public class AfficherDonneesPoids extends AppCompatActivity {
