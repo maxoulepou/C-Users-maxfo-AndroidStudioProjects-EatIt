@@ -12,29 +12,29 @@
         android:layout_width="60dp"
         android:layout_height="15dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/fragment_photoRepas"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_NivFaim" />
 
     <ImageView
         android:id="@+id/fragment_photoRepas"
         android:layout_width="125dp"
         android:layout_height="127dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_commentaireRepas"
         app:srcCompat="@drawable/autre" />
 
     <TextView
         android:id="@+id/fragment_texte_typeRepas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="36dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/fragment_photoRepas"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/fragment_photoRepas"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_texte_typeRepas" />
 
     <TextView
@@ -62,8 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/fragment_photoRepas"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_dureeRepas" />
 </androidx.constraintlayout.widget.ConstraintLayout>

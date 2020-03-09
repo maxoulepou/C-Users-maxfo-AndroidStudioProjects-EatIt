@@ -1,23 +1,27 @@
 package Model;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-
-import com.example.eatit.R;
-
 public class Repas {
     private String duree, niveauFaim;
-    private String repas; // a modifier
+    private String typeRepas; // a modifier
     private String description, mDate;
+    private String heure;
     //photo
 
-    public Repas (String date, String duree, String niveauFaim, String repas, String description){
+    public Repas (String date, String heure, String duree, String niveauFaim, String typeRepas, String description){
         this.mDate = date;
         this.duree = duree;
         this. niveauFaim = niveauFaim;
-        this.repas = repas;
+        this.typeRepas = typeRepas;
         this.description = description;
+        this.heure = heure;
+    }
+
+    public String getHeure() {
+        return heure;
+    }
+
+    public void setHeure(String heure) {
+        this.heure = heure;
     }
 
     public String getDuree() {
@@ -28,8 +32,8 @@ public class Repas {
         return niveauFaim;
     }
 
-    public String getRepas() {
-        return repas;
+    public String getTypeRepas() {
+        return typeRepas;
     }
 
     public String getDescription() {
@@ -52,8 +56,8 @@ public class Repas {
         this.niveauFaim = niveauFaim;
     }
 
-    public void setRepas(String repas) {
-        this.repas = repas;
+    public void setTypeRepas(String typeRepas) {
+        this.typeRepas = typeRepas;
     }
 
     public void setDescription(String description) {

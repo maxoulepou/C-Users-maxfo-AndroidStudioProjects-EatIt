@@ -50,7 +50,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/date"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/jourRepas"
+        app:layout_constraintBottom_toTopOf="@+id/jourRepas_mesRepas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView" />
 
     <EditText
-        android:id="@+id/jourRepas"
+        android:id="@+id/jourRepas_mesRepas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
@@ -79,13 +79,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_mesRepas"
         android:layout_width="300dp"
         android:layout_height="400dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/jourRepas" />
+        app:layout_constraintTop_toBottomOf="@id/jourRepas_mesRepas" />
+
+    <Button
+        android:id="@+id/button_add_repas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/ajouterRepas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_mesRepas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,7 @@
 package com.example.eatit;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,9 +9,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Calendar;
-
-import Controleur.AjouterRepasActivity;
 import Controleur.RepasMainFragment;
 
 public class MesRepasActivity extends AppCompatActivity {
@@ -31,7 +25,7 @@ public class MesRepasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mes_repas);
 
-        jourRepas = (EditText) findViewById(R.id.jourRepas);
+        jourRepas = (EditText) findViewById(R.id.jourRepas_mesRepas);
         jourRepas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import Controleur.RepasMainFragment;
+
 public class MenuBas extends AppCompatActivity {
 
     private String fragmentActif;
@@ -44,8 +46,7 @@ public class MenuBas extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             fragment = new AccueilFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout_menuBas,
-                    fragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout_menuBas, fragment);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout_menuBas, fragment).commit();
         }
 
@@ -62,18 +63,9 @@ public class MenuBas extends AppCompatActivity {
                 case R.id.navigation_profil:
                     fragment = new ProfilFragment();
                     fragmentTransaction.remove(fragment).addToBackStack("profil");
-                    //fragmentTransaction.remove(fragment);
-                    //fragmentTransaction.replace(R.id.fragment_layout_menuBas, newFragment);
-                    //fragmentTransaction.addToBackStack(null);
-                    //newFragment = new ProfilFragment();
-                    //fragmentTransaction.add(R.id.fragment_layout_menuBas, fragment);
-                    //fragmentTransaction.commit();
-                    //fragmentTransaction.remove(fragment);
-                    //Intent menuBas = new Intent(MenuBas.this, MenuBas.class);
-                    //startActivity(menuBas);
                     break;
                 case R.id.navigation_repas:
-                    fragment = new RepasFragment();
+                    fragment = new RepasMainFragment();
                     break;
                 case R.id.navigation_accueil:
                     fragment = new AccueilFragment();

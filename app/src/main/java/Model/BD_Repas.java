@@ -22,6 +22,7 @@ public class BD_Repas extends SQLiteOpenHelper {
     public static final String col_Niv_faim = "Niveau_faim";
     public static final String col_Commentaire = "Commentaire";
     public static final String col_Type_Repas = "Type_Repas";
+    public static final String col_Heure = "Heure";
     private ArrayList<Repas> lRepas;
     private SimpleDateFormat sdf;
     private String formatedDate;
@@ -38,6 +39,7 @@ public class BD_Repas extends SQLiteOpenHelper {
                 + col_idRepas + " integer primary key autoincrement, "
                 + col_Type_Repas + " text not null, "
                 + col_Date + " varchar(15) not null, "
+                + col_Heure + " varchar(5), "
                 + col_Duree + " text not null, "
                 + col_Niv_faim + " text not null, "
                 + col_Commentaire + " text)";
@@ -81,8 +83,9 @@ public class BD_Repas extends SQLiteOpenHelper {
             String mNivFaim = result.getString(result.getColumnIndex(col_Niv_faim));
             String mCommentaire = result.getString(result.getColumnIndex(col_Commentaire));
             String mRepas = result.getString(result.getColumnIndex(col_Type_Repas));
+            String mHeure = result.getString(result.getColumnIndex(col_Heure));
 
-            lRepas.add(new Repas(mDate, mDuree, mNivFaim, mRepas, mCommentaire));
+            lRepas.add(new Repas(mDate, mHeure, mDuree, mNivFaim, mRepas, mCommentaire));
             result.moveToNext();
         }
         result.close();
@@ -90,15 +93,16 @@ public class BD_Repas extends SQLiteOpenHelper {
     }
 
     public ArrayList<Repas> getlRepasDate(String date){
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME + "where " + col_Date + " = '" + date +"'", null);
+        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME + " where " + col_Date + " = '" + date +"'", null);
         while (!result.isAfterLast()) {
             String mDate = result.getString(result.getColumnIndex(col_Date));
             String mDuree = result.getString(result.getColumnIndex(col_Duree));
             String mNivFaim = result.getString(result.getColumnIndex(col_Niv_faim));
             String mCommentaire = result.getString(result.getColumnIndex(col_Commentaire));
             String mRepas = result.getString(result.getColumnIndex(col_Type_Repas));
+            String mHeure = result.getString(result.getColumnIndex(col_Heure));
 
-            lRepas.add(new Repas(mDate, mDuree, mNivFaim, mRepas, mCommentaire));
+            lRepas.add(new Repas(mDate, mDuree, mHeure, mNivFaim, mRepas, mCommentaire));
             result.moveToNext();
         }
         result.close();

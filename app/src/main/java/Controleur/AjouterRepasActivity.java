@@ -1,12 +1,15 @@
 package Controleur;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -15,13 +18,17 @@ import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.eatit.MesRepasActivity;
 import com.example.eatit.R;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import Model.BD_Repas;
 
@@ -36,6 +43,8 @@ public class AjouterRepasActivity extends AppCompatActivity {
     private EditText mDate, mHeure, mDuree, mCommentaire;
     private SeekBar mNiveauFaim;
     public BD_Repas mBD_repas;
+    private boolean isEnregistre;
+    private String datepicked;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +64,70 @@ public class AjouterRepasActivity extends AppCompatActivity {
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
 
-        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
+//        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("test image boutton");
+//            }
+//        });
+
+        petitDej.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("test image boutton");
+                typeRepas = "Petit déjeuner";
+                petitDej.setColorFilter(null);
+                dejeuner.setColorFilter(Color.GRAY);
+                collation.setColorFilter(Color.GRAY);
+                diner.setColorFilter(Color.GRAY);
+                autre.setColorFilter(Color.GRAY);
+            }
+        });
+
+        dejeuner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                typeRepas = "Déjeuner";
+                dejeuner.setColorFilter(null);
+                petitDej.setColorFilter(Color.GRAY);
+                collation.setColorFilter(Color.GRAY);
+                diner.setColorFilter(Color.GRAY);
+                autre.setColorFilter(Color.GRAY);
+            }
+        });
+
+        collation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                typeRepas = "Collation";
+                collation.setColorFilter(null);
+                dejeuner.setColorFilter(Color.GRAY);
+                petitDej.setColorFilter(Color.GRAY);
+                diner.setColorFilter(Color.GRAY);
+                autre.setColorFilter(Color.GRAY);
+            }
+        });
+
+        diner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                typeRepas = "Diner";
+                diner.setColorFilter(null);
+                dejeuner.setColorFilter(Color.GRAY);
+                collation.setColorFilter(Color.GRAY);
+                petitDej.setColorFilter(Color.GRAY);
+                autre.setColorFilter(Color.GRAY);
+            }
+        });
+
+        autre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                typeRepas = "Autre";
+                autre.setColorFilter(null);
+                dejeuner.setColorFilter(Color.GRAY);
+                collation.setColorFilter(Color.GRAY);
+                diner.setColorFilter(Color.GRAY);
+                petitDej.setColorFilter(Color.GRAY);
             }
         });
 
@@ -66,17 +135,21 @@ public class AjouterRepasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("repas enregister");
-                boolean isEnregistre = mBD_repas.addRepas(mDate.getText().toString(),
+                isEnregistre = mBD_repas.addRepas(mDate.getText().toString(),
                         mDuree.getText().toString(), mNiveauFaim.getProgress(),
-                        mCommentaire.getText().toString(),typeRepas);
+                        mCommentaire.getText().toString(), typeRepas);
                 System.out.println("enregistré");
                 System.out.println(mDate.getText().toString());
                 System.out.println(mDuree.getText().toString());
                 System.out.println(mNiveauFaim.getProgress());
                 System.out.println(mCommentaire.getText().toString());
                 System.out.println(typeRepas);
-                Intent MesRepas = new Intent(AjouterRepasActivity.this, MesRepasActivity.class);
-                startActivity(MesRepas);
+                if (isEnregistre == true) {
+                    Intent MesRepas = new Intent(AjouterRepasActivity.this, MesRepasActivity.class);
+                    startActivity(MesRepas);
+                } else {
+                    System.out.println("erreur lors de l'enregistrement du repas");
+                }
             }
         });
     }

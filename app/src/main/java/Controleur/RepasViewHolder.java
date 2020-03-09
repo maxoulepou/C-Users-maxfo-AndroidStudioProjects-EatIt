@@ -2,11 +2,8 @@ package Controleur;
 
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.eatit.R;
-
 import Model.Repas;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +22,10 @@ public class RepasViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void update(Repas repas){
-        //TODO
+        typeRepas.setText(repas.getTypeRepas());
+        heureRepas.setText(repas.getHeure());
+        NivFaim.setText(repas.getNiveauFaim());
+        duree.setText(repas.getDuree());
+        commentaire.setText(repas.getDescription());
     }
 }

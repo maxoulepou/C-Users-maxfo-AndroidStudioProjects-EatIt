@@ -7,11 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.eatit.R;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
 import Model.BD_Repas;
 import Model.Repas;
 
@@ -23,9 +20,9 @@ public class RepasAdapter extends RecyclerView.Adapter<RepasViewHolder>{
     private SimpleDateFormat sdf;
 
     public RepasAdapter(ArrayList<Repas> lRepas, String date){
-        sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        mDate = sdf.format(date).toString();
-        this.lRepas = mBD_repas.getlRepasDate(mDate);
+//        sdf = new SimpleDateFormat("dd-MM-yyyy");
+//        mDate = sdf.format(date);
+        this.lRepas = lRepas;
     }
 
     //Creer le view holder
@@ -33,7 +30,7 @@ public class RepasAdapter extends RecyclerView.Adapter<RepasViewHolder>{
     @Override
     public RepasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        LayoutInflater inflater = LayoutInflater.from(context);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.fragment_repas, parent, false);
         return new RepasViewHolder(view);
     }
