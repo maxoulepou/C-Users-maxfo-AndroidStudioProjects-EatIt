@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="370dp"
-        android:layout_marginBottom="679dp"
-        android:background="@drawable/fleche"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo_eatie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -39,38 +31,35 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
         android:layout_marginEnd="136dp"
-        android:text="@string/ajouter_un_contact"
+        android:text="@string/afficher_un_contact"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_eatie" />
 
     <Button
-        android:id="@+id/but_contact_enregistrer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/but_contact_modifier"
+        android:layout_width="162dp"
+        android:layout_height="40dp"
         android:layout_marginStart="124dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="125dp"
         android:background="@drawable/button"
-        android:text="@string/enregistrer"
+        android:text="@string/modifier"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contact_adresse" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_adresse2" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
+        android:layout_marginTop="45dp"
         android:text="Prénom"
-        app:layout_constraintEnd_toStartOf="@+id/et_contact_prenom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -80,10 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="41dp"
-        android:layout_marginEnd="87dp"
-        android:layout_marginRight="87dp"
         android:text="Nom"
-        app:layout_constraintEnd_toStartOf="@+id/et_contact_nom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -93,10 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginRight="49dp"
         android:text="Profession"
-        app:layout_constraintEnd_toStartOf="@+id/et_contact_profession"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -106,10 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="43dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
         android:text="Email"
-        app:layout_constraintEnd_toStartOf="@+id/et_contact_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -119,15 +99,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
         android:text="Téléphone"
-        app:layout_constraintEnd_toStartOf="@+id/et_contact_telephone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/et_contact_prenom"
+        android:id="@+id/et_contact_prenom2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -139,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/et_contact_nom"
+        android:id="@+id/et_contact_nom2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -148,10 +125,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contact_prenom" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_prenom2" />
 
     <EditText
-        android:id="@+id/et_contact_profession"
+        android:id="@+id/et_contact_profession2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -160,10 +137,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contact_nom" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_nom2" />
 
     <EditText
-        android:id="@+id/et_contact_email"
+        android:id="@+id/et_contact_email2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -172,10 +149,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contact_profession" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_profession2" />
 
     <EditText
-        android:id="@+id/et_contact_telephone"
+        android:id="@+id/et_contact_telephone2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -184,24 +161,21 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contact_email" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_email2" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="66dp"
-        android:layout_marginRight="66dp"
         android:text="Adresse"
-        app:layout_constraintEnd_toStartOf="@+id/et_contact_adresse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
-        android:id="@+id/et_contact_adresse"
+        android:id="@+id/et_contact_adresse2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -211,6 +185,20 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contact_telephone" />
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_telephone2" />
+
+    <TextView
+        android:id="@+id/tv_contact_supprimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="@string/supprimer_contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_contact_modifier" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

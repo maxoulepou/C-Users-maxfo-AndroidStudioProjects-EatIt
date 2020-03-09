@@ -119,6 +119,12 @@
     <string name="telephone">Téléphone</string>
     <string name="feminin">Féminin</string>
     <string name="masculin">Masculin</string>
+    <string name="ajouter_un_contact">AJOUTER UN CONTACT</string>
+    <string name="afficher_un_contact">AFFICHER UN CONTACT</string>
+    <string name="ajout_contact">   Ajouter un nouveau contact   </string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="modifier">Modifier</string>
+    <string name="supprimer_contact"><u>Supprimer ce contact</u></string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
