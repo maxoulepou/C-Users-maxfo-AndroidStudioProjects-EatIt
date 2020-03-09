@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MesEvntsSante extends Fragment {
+public class RessentiFragment extends Fragment {
 
 
-    public MesEvntsSante() {
+    public RessentiFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class MesEvntsSante extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mes_evnt_sante, container, false);
+        return inflater.inflate(R.layout.fragment_ressenti, container, false);
     }
 
 }

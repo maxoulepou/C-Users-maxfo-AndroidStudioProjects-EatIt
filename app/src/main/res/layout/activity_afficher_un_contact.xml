@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
         android:layout_marginEnd="136dp"
-        android:text="@string/afficher_un_contact"
+        android:text="AFFICHER UN CONTACT"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="125dp"
         android:background="@drawable/button"
-        android:text="@string/modifier"
+        android:text="Modifier"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -196,7 +196,7 @@
         android:layout_marginTop="20dp"
         android:clickable="true"
         android:onClick="onClick"
-        android:text="@string/supprimer_contact"
+        android:text="Supprimer le contact"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/but_contact_modifier" />
 

@@ -5,25 +5,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class PageAdapter extends FragmentPagerAdapter {
+public class PageAdapterObjectifs extends FragmentPagerAdapter {
 
     private int numberoftabs;
 
-public PageAdapter(FragmentManager fm, int numberoftabs) {
-    super(fm);
-    this.numberoftabs=numberoftabs;
-}
+    public PageAdapterObjectifs(FragmentManager fm, int numberoftabs) {
+        super(fm);
+        this.numberoftabs=numberoftabs;
+    }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MesObjPersonnels();
+                return new MesObjPersonnelsFragment();
             case 1:
-                return new MesObjPartages();
-            //case 2:
-             //   return new tab3();
+                return new MesObjPartagesFragment();
+            case 2:
+                return new MesObjsAtteintsFragment();
             default:
                 return null;
         }

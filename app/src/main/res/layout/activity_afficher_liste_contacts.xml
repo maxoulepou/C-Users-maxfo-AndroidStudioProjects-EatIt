@@ -43,7 +43,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/button"
-        android:text="@string/ajout_contact"
+        android:text="Ajouter un contact"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

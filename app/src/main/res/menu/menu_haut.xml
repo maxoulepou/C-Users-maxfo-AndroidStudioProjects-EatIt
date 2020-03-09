@@ -4,18 +4,17 @@
 
     <item
         android:id="@+id/item1"
-        android:title="Mes contacts"
+        android:title="Mon Profil"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/item2"
-        android:title="Exporter mes données"
+        android:title="Mes contacts"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/item3"
-        android:title="F.A.Q"
-        app:showAsAction="never"/>
-
+        android:title="Exporter mes données"
+        app:showAsAction="never" />
 
 </menu>

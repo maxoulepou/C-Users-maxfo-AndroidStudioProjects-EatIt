@@ -2,7 +2,6 @@ package Controleur;
 
 
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +19,7 @@ public class Poids_SuiviActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("hello world");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suivi_poids);
+        setContentView(R.layout.fragment_mon_suivi);
         bdp = new BD_Poids(this);
 
         // On cast les variables EditText et Button en recherchant les edittext et boutons grâce à leur ID

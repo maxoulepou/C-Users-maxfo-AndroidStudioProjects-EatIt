@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class PageAdapterTrois extends FragmentPagerAdapter {
+public class PageAdapterRessenti extends FragmentPagerAdapter {
 
     private int numberoftabs;
 
-    public PageAdapterTrois(FragmentManager fm, int numberoftabs) {
+    public PageAdapterRessenti(FragmentManager fm, int numberoftabs) {
         super(fm);
         this.numberoftabs=numberoftabs;
     }
@@ -19,11 +19,11 @@ public class PageAdapterTrois extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MaTete();
+                return new MaTeteFragment();
             case 1:
-                return new MonCorps();
+                return new MonCorpsFragment();
             case 2:
-               return new MonActivite();
+               return new MonActiviteFragment();
             default:
                 return null;
         }

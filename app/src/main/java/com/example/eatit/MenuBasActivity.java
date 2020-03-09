@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MenuBas extends AppCompatActivity {
+public class MenuBasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class MenuBas extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             Fragment fragment = null;
             switch(menuItem.getItemId()) {
-                case R.id.navigation_profil:
-                    fragment = new ProfilFragment();
+                case R.id.navigation_ressenti:
+                    fragment = new RessentiFragment();
                     break;
                 case R.id.navigation_repas:
                     fragment = new RepasFragment();

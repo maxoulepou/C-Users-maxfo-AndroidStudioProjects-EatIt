@@ -13,7 +13,7 @@ public class MonProfilEtEvnt extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabItem tab1,tab2;
-    public PageAdapterBis pageradapter;
+    public PageAdapterProfil pageradapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MonProfilEtEvnt extends AppCompatActivity {
         tab2=(TabItem) findViewById(R.id.Tab2);
         viewPager= findViewById(R.id.viewpager);
 
-        pageradapter=new PageAdapterBis(getSupportFragmentManager(), tabLayout.getTabCount());
+        pageradapter=new PageAdapterProfil(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageradapter);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

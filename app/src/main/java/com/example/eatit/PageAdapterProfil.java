@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class PageAdapterBis extends FragmentPagerAdapter {
+public class PageAdapterProfil extends FragmentPagerAdapter {
 
     private int numberoftabs;
 
-    public PageAdapterBis(FragmentManager fm, int numberoftabs) {
+    public PageAdapterProfil(FragmentManager fm, int numberoftabs) {
         super(fm);
         this.numberoftabs=numberoftabs;
     }
@@ -19,9 +19,9 @@ public class PageAdapterBis extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MonSuivi();
+                return new MonProfilFragment();
             case 1:
-                return new MesDonnees();
+                return new MesEvntsSanteFragment();
             default:
                 return null;
         }

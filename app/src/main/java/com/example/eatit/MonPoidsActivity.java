@@ -8,23 +8,24 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-public class MonRessenti extends AppCompatActivity {
+public class MonPoidsActivity extends AppCompatActivity {
+
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabItem tab1,tab2;
-    public PageAdapterBis pageradapter;
+    public PageAdapterPoids pageradapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ressenti);
+        setContentView(R.layout.fragment_poids);
 
         tabLayout=(TabLayout) findViewById(R.id.tablayout);
         tab1=(TabItem) findViewById(R.id.Tab1);
         tab2=(TabItem) findViewById(R.id.Tab2);
         viewPager= findViewById(R.id.viewpager);
 
-        pageradapter=new PageAdapterBis(getSupportFragmentManager(), tabLayout.getTabCount());
+        pageradapter=new PageAdapterPoids(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageradapter);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

@@ -16,8 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenuBas"></activity>
-        <activity android:name=".MesObjectifs" />
+        <activity android:name=".MenuBasActivity"></activity>
+        <activity android:name=".MesObjectifsActivity" />
         <activity android:name="Controleur.AjouterContactActivity" />
         <activity android:name="Controleur.AfficherDonneesPoids">
             <intent-filter>

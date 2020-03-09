@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class PageAdapterQuatre extends FragmentPagerAdapter {
+public class PageAdapterPoids extends FragmentPagerAdapter {
 
     private int numberoftabs;
 
-    public PageAdapterQuatre(FragmentManager fm, int numberoftabs) {
+    public PageAdapterPoids(FragmentManager fm, int numberoftabs) {
         super(fm);
         this.numberoftabs=numberoftabs;
     }
@@ -19,9 +19,9 @@ public class PageAdapterQuatre extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new MonSuivi();
+                return new MonSuiviFragment();
             case 1:
-                return new MesDonnees();
+                return new MesDonneesFragment();
             default:
                 return null;
         }

@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MesObjPersonnels extends Fragment {
+public class MesObjPartagesFragment extends Fragment {
 
 
-    public MesObjPersonnels() {
+    public MesObjPartagesFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class MesObjPersonnels extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_obj_personnels, container, false);
+        return inflater.inflate(R.layout.fragment_obj_partages, container, false);
     }
 
 }

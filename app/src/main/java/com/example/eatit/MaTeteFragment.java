@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MonCorps extends Fragment {
+public class MaTeteFragment extends Fragment {
 
 
-    public MonCorps() {
+    public MaTeteFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class MonCorps extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mon_corps, container, false);
+        return inflater.inflate(R.layout.fragment_ma_tete, container, false);
     }
 
 }

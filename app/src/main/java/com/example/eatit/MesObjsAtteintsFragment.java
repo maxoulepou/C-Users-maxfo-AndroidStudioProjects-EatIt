@@ -2,21 +2,20 @@ package com.example.eatit;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MesDonnees extends Fragment {
+public class MesObjsAtteintsFragment extends Fragment {
 
 
-    public MesDonnees() {
+    public MesObjsAtteintsFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +24,7 @@ public class MesDonnees extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mes_donnees, container, false);
+        return inflater.inflate(R.layout.fragment_objs_atteints, container, false);
     }
 
 }

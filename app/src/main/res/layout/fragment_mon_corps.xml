@@ -1,96 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MonCorps">
+    tools:context=".MonCorpsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/mess_mon_corps"
-        android:textStyle="italic"
-        android:gravity="center_horizontal"/>
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="300sp"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50sp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <SeekBar
-            android:id="@+id/seekBar2"
-            android:layout_width="267dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:indeterminate="false"
-            android:max="100"
-            android:progress="0"
-            android:progressDrawable="@drawable/track"
-            android:thumb="@drawable/thumb" />
+            android:layout_centerHorizontal="true"
+            android:text="@string/mess_mon_corps"
+            android:textStyle="italic"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65sp">
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pas bien du tout"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="13dp"/>
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="267dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/track"
+                android:thumb="@drawable/thumb" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Très bien"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="310dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Pas bien du tout" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="40dp"
+            android:text="Très bien" />
+
+    </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
         android:orientation="vertical"
-        android:layout_marginTop="100sp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-    <TextView
-        android:id="@+id/textView57"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sensations"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/sensations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/sensations" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectanglebleujaune"
-        android:layout_marginTop="10sp">
-    </Spinner>
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/rectanglebleujaune"></Spinner>
+
+        <TextView
+            android:id="@+id/outputSpinnerTv"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rectanglejaunebis"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/outputSpinnerTv2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectanglejaunebis"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/outputSpinnerTv3"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectanglejaunebis"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="25sp" />
 
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/commentaires"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:autofillHints="@string/commentaires"
         android:background="@drawable/rectanglenoir"
-        android:layout_marginTop="380dp"
-        android:layout_gravity="center_horizontal"/>
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        android:layout_marginTop="35dp"
+        android:gravity="start|top"
+        android:text="@string/commentaires"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:textStyle="italic"
+        android:textColor="@color/grey"/>
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/bouton_enregistrer"
         android:layout_width="162dp"
         android:layout_height="40dp"
-        android:text="@string/enregistrer"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/rectanglejaune"
-        android:layout_marginTop="550dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_marginTop="35dp"
+        android:text="@string/enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentaires" />
 
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
