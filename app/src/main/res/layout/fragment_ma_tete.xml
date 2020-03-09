@@ -22,6 +22,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:gravity="center_horizontal"
             android:text="@string/mess_ma_tete"
             android:textStyle="italic"
@@ -327,14 +328,17 @@
 
     <EditText
         android:id="@+id/commentaires"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/rectanglenoir"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/fond_liste"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:lines="3"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:text="@string/commentaires"
@@ -355,7 +359,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/commentaires"
-            android:layout_marginTop="35dp"/>
+            android:layout_marginTop="30dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,29 +9,35 @@ import Fragment.*;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+
 import com.example.eatit.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuBasActivity extends AppCompatActivity {
+
+    private String fragmentActif;
+    private AccueilFragment accueilFragment;
+    private RepasFragment mRepasFragment;
+    //private Fragment fragment, newFragment;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_bas);
 
-        //creating fragment transition
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //adding fragment to current activity
-        Fragment fragment = new AccueilFragment();
-        fragmentTransaction.add(R.id.fragment_layout, fragment);
-        fragmentTransaction.commit();
+        bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navlistener);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout_menuBas,
+                    new AccueilFragment()).commit();
+        }
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navlistener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             Fragment fragment = null;
@@ -52,7 +58,7 @@ public class MenuBasActivity extends AppCompatActivity {
                     fragment = new PoidsFragment();
                     break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout_menuBas,fragment).commit();
             return true;
         }
     };

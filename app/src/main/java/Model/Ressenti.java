@@ -1,50 +1,26 @@
 package Model;
 
-import java.util.Date;
+public abstract class Ressenti {
 
-public class Ressenti {
+    private int idRessenti;
+    private String date;
+    private String commentaire;
 
-    private Date date;
-    private RessentiEmotion mEmotion;
-    private RessentiPhysique mPhysique;
-    private RessentiCorps mCorps;
-
-    public Ressenti(Date date, RessentiEmotion ressentiEmotion, RessentiPhysique ressentiPhysique, RessentiCorps ressentiCorps){
-        this.mCorps = ressentiCorps;
+    public Ressenti (int id, String date, String commentaire){
+        this.idRessenti = id;
         this.date = date;
-        this.mEmotion = ressentiEmotion;
-        this.mPhysique = ressentiPhysique;
+        this.commentaire = commentaire;
     }
 
-    public Date getDate() {
+    public int getIdRessenti() {
+        return idRessenti;
+    }
+
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public RessentiEmotion getEmotion() {
-        return mEmotion;
-    }
-
-    public void setEmotion(RessentiEmotion emotion) {
-        mEmotion = emotion;
-    }
-
-    public RessentiPhysique getPhysique() {
-        return mPhysique;
-    }
-
-    public void setPhysique(RessentiPhysique physique) {
-        mPhysique = physique;
-    }
-
-    public RessentiCorps getCorps() {
-        return mCorps;
-    }
-
-    public void setCorps(RessentiCorps corps) {
-        mCorps = corps;
+    public String getCommentaire() {
+        return commentaire;
     }
 }

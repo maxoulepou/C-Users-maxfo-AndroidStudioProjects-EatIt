@@ -16,9 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="Controleur.MenuBasActivity"></activity>
+        <activity android:name="Controleur.AfficherDonneesPoids"></activity>
         <activity android:name="Controleur.MesObjectifsActivity" />
-        <activity android:name="Controleur.AfficherDonneesPoids">
+        <activity android:name="Controleur.MonRessentiActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
         <activity android:name="Controleur.CreationCompteActivity" />
         <activity android:name="Controleur.ContactActivity" />
         <activity android:name="Controleur.Poids_SuiviActivity" />
-        <activity android:name="Controleur.MainActivity" />
+        <activity android:name="Controleur.MenuBasActivity" />
 
 
         <provider
