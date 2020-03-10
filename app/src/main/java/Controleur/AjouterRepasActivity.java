@@ -63,12 +63,12 @@ public class AjouterRepasActivity extends AppCompatActivity {
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
 
-        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("test image boutton");
-            }
-        });
+//        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("test image boutton");
+//            }
+//        });
 
         mDate.setOnClickListener(new View.OnClickListener() {
                                      @Override

@@ -46,7 +46,7 @@ public class MenuBasActivity extends AppCompatActivity {
                     fragment = new RessentiFragment();
                     break;
                 case R.id.navigation_repas:
-                    fragment = new RepasFragment();
+                    fragment = new RepasMainFragment();
                     break;
                 case R.id.navigation_accueil:
                     fragment = new AccueilFragment();

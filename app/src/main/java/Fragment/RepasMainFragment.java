@@ -23,7 +23,6 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import Controleur.AjouterRepasActivity;
-import RepasAdapter;
 import Model.BD_Repas;
 import Model.Repas;
 import butterknife.BindView;

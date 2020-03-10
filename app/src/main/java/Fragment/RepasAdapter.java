@@ -9,7 +9,6 @@ import com.example.eatit.R;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import Fragment.RepasViewHolder;
 import Model.BD_Repas;
 import Model.Repas;
 
@@ -31,7 +30,7 @@ public class RepasAdapter extends RecyclerView.Adapter<RepasViewHolder>{
     @Override
     public RepasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.fragment_repas, parent, false);
+        View view = inflater.inflate(R.layout.ligne_repas1, parent, false);
         return new RepasViewHolder(view);
     }
 
