@@ -37,7 +37,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
 
     private String currentPhotoPath;
     private ConstraintLayout mLayout;
-    private Button mButtonTakePhoto;
+    private ImageButton mButtonTakePhoto;
     private Button mButtonEnregister;
     private String typeRepas;
     private ImageView petitDej, dejeuner, collation, diner, autre;
@@ -52,7 +52,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ajouter_repas);
         mBD_repas = new BD_Repas(this);
 
-        mButtonTakePhoto = (Button) findViewById(R.id.button_take_photo);
+        mButtonTakePhoto = (ImageButton) findViewById(R.id.imageButton_ajoutRepas);
         mButtonEnregister = (Button) findViewById(R.id.button_enregister_ajout_repas);
         petitDej = (ImageView) findViewById(R.id.imageView5);
         dejeuner = (ImageView) findViewById(R.id.imageView7);
@@ -65,12 +65,12 @@ public class AjouterRepasActivity extends AppCompatActivity {
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
 
-//        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                System.out.println("test image boutton");
-//            }
-//        });
+        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("test image boutton");
+            }
+        });
 
         mDate.setOnClickListener(new View.OnClickListener() {
                                      @Override

@@ -243,7 +243,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/ajoutezphotos"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_take_photo"
+        app:layout_constraintBottom_toTopOf="@id/imageButton_ajoutRepas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -276,7 +276,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:autofillHints="" tools:targetApi="o" />
-
+<!--
     <Button
         android:id="@+id/button_take_photo"
         android:layout_width="63dp"
@@ -287,7 +287,7 @@
         app:layout_constraintBottom_toTopOf="@id/editTextComm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-        <!--app:srcCompat="@drawable/addphoto" /> -->
+        app:srcCompat="@drawable/addphoto" /> -->
 
     <LinearLayout
         android:id="@+id/linearLayout_activity_ajout_repas"
@@ -332,6 +332,16 @@
         android:text="@string/tresfaim"
         app:layout_constraintBottom_toTopOf="@id/linearLayout_activity_ajout_repas"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton_ajoutRepas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextComm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/addphoto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
