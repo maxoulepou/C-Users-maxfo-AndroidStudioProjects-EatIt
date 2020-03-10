@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.eatit.MenuBas;
 import com.example.eatit.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,7 +35,7 @@ public class ConnexionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAuth.signInWithEmailAndPassword(mTextEmail.getText().toString(), mTextPassword.getText().toString());
-                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBas.class);
+                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBasActivity.class);
                 startActivity(MenuBas);
             }
         });
@@ -44,7 +43,7 @@ public class ConnexionActivity extends AppCompatActivity {
         mCreateCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBas.class);
+                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBasActivity.class);
                 startActivity(MenuBas);
             }
         });
@@ -57,14 +56,14 @@ public class ConnexionActivity extends AppCompatActivity {
         //on vérifie que l'utilisateur ne s'est pas déjà connecté
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
-        Intent ConnexionActivity = new Intent(ConnexionActivity.this, AccueilActivity.class);
+        Intent ConnexionActivity = new Intent(ConnexionActivity.this, MenuBasActivity.class);
         startActivity(ConnexionActivity);
     } **/
 
     public void  updateUI(FirebaseUser account){
         if(account != null){
             Toast.makeText(this,"You Signed In successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this, AccueilActivity.class));
+            startActivity(new Intent(this, MenuBasActivity.class));
         }else {
             Toast.makeText(this,"You must signed in", Toast.LENGTH_LONG).show();
         }

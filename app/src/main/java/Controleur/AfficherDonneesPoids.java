@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import Model.BD_Poids;
 import Model.Poids;
-import Views.PoidsAdapter;
+import Fragment.PoidsAdapter;
 
 
 public class AfficherDonneesPoids extends AppCompatActivity {
@@ -26,7 +26,7 @@ public class AfficherDonneesPoids extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_afficher_poids_recycler);
+        setContentView(R.layout.fragment_mes_donnees2);
 
         rv = (RecyclerView) findViewById(R.id.recycler_view);
         bdp = new BD_Poids(this);

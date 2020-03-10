@@ -1,169 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MonActivite">
+    tools:context="Fragment.MonActiviteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/mess_mon_activite"
-        android:textStyle="italic"
-        android:gravity="center_horizontal"/>
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:autofillHints="@string/commentaires"
-        android:background="@drawable/rectanglenoir"
-        android:layout_marginTop="530dp"
-        android:layout_gravity="center_horizontal"/>
 
-    <Button
-        android:id="@+id/button21"
-        android:layout_width="162dp"
-        android:layout_height="40dp"
-        android:text="@string/enregistrer"
-        android:background="@drawable/rectanglejaune"
-        android:layout_marginTop="675dp"
-        android:layout_gravity="center_horizontal"/>
-
-    <TextView
-        android:id="@+id/textView56"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/intensite"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180sp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35sp">
-
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:drawableLeft="@drawable/bonhommesport"
-        android:background="@drawable/rectanglegrisbiss" />
-
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:drawableLeft="@drawable/horloge"
-        android:background="@drawable/dureeactivite"
-        android:layout_marginTop="15sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="220sp"
-        android:layout_marginLeft="20sp">
-
-    <Button
-        android:id="@+id/button22"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/aucuneffort"
-        android:background="@color/turquoise"/>
-
-    <Button
-        android:id="@+id/button23"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/trestresfacile"
-        android:background="@color/turquoisebis"/>
-
-        <Button
-            android:id="@+id/button24"
-            android:layout_width="170sp"
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tresfacile"
-            android:background="@color/vert" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button25"
-            android:layout_width="170sp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mess_mon_activite"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/activite_realisee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rectanglegrisbiss"
+                android:drawableLeft="@drawable/bonhommesport"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/duree_activite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/dureeactivite"
+                android:drawableLeft="@drawable/horloge"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/intensite_effort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20sp"
+                android:text="@string/intensite" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/facile"
-            android:background="@color/vert" />
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-        <Button
-            android:id="@+id/button26"
-            android:layout_width="170sp"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/aucun_effort"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/turquoise"
+                    android:text="@string/aucuneffort" />
+
+                <Button
+                    android:id="@+id/tres_tres_facile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/turquoisebis"
+                    android:text="@string/trestresfacile" />
+
+                <Button
+                    android:id="@+id/tres_facile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/vert"
+                    android:text="@string/tresfacile" />
+
+                <Button
+                    android:id="@+id/facile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/vert"
+                    android:text="@string/facile" />
+
+                <Button
+                    android:id="@+id/effort_modere"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/jaune"
+                    android:text="@string/effortmodere" />
+
+                <Button
+                    android:id="@+id/moyen"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/jaune"
+                    android:text="@string/moyen" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/un_peu_difficile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orange"
+                    android:text="@string/unpeudifficile" />
+
+                <Button
+                    android:id="@+id/difficile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orange"
+                    android:text="@string/difficile" />
+
+                <Button
+                    android:id="@+id/tres_difficile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orange"
+                    android:text="@string/tresdifficile" />
+
+                <Button
+                    android:id="@+id/tres_tres_difficile"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/rouge"
+                    android:text="@string/trestresdifficile" />
+
+                <Button
+                    android:id="@+id/maximal"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bordeaux"
+                    android:text="@string/maximal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/effortmodere"
-            android:background="@color/jaune" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+            android:layout_marginTop="35dp">
 
-        <Button
-            android:id="@+id/button27"
-            android:layout_width="170sp"
-            android:layout_height="wrap_content"
-            android:text="@string/moyen"
-            android:background="@color/jaune" />
+            <EditText
+                android:id="@+id/commentaires"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rectanglenoir"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/commentaires"
+                android:textColor="@color/grey"
+                android:textStyle="italic" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/bouton_enregistrer"
+                android:layout_width="162dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="35dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rectanglejaune"
+                android:text="@string/enregistrer" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="243sp"
-        android:layout_marginLeft="220sp">
-    <Button
-        android:id="@+id/button28"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/unpeudifficile"
-        android:background="@color/orange" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/button29"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/difficile"
-        android:background="@color/orange" />
-
-    <Button
-        android:id="@+id/button30"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/tresdifficile"
-        android:background="@color/orange" />
-
-    <Button
-        android:id="@+id/button31"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/trestresdifficile"
-        android:background="@color/rouge" />
-
-    <Button
-        android:id="@+id/button32"
-        android:layout_width="170sp"
-        android:layout_height="wrap_content"
-        android:text="@string/maximal"
-        android:background="@color/bordeaux" />
-
-    </LinearLayout>
-
-
-</FrameLayout>
+</ScrollView>

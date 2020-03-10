@@ -8,7 +8,6 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.eatit.MenuBas;
 import com.example.eatit.R;
 
 public class CreationCompteActivity extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class CreationCompteActivity extends AppCompatActivity {
         mButtonCreationCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ContactActivity = new Intent(CreationCompteActivity.this, MenuBas.class);
+                Intent ContactActivity = new Intent(CreationCompteActivity.this, MenuBasActivity.class);
                 startActivity(ContactActivity);
             }
         });

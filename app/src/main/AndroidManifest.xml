@@ -15,14 +15,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MenuBas"></activity>
-        <activity android:name=".MesObjectifs" />
-        <activity android:name="Controleur.AjouterContactActivity" />
-        <activity android:name="Controleur.AjouterRepasActivity"/>
-        <activity android:name="Controleur.AfficherDonneesPoids"/>
-        <activity android:name=".MonRessenti"/>
-        <activity android:name="Controleur.MainActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name="Controleur.MesObjectifsActivity" />
+        <activity android:name="Controleur.AjouterPoidsActivity"/>
+        <activity android:name="Controleur.MenuBasActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,12 +26,15 @@
             </intent-filter>
         </activity>
         <activity android:name="Controleur.ConnexionActivity" />
-        <activity android:name="Controleur.AccueilActivity" />
-        <activity android:name="Controleur.CreationCompteActivity" />
         <activity android:name="Controleur.ContactActivity" />
         <activity android:name="Controleur.Poids_SuiviActivity" />
-        <activity android:name="Controleur.AjouterPoidsActivity"/>
-        <activity android:name=".MesRepasActivity"/>
+        <activity android:name="Controleur.AfficherUnContactActivity" />
+        <activity android:name="Controleur.AjouterContactActivity" />
+        <activity android:name="Controleur.MonPoidsActivity" />
+
+
+
+
 
 
         <provider

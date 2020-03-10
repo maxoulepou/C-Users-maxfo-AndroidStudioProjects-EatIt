@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_profil"
-        android:icon="@drawable/iconprofil"
-        android:title="@string/titreprofil" />
+        android:id="@+id/navigation_ressenti"
+        android:icon="@drawable/iconressenti"
+        android:title="@string/titreressenti" />
 
     <item
         android:id="@+id/navigation_repas"
@@ -13,8 +13,8 @@
 
     <item
         android:id="@+id/navigation_accueil"
-        android:icon="@drawable/iconcahier"
-        android:title="@string/titrecahier" />
+        android:icon="@drawable/iconaccueil"
+        android:title="@string/titremaison" />
 
     <item
         android:id="@+id/navigation_objectifs"

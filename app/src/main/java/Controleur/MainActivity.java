@@ -14,16 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
-import com.example.eatit.MenuBas;
+
 import com.example.eatit.R;
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.ErrorCodes;
-import com.firebase.ui.auth.IdpResponse;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.util.Arrays;
-
-import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         mConnexionButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent ConnexionActivity = new Intent(MainActivity.this, ConnexionActivity.class);
+                Intent ConnexionActivity = new Intent(MainActivity.this, MenuBasActivity.class);
                 startActivity(ConnexionActivity);
             }
         });

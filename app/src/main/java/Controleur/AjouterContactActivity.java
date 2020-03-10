@@ -1,15 +1,17 @@
 package Controleur;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import Model.BD_Contact;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.eatit.R;
-import Model.BD_Contact;
 
 
 public class AjouterContactActivity extends AppCompatActivity {
@@ -19,7 +21,7 @@ public class AjouterContactActivity extends AppCompatActivity {
     // On crée des variables qui correspondent aux différents EditText + bouton du layout
     // "activity_ajouter_contact"
 
-    EditText editPrenom, editNom, editProfession, editEmail, editTelephone;
+    EditText editPrenom, editNom, editProfession, editEmail, editTelephone, editAdresse;
     Button boutonAjouter;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class AjouterContactActivity extends AppCompatActivity {
         editProfession = (EditText) findViewById(R.id.et_contact_profession);
         editEmail = (EditText) findViewById(R.id.et_contact_email);
         editTelephone = (EditText) findViewById(R.id.et_contact_telephone);
+        editAdresse = (EditText) findViewById(R.id.et_contact_adresse);
         boutonAjouter = (Button) findViewById(R.id.but_contact_enregistrer);
 
         ajouterContact();
@@ -49,34 +52,25 @@ public class AjouterContactActivity extends AppCompatActivity {
                                 editNom.getText().toString(),
                                 editProfession.getText().toString(),
                                 editEmail.getText().toString(),
-                                editTelephone.getText().toString());
+                                editTelephone.getText().toString(),
+                                editAdresse.getText().toString());
+
                         if (isInserted == true)
                             Toast.makeText(AjouterContactActivity.this, "Contact ajouté", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(AjouterContactActivity.this, "Contact pas ajouté", Toast.LENGTH_SHORT).show();
 
-                        System.out.println("Nombre de ligne : " + bdc.getNombre());
-
-
-
-
-//                        String prenom = "prenom";
-//                        String nom = "nom";
-//                        String profession = "profession";
-//                        String email = "email";
-//                        String telephone = "telephone";
-//
-//                        bdc.getIdContact(prenom,nom,profession,email,telephone);
+                        openNewActivity(AfficherListeContactsActivity.class);
                     }
                 }
+
         );
 
     }
 
-
-    public void modifierContact() {
-
+    public void openNewActivity(Class nouvelle_classe) {
+        Intent intent = new Intent(this, nouvelle_classe);
+        startActivity(intent);
     }
-
 
 }

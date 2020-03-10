@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="75dp"
-    android:background="@drawable/fond_liste">
+    android:background="@drawable/fond_liste_contact2">
 
     <TextView
         android:id="@+id/tv_poids"
@@ -14,10 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="4dp"
-        android:text="Poids"
+        android:text="Poids (kg)"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tv_valeurpoids"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,16 +28,14 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_weight="1"
-        android:background="@color/blue"
-        android:text="59/57/2222"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
+        android:text="Date"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
         android:id="@+id/tv_valeurpoids"
@@ -50,18 +49,6 @@
         app:layout_constraintTop_toBottomOf="@id/tv_poids" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="5dp"
-        android:text="kg"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_valeurpoids"
-        app:layout_constraintTop_toBottomOf="@+id/tv_poids" />
-
-    <TextView
         android:id="@+id/tv_imc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,8 +57,12 @@
         android:layout_marginTop="24dp"
         android:text="IMC"
         android:textSize="12sp"
+        android:textStyle="bold"
+
         app:layout_constraintStart_toEndOf="@+id/tv_poids"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        />
 
     <TextView
         android:id="@+id/tv_valeurimc"
@@ -92,10 +83,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
-        android:text="TT"
+        android:text="TT (cm)"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tv_imc"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"/>
 
     <TextView
         android:id="@+id/tv_graisse"
@@ -104,10 +97,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
-        android:text="Graisse"
+        android:text="Graisse (kg)"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tv_tt"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"/>
 
     <TextView
         android:id="@+id/tv_muscle"
@@ -116,10 +111,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
-        android:text="Muscle"
+        android:text="Muscle (kg)"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tv_graisse"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"/>
 
     <TextView
         android:id="@+id/tv_valeurtt"
