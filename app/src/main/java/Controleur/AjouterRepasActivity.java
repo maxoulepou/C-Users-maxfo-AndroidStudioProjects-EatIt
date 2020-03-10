@@ -19,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
 
-import com.example.eatit.MenuBas;
 import com.example.eatit.R;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -176,7 +176,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
                 System.out.println(typeRepas);
                 if (isEnregistre == true) {
                     System.out.println("repas enregister");
-                    Intent MenuBas = new Intent(AjouterRepasActivity.this, com.example.eatit.MenuBas.class);
+                    Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
                     startActivity(MenuBas);
                 } else {
                     System.out.println("erreur lors de l'enregistrement du repas");
