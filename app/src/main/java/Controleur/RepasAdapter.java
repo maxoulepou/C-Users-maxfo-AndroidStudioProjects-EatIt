@@ -19,7 +19,7 @@ public class RepasAdapter extends RecyclerView.Adapter<RepasViewHolder>{
     private String mDate;
     private SimpleDateFormat sdf;
 
-    public RepasAdapter(ArrayList<Repas> lRepas, String date){
+    public RepasAdapter(ArrayList<Repas> lRepas){
 //        sdf = new SimpleDateFormat("dd-MM-yyyy");
 //        mDate = sdf.format(date);
         this.lRepas = lRepas;
@@ -29,7 +29,6 @@ public class RepasAdapter extends RecyclerView.Adapter<RepasViewHolder>{
     @NonNull
     @Override
     public RepasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.fragment_repas, parent, false);
         return new RepasViewHolder(view);
@@ -38,14 +37,12 @@ public class RepasAdapter extends RecyclerView.Adapter<RepasViewHolder>{
     //Renvoie da la liste de repas au view holder pour update affichage
     @Override
     public void onBindViewHolder(@NonNull RepasViewHolder viewHolder, int position) {
-        for(int i = 0; i<lRepas.size(); i++){
-            viewHolder.update(this.lRepas.get(i));
-        }
+        viewHolder.update(this.lRepas.get(position));
     }
 
     //Retourne le compte total d'item dans la liste
     @Override
     public int getItemCount() {
-        return this.lRepas.size();
+        return lRepas.size();
     }
 }

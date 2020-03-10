@@ -20,6 +20,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.eatit.MenuBas;
 import com.example.eatit.MesRepasActivity;
 import com.example.eatit.R;
 import java.io.File;
@@ -70,6 +71,38 @@ public class AjouterRepasActivity extends AppCompatActivity {
 //                System.out.println("test image boutton");
 //            }
 //        });
+
+        mDate.setOnClickListener(new View.OnClickListener() {
+                                     @Override
+                                     public void onClick(View v) {
+                                         final Calendar cldr = Calendar.getInstance();
+                                         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+                                             @Override
+                                             //Cette méthode elle nous sert à enregistrer la date sélectionnée
+                                             public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                                                   int dayOfMonth) {
+                                                 cldr.set(Calendar.YEAR, year);
+                                                 cldr.set(Calendar.MONTH, monthOfYear);
+                                                 cldr.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                                                 //On formate pour la recherche dans la BD.
+                                                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);
+                                                 datepicked = dateFormat.format(cldr.getTime());
+
+                                                 //Formatage pour l'affichage de l'edittext qui s'appelle "et_date"
+                                                 DateFormat df_date = DateFormat.getDateInstance(DateFormat.SHORT, Locale.FRANCE); //DateFormat.LONG ça met la date sous la forme 28 février 2020.
+                                                 String dateDF = df_date.format(cldr.getTime());
+                                                 mDate.setText(dateDF);
+                                             }
+                                         };
+
+                                         new DatePickerDialog(AjouterRepasActivity.this, date, cldr
+                                                 .get(Calendar.YEAR), cldr.get(Calendar.MONTH),
+                                                 cldr.get(Calendar.DAY_OF_MONTH)).show();
+                                     }
+                                 }
+        );
 
         petitDej.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,9 +167,8 @@ public class AjouterRepasActivity extends AppCompatActivity {
         mButtonEnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("repas enregister");
-                isEnregistre = mBD_repas.addRepas(mDate.getText().toString(),
-                        mDuree.getText().toString(), mNiveauFaim.getProgress(),
+                isEnregistre = mBD_repas.addRepas(mDate.getText().toString(), mHeure.getText().toString(),
+                        mDuree.getText().toString(),  mNiveauFaim.getProgress(),
                         mCommentaire.getText().toString(), typeRepas);
                 System.out.println("enregistré");
                 System.out.println(mDate.getText().toString());
@@ -145,8 +177,9 @@ public class AjouterRepasActivity extends AppCompatActivity {
                 System.out.println(mCommentaire.getText().toString());
                 System.out.println(typeRepas);
                 if (isEnregistre == true) {
-                    Intent MesRepas = new Intent(AjouterRepasActivity.this, MesRepasActivity.class);
-                    startActivity(MesRepas);
+                    System.out.println("repas enregister");
+                    Intent MenuBas = new Intent(AjouterRepasActivity.this, com.example.eatit.MenuBas.class);
+                    startActivity(MenuBas);
                 } else {
                     System.out.println("erreur lors de l'enregistrement du repas");
                 }
@@ -244,9 +277,6 @@ public class AjouterRepasActivity extends AppCompatActivity {
 //        Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
 //        imageView.setImageBitmap(bitmap);
 //    }
-
-
-
 }
 
 

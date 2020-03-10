@@ -34,16 +34,16 @@ public class BD_Repas extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db){
         //    sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-
         String strSQL = "create table " + TABLE_NAME +"("
                 + col_idRepas + " integer primary key autoincrement, "
                 + col_Type_Repas + " text not null, "
-                + col_Date + " varchar(15) not null, "
-                + col_Heure + " varchar(5), "
-                + col_Duree + " text not null, "
-                + col_Niv_faim + " text not null, "
+                + col_Date + " text, "
+                + col_Heure + " text, "
+                + col_Duree + " text, "
+                + col_Niv_faim + " text, "
                 + col_Commentaire + " text)";
         db.execSQL(strSQL);
+        System.out.println("BD_Repas créer");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -51,21 +51,23 @@ public class BD_Repas extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addRepas (String date, String duree, int nivFaim, String commentaire, String repas){
+    public boolean addRepas (String date, String heure, String duree, int nivFaim, String commentaire, String repas){
         ContentValues cv = new ContentValues();
 //        formatedDate = sdf.format(date);
 
         cv.put(col_Date, date);
-        cv.put(col_Type_Repas, repas.toString());
+        cv.put(col_Heure, heure);
         cv.put(col_Duree, duree);
         cv.put(col_Niv_faim, nivFaim);
         cv.put(col_Commentaire, commentaire);
+        cv.put(col_Type_Repas, repas);
 
         long result = this.getWritableDatabase().insert(TABLE_NAME, null, cv);
 
         if (result == -1){
             return false;
         } else {
+            System.out.println("addRepas fonctionne");
             return true;
         }
     }
@@ -78,14 +80,16 @@ public class BD_Repas extends SQLiteOpenHelper {
     public ArrayList<Repas> getlRepas(){
         Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
         while (!result.isAfterLast()) {
-            String mDate = result.getString(result.getColumnIndex(col_Date));
-            String mDuree = result.getString(result.getColumnIndex(col_Duree));
-            String mNivFaim = result.getString(result.getColumnIndex(col_Niv_faim));
-            String mCommentaire = result.getString(result.getColumnIndex(col_Commentaire));
-            String mRepas = result.getString(result.getColumnIndex(col_Type_Repas));
-            String mHeure = result.getString(result.getColumnIndex(col_Heure));
+            String mRepas = result.getString(1);
+            String mDate = result.getString(2);
+            String mHeure = result.getString(3);
+            String mDuree = result.getString(4);
+            String mNivFaim = result.getString(5);
+            String mCommentaire = result.getString(6);
 
-            lRepas.add(new Repas(mDate, mHeure, mDuree, mNivFaim, mRepas, mCommentaire));
+            Repas r = new Repas(mDate, mHeure, mDuree,  mNivFaim, mRepas, mCommentaire);
+
+            lRepas.add(r);
             result.moveToNext();
         }
         result.close();
@@ -93,17 +97,21 @@ public class BD_Repas extends SQLiteOpenHelper {
     }
 
     public ArrayList<Repas> getlRepasDate(String date){
+        lRepas = new ArrayList<>();
         Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME + " where " + col_Date + " = '" + date +"'", null);
-        while (!result.isAfterLast()) {
-            String mDate = result.getString(result.getColumnIndex(col_Date));
-            String mDuree = result.getString(result.getColumnIndex(col_Duree));
-            String mNivFaim = result.getString(result.getColumnIndex(col_Niv_faim));
-            String mCommentaire = result.getString(result.getColumnIndex(col_Commentaire));
-            String mRepas = result.getString(result.getColumnIndex(col_Type_Repas));
-            String mHeure = result.getString(result.getColumnIndex(col_Heure));
+        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
+            String mRepas = result.getString(1);
+            String mDate = result.getString(2);
+            String mHeure = result.getString(3);
+            String mDuree = result.getString(4);
+            String mNivFaim = result.getString(5);
+            String mCommentaire = result.getString(6);
 
-            lRepas.add(new Repas(mDate, mDuree, mHeure, mNivFaim, mRepas, mCommentaire));
+            Repas r = new Repas(mDate, mHeure, mDuree,  mNivFaim, mRepas, mCommentaire);
+
+            lRepas.add(r);
             result.moveToNext();
+            System.out.println("addRepasDate fonctionne");
         }
         result.close();
         return lRepas;
