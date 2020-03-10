@@ -1,4 +1,4 @@
-package com.example.eatit;
+package Controleur;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.eatit.R;
 
 import Controleur.RepasMainFragment;
 

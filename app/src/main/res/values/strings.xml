@@ -156,6 +156,10 @@
     <string name="duree">Durée du repas :</string>
     <string name="min">minutes</string>
     <string name="niveaudefaim">Niveau de faim</string>
+    <string name="decrire">Descreption et ressenti de votre repas</string>
+    <string name="pasfaimdutout">Absolument pas faim</string>
+    <string name="tresfaim">Très très faim</string>
+    <string name="ajouterRepas">Ajouter un repas</string>
 
     <!-- EXPORTER DONNEES -->
 

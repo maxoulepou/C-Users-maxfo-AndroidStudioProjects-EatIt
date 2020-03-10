@@ -32,7 +32,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/rectanglegrisbiss"
                 android:drawableLeft="@drawable/bonhommesport"
                 android:ems="10"
                 android:inputType="textPersonName" />

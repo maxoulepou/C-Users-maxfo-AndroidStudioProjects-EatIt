@@ -18,10 +18,8 @@ import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.eatit.MenuBas;
-import com.example.eatit.MesRepasActivity;
 import com.example.eatit.R;
 import java.io.File;
 import java.io.IOException;

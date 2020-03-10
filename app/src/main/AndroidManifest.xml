@@ -31,12 +31,6 @@
         <activity android:name="Controleur.AfficherUnContactActivity" />
         <activity android:name="Controleur.AjouterContactActivity" />
         <activity android:name="Controleur.MonPoidsActivity" />
-
-
-
-
-
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"
