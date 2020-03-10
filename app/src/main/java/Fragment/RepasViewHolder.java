@@ -1,4 +1,4 @@
-package Controleur;
+package Fragment;
 
 import android.view.View;
 import android.widget.TextView;

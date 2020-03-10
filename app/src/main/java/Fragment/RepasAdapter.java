@@ -1,6 +1,5 @@
-package Controleur;
+package Fragment;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.eatit.R;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
+import Fragment.RepasViewHolder;
 import Model.BD_Repas;
 import Model.Repas;
 

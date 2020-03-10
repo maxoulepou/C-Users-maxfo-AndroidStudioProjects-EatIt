@@ -26,7 +26,6 @@
             </intent-filter>
         </activity>
         <activity android:name="Controleur.ConnexionActivity" />
-        <activity android:name="Controleur.ContactActivity" />
         <activity android:name="Controleur.Poids_SuiviActivity" />
         <activity android:name="Controleur.AfficherUnContactActivity" />
         <activity android:name="Controleur.AjouterContactActivity" />

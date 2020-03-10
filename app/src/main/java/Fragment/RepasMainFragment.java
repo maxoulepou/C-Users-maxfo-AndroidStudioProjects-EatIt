@@ -1,4 +1,4 @@
-package Controleur;
+package Fragment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.eatit.MenuBas;
 import com.example.eatit.R;
 
 import java.text.DateFormat;
@@ -23,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
+import Controleur.AjouterRepasActivity;
+import RepasAdapter;
 import Model.BD_Repas;
 import Model.Repas;
 import butterknife.BindView;

@@ -1,4 +1,4 @@
-package com.example.eatit;
+package Controleur;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
@@ -9,7 +9,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import Controleur.RepasMainFragment;
+import com.example.eatit.R;
+
+import Fragment.RepasMainFragment;
 
 public class MesRepasActivity extends AppCompatActivity {
 
