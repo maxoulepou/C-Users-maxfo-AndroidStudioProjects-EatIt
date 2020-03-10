@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/ajout_objectifs"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/eatie"/>
+
+    <TextView
+        android:id="@+id/ajout_objectifs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ajouter_un_objectif_perso"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ajout_objectifs"
+        android:layout_marginTop="50dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textObjectifs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Objectif"/>
+
+    <TextView
+        android:id="@+id/textDateDebut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="50dp"
+        android:text="Début prévu"/>
+
+        <TextView
+            android:id="@+id/textDateFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="50dp"
+            android:text="Fin prévue"/>
+
+        <TextView
+            android:id="@+id/textEchelle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="50dp"
+            android:text="Note de likert"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editObjectif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectanglebleu"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:drawableLeft="@drawable/cible"
+        android:padding="6dp"/>
+
+    <EditText
+        android:id="@+id/editDateDebut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rectanglebleu"
+        android:ems="10"
+        android:drawableLeft="@drawable/sablier"
+        android:padding="6dp"/>
+
+            <EditText
+                android:id="@+id/editDateFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/rectanglebleu"
+                android:ems="10"
+                android:drawableLeft="@drawable/sablier"
+                android:padding="6dp"/>
+
+            <EditText
+                android:id="@+id/editEchelle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/rectanglebleu"
+                android:ems="10"
+                android:padding="6dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/echelle"/>
+
+           <!-- <EditText
+                android:id="@+id/editEchelle"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/fond_edit_echelle_likert"
+                android:ems="10"
+                android:padding="6dp"
+                android:layout_gravity="center_horizontal"/> <! -->
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textpasdutoutatteint"
+        android:layout_width="61dp"
+        android:layout_height="wrap_content"
+        android:text="Pas du tout atteint"
+        android:textSize="12dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/echellelikert"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/texttotalementatteint"
+        android:layout_width="61dp"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:text="Totalement atteint"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/echellelikert"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/echellelikert"
+        android:layout_width="420dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/echellelikert"
+        android:layout_marginTop="70dp"/>
+
+    <Button
+        android:id="@+id/but_contact_enregistrer"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="@string/enregistrer"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/echellelikert"
+        android:layout_marginTop="40dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
