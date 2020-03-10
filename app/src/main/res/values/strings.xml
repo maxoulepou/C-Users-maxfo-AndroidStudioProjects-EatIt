@@ -172,6 +172,11 @@
     <string name="ajouter_contact">Ajouter Contact</string>
     <string name="nom_prenom">nom prenom</string>
 
+    <!-- MES OBJECTIFS -->
+
+    <string name="ajouter_un_objectif_perso">AJOUTER UN OBJECTIF PERSONNEL</string>
+    <string name="ajouter_un_objectif_partage">AJOUTER UN OBJECTIF PARTAGÉ</string>
+
     <!-- AUTRES -->
 
     <string name="enregistrer">Enregistrer</string>

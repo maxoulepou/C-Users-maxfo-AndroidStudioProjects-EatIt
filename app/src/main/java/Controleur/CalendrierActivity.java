@@ -16,22 +16,23 @@ public class CalendrierActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView((R.layout.fragment_accueil));
-//
-//        Date today = new Date();
-//        Calendar lastYear = Calendar.getInstance();
-//        lastYear.add(Calendar.YEAR, 1);
-//
-//        CalendarPickerView datePicker = findViewById(R.id.calendar);
-//        datePicker.init(today, lastYear.getTime())
-//                .inMode(CalendarPickerView.SelectionMode.RANGE)
-//                .withSelectedDate(today);
-//
-//        datePicker.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
-//            @Override
-//            public void onDateSelected(Date date) {
-//                //String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
-//
-//                Calendar calSelected = Calendar.getInstance();
+
+        Date today = new Date();
+        Calendar lastYear = Calendar.getInstance();
+        lastYear.add(Calendar.YEAR, -1);
+
+        CalendarPickerView datePicker = findViewById(R.id.calendar);
+        datePicker.init(lastYear.getTime(), today)
+                .inMode(CalendarPickerView.SelectionMode.RANGE)
+                .withSelectedDate(today);
+
+         datePicker.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
+             @Override
+                                              }
+            public void onDateSelected(Date date) {
+                String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
+
+                Calendar calSelected = Calendar.getInstance();
 //                calSelected.setTime(date);
 //
 //                String selectedDate = "" + calSelected.get(Calendar.DAY_OF_MONTH)
