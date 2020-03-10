@@ -140,7 +140,7 @@
                     android:layout_marginStart="155dp"/>
 
                 <TextView
-                    android:id="@+id/tv_tt_act"
+                    android:id="@+id/tv_poids_act"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rectanglejaune"
@@ -153,7 +153,7 @@
                     android:textAlignment="center"/>
 
                 <TextView
-                    android:id="@+id/tv_poids_act"
+                    android:id="@+id/tv_tt_act"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rectanglejaune"

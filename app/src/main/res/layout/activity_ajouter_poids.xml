@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tt" />
 
     <TextView
-        android:id="@+id/tv_tt_act"
+        android:id="@+id/tv_poids_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -173,7 +173,7 @@
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_poids_act"
+        app:layout_constraintStart_toEndOf="@+id/tv_tt_act"
         app:layout_constraintTop_toBottomOf="@+id/et_poids_tt"
         android:background="@drawable/rectanglebleubis"/>
 
@@ -187,7 +187,7 @@
         android:layout_marginStart="20dp"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_tt_act"
+        app:layout_constraintStart_toEndOf="@+id/tv_poids_act"
         app:layout_constraintTop_toBottomOf="@+id/et_poids_graisse"
         android:background="@drawable/rectanglebleubis"/>
 

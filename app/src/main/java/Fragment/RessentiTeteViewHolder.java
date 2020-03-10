@@ -27,7 +27,6 @@ public class RessentiTeteViewHolder extends RecyclerView.ViewHolder {
 
     //A chaque recyclage de cellule elle est appelée.
     public void display(RessentiTete pds) {
-
         date.setText(pds.getDate());
         emotions.setText(pds.getEmotions());
         commentaire.setText(pds.getCommentaire());

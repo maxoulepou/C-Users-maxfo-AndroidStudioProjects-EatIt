@@ -2,6 +2,7 @@ package Controleur;
 
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -81,7 +82,7 @@ public class AjouterPoidsActivity extends AppCompatActivity {
                                                     //pour l'utilisateur.
 
                                                     //Formatage pour la BD.
-                                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE);
+                                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.FRANCE);
                                                     date_selectionnee = dateFormat.format(cldr.getTime()); //cldr.getTime() envoie un objet de type Date. La date est formatée en String de la forme "yyyy-MM-dd HH:mm:ss".
 
                                                     //Formatage pour l'affichage de l'edittext qui s'appelle "editDate"
@@ -125,43 +126,37 @@ public class AjouterPoidsActivity extends AppCompatActivity {
 
                 if (editPoids.getText().toString().isEmpty()) {
                     poids = -1;
-                }
-                else {
+                } else {
                     poids = Double.parseDouble(editPoids.getText().toString());
                 }
 
                 if (editTaille.getText().toString().isEmpty()) {
                     taille = -1;
-                }
-                else {
+                } else {
                     taille = Double.parseDouble(editTaille.getText().toString());
                 }
 
                 if (editTT.getText().toString().isEmpty()) {
                     tt = -1;
-                }
-                else {
+                } else {
                     tt = Double.parseDouble(editTT.getText().toString());
                 }
 
                 if (editGraisse.getText().toString().isEmpty()) {
                     graisse = -1;
-                }
-                else {
+                } else {
                     graisse = Double.parseDouble(editGraisse.getText().toString());
                 }
 
                 if (editMuscle.getText().toString().isEmpty()) {
                     muscle = -1;
-                }
-                else {
-                    muscle = Double.parseDouble(editGraisse.getText().toString());
+                } else {
+                    muscle = Double.parseDouble(editMuscle.getText().toString());
                 }
 
                 if (taille == -1 || poids == -1) {
                     imc = -1;
-                }
-                else {
+                } else {
                     imc = poids / (Math.pow(taille, 2));
                 }
 
@@ -169,13 +164,19 @@ public class AjouterPoidsActivity extends AppCompatActivity {
                 boolean isInserted = bdp.insererPoids(date, poids, taille, imc, tt, graisse, muscle);
 
 
-                if (isInserted == true)
+                if (isInserted == true) {
                     Toast.makeText(AjouterPoidsActivity.this, "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
-                else
+                    openNewActivity(MonPoidsActivity.class);
+                } else {
                     Toast.makeText(AjouterPoidsActivity.this, "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
-
+                }
             }
         });
+    }
+
+    public void openNewActivity(Class nouvelle_classe) {
+        Intent intent = new Intent(this, nouvelle_classe);
+        startActivity(intent);
     }
 }
 

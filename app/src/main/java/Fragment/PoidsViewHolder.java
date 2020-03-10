@@ -19,6 +19,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
     private TextView imc;
     private TextView muscle;
     private TextView graisse;
+    private TextView tt;
     private static DecimalFormat df2 = new DecimalFormat("#.##");
 
 
@@ -30,6 +31,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         imc = (TextView) itemView.findViewById(R.id.tv_valeurimc);
         muscle = (TextView) itemView.findViewById(R.id.tv_valeurm);
         graisse = (TextView) itemView.findViewById(R.id.tv_valeurg);
+        tt = (TextView) itemView.findViewById(R.id.tv_valeurtt);
 
 
     }
@@ -42,5 +44,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         imc.setText(String.valueOf(df2.format(pds.getImc())));
         muscle.setText(String.valueOf(df2.format(pds.getMuscle())));
         graisse.setText(String.valueOf(df2.format(pds.getGraisse())));
+        tt.setText(String.valueOf(df2.format(pds.getTt())));
+
     }
 }
