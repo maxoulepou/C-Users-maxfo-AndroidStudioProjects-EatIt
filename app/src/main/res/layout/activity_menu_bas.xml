@@ -19,9 +19,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
         android:background="@color/greybis"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"/>
+    <!-- app:active_centre_button_icon_color="@color/white"
+    app:space_background_color="@color/white"
+    app:centre_button_icon="@drawable/iconaccueil"
+    app:space_item_icon_size="30dp"
+    app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+    app:space_item_text_size="@dimen/space_item_text_default_size"
+    app:inactive_centre_button_icon_color="@color/white"/> !-->
+    <!--
+    app:itemIconTint="@color/black"
+    app:itemTextColor="@color/black"!-->
 
 </RelativeLayout>

@@ -85,6 +85,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
                     android:textStyle="italic"
+                    android:digits="0123456789"
                     />
 
             </LinearLayout>
@@ -112,7 +113,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp">
 
                 <Button
                     android:id="@+id/aucun_effort"
@@ -162,7 +164,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30sp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp">
 
                 <Button
                     android:id="@+id/un_peu_difficile"
@@ -239,7 +242,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
         <Button
-            android:id="@+id/bouton_enregistrer"
+            android:id="@+id/bouton_enregistrer_activite"
             android:layout_width="162dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"

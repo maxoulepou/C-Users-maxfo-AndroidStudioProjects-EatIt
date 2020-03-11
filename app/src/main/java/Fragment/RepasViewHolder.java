@@ -22,11 +22,11 @@ public class RepasViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void update(Repas repas){
-        typeRepas.setText(repas.getTypeRepas());
+        typeRepas.setText(repas.getTypeRepas() + " : ");
         typeRepas.setAllCaps(true);
         heureRepas.setText(repas.getHeure());
-        NivFaim.setText("Niveau de Faim: " + repas.getNiveauFaim());
-        duree.setText("Duree du repas: " + repas.getDuree());
-        commentaire.setText("Description/Commentaire: " + repas.getDescription());
+        NivFaim.setText(repas.getNiveauFaim());
+        duree.setText(repas.getDuree() + " minutes");
+        commentaire.setText(repas.getDescription());
     }
 }

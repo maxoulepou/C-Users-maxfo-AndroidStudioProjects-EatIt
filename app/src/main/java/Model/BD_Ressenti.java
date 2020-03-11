@@ -155,7 +155,7 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
     }
 
-    public boolean insererRessentiSport(String date, String activite, String commentaire, int difficulte, int duree) {
+    public boolean insererRessentiActivite(String date, String activite, String commentaire, int difficulte, int duree) {
 
         ContentValues cv = new ContentValues();
 
@@ -164,6 +164,14 @@ public class BD_Ressenti extends SQLiteOpenHelper {
         cv.put(col_activite, activite);
         cv.put(col_difficulte, difficulte);
         cv.put(col_duree_activite, duree);
+
+        if(duree ==-1){
+            return false;
+        }
+
+        if (activite.isEmpty()){
+            return false;
+        }
 
         //Dans le cas où les variables qui peuvent être NULL le sont, on introduit "NULL" dans la BD si le String qui est entré par l'utilisateur est vide.
         if (commentaire.isEmpty()) {
@@ -181,7 +189,6 @@ public class BD_Ressenti extends SQLiteOpenHelper {
         }
 
     }
-
 
 //    -------------------- RECUPERATION DES TABLES SOUS FORME D ARRAYLISTS D'OBJETS ---------------
 
@@ -285,7 +292,7 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
         liste_ressentis_corps = new ArrayList<RessentiCorps>();
 
-        String requete = "select " + col_idRessenti_tete + "," + col_date_corps + "," + col_sensations + "," + col_comm_corps + "," + col_niveau_bienetre + " from " + TABLE_RESSENTI_CORPS + "where" + col_date_corps + "='" + date +"'";
+        String requete = "select " + col_idRessenti_tete + "," + col_date_corps + "," + col_sensations + "," + col_comm_corps + "," + col_niveau_bienetre + " from " + TABLE_RESSENTI_CORPS + " where " + col_date_corps + "='" + date +"'";
 
         Cursor touslesressentiscorps = this.getWritableDatabase().rawQuery(requete, null);
 

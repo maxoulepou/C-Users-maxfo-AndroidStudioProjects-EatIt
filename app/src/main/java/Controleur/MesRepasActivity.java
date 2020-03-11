@@ -1,5 +1,6 @@
 package Controleur;
 
+import Fragment.RepasFragment;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -11,15 +12,13 @@ import android.widget.TextView;
 
 import com.example.eatit.R;
 
-import Fragment.RepasMainFragment;
-
 public class MesRepasActivity extends AppCompatActivity {
 
     private static final String TAG="MesRepas";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateListener;
-    private EditText jourRepas;
-    private RepasMainFragment mFragment;
+    private TextView jourRepas;
+    private RepasFragment mFragment;
     private String mDate;
 
     @Override
@@ -27,7 +26,7 @@ public class MesRepasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mes_repas);
 
-        jourRepas = (EditText) findViewById(R.id.jourRepas_mesRepas);
+        jourRepas = (TextView) findViewById(R.id.jourRepas_mesRepas);
         jourRepas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,9 +43,9 @@ public class MesRepasActivity extends AppCompatActivity {
 //                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 //                dialog.show();
                 mDate = jourRepas.getText().toString();
-                mFragment = (RepasMainFragment) getSupportFragmentManager().findFragmentById(R.id.recyclerView_mesRepas);
+                mFragment = (RepasFragment) getSupportFragmentManager().findFragmentById(R.id.recyclerView_mesRepas);
                 if (mFragment == null) {
-                    mFragment = new RepasMainFragment();
+                    mFragment = new RepasFragment();
                     mFragment.configureRecyclerView(mDate);
                     getSupportFragmentManager().beginTransaction()
                             .add(R.id.recyclerView_mesRepas, mFragment)
