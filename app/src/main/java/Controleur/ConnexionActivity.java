@@ -31,7 +31,7 @@ public class ConnexionActivity extends AppCompatActivity {
         mBd = new BD(this);
         setContentView(R.layout.activity_connexion);
         mConnexionButton = (Button) findViewById(R.id.activity_connexion_button_connexion);
-        mTextEmail = (EditText) findViewById(R.id.editText_email);
+        mTextEmail = (EditText) findViewById(R.id.editText_email_creationCompte);
         mTextPassword = (EditText) findViewById(R.id.editText_Password);
         mCreateCompte = (TextView) findViewById(R.id.activity_connexion_textview_createCompte);
 
@@ -40,6 +40,7 @@ public class ConnexionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //mAuth.signInWithEmailAndPassword(mTextEmail.getText().toString(), mTextPassword.getText().toString());
                 if (mBd.seConnecter(mTextEmail.getText().toString(), mTextPassword.getText().toString()) == true){
+                    mBd.estConnecte(mTextEmail.getText().toString());
                     Intent MenuBas = new Intent(ConnexionActivity.this, MenuBasActivity.class);
                     startActivity(MenuBas);
                 }
