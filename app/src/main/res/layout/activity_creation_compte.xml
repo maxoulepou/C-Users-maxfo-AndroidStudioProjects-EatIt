@@ -43,13 +43,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email"
-            app:layout_constraintBottom_toTopOf="@+id/editText_email"
+            app:layout_constraintBottom_toTopOf="@+id/editText_email_creationCompte"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/creation_de_compte" />
 
         <EditText
-            android:id="@+id/editText_email"
+            android:id="@+id/editText_email_creationCompte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rectanglebleu"
@@ -70,7 +70,7 @@
             app:layout_constraintBottom_toTopOf="@+id/editText_Password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+            app:layout_constraintTop_toBottomOf="@+id/editText_email_creationCompte" />
 
         <EditText
             android:id="@+id/editText_Password"

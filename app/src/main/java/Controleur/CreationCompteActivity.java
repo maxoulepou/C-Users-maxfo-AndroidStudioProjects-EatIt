@@ -30,7 +30,7 @@ public class CreationCompteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mBD = new BD(this);
         setContentView(R.layout.activity_creation_compte);
-        textMail = (EditText) findViewById(R.id.editText_email);
+        textMail = (EditText) findViewById(R.id.editText_email_creationCompte);
         textMdp = (EditText) findViewById(R.id.editText_Password);
         textNom = (EditText) findViewById(R.id.editTextNom);
         textPrenom = (EditText) findViewById(R.id.editTextPrenom);
@@ -60,7 +60,7 @@ public class CreationCompteActivity extends AppCompatActivity {
         mButtonCreationCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mBD.getId(textMail.getText().toString()).equals("Error")){
+                if (mBD.getId(textMail.getText().toString()).equals("Pas de mail trouve")){
                     Patient p = new Patient(textMail.getText().toString(), textMdp.getText().toString(), textNom.getText().toString(), textPrenom.getText().toString(), sexe, textDateNaissance.getText().toString());
                     mBD.creerCompte(p);
                     Intent ContactActivity = new Intent(CreationCompteActivity.this, MenuBasActivity.class);
