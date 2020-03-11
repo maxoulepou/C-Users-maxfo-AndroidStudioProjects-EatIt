@@ -1,29 +1,199 @@
 <resources>
+
     <string name="app_name">EatIt</string>
-    <string name="rechercher">Rechercher</string>
+
+    <!-- TITRE BAS DU LOGO -->
+
+    <string name="accueil">ACCUEIL</string>
+    <string name="mon_profil">MON PROFIL</string>
+    <string name="mes_objectifs">MES OBJECTIFS</string>
+    <string name="mes_contacts">MES CONTACTS</string>
+    <string name="mes_repas">MES REPAS</string>
+    <string name="mon_poids">MON POIDS</string>
+    <string name="mes_ressentis">MES RESSENTIS</string>
+    <string name="ajouter_un_contact">AJOUTER UN CONTACT</string>
+    <string name="ajouter_un_ressenti">AJOUTER UN RESSENTI</string>
+    <string name="ajouter_des_donnees">AJOUTER DES DONNÉES</string>
+    <string name="ajouter_un_evnt_sante">AJOUTER UN ÉVÉNEMENT DE SANTÉ</string>
+    <string name="creation_compte">CRÉATION DE COMPTE</string>
+    <string name="exporter_donnees">EXPORTER MES DONNÉES</string>
+
+    <!-- MENU BAS -->
+
+    <string name="titreressenti">Mes Ressentis</string>
+    <string name="titrerepas">Mes Repas</string>
+    <string name="titremaison">Accueil</string>
+    <string name="titreobj">Mes Objectifs</string>
+    <string name="titrepoids">Mon Poids</string>
+
+    <!-- MESSAGES -->
+
+    <string name="mess_obj_perso">Définissez vos propres objectifs !</string>
+    <string name="mess_mon_activite">Est-ce que vous avez eu une activité aujourd\'hui ?</string>
+    <string name="mess_ma_tete">Comment vous sentez-vous dans votre tête ?</string>
+    <string name="mess_mon_corps">Comment vous sentez-vous dans votre corps ?</string>
+
+    <!-- COMPTE -->
+
     <string name="vous_n_avez_pas_de_compte">Vous n\'avez pas de compte ?</string>
     <string name="creez_le">Créez-le !</string>
     <string name="bienvenue_sur_eatie">Bienvenue sur EATIE !</string>
     <string name="se_connecter">Se connecter</string>
     <string name="mdp_oublie">Mot de passe oublié ?</string>
+    <string name="creer_son_compte">Créer son compte</string>
     <string name="identifiant">IDENTIFIANT</string>
     <string name="mdp">MOT DE PASSE</string>
-    <string name="todo">TODO</string>
-    <string name="creation_compte">CRÉATION DE COMPTE</string>
     <string name="email">E-MAIL</string>
+    <string name="Nom">NOM</string>
+    <string name="Prenom">PRÉNOM</string>
     <string name="vous_etes">VOUS ETES</string>
     <string name="une_femme">UNE FEMME</string>
     <string name="un_homme">UN HOMME</string>
     <string name="date_de_naissance">DATE DE NAISSANCE</string>
-    <string name="creer_son_compte">Créer son compte</string>
-    <string name="mes_objectifs">MES OBJECTIFS</string>
-    <string name="mes_contacts">MES CONTACTS</string>
-    <string name="tab_text1">Personnels</string>
-    <string name="tab_text2">Partagés</string>
-    <string name="tab_text3">Atteints</string>
-    <string name="mes_repas">MES REPAS</string>
+
+    <!-- ONGLETS -->
+
+    <string name="tab_personnels">Personnels</string>
+    <string name="tab_partages">Partagés</string>
+    <string name="tab_atteints">Atteints</string>
+    <string name="tab_ma_tete">Ma tête</string>
+    <string name="tab_mon_corps">Mon corps</string>
+    <string name="tab_mon_activite">Mon activité</string>
+    <string name="tab_mon_suivi">Mon suivi</string>
+    <string name="tab_mes_donnees">Mes données</string>
+    <string name="tab__mon_profil">Mon Profil</string>
+    <string name="tab__mes_evnts">Mes Événements de santé</string>
+
+    <!-- MA TETE -->
+
+    <string name="heureux">Heureux</string>
+    <string name="calme">Calme</string>
+    <string name="serein">Serein</string>
+    <string name="fier">Fier</string>
+    <string name="pensif">Pensif</string>
+    <string name="confiant">Confiant</string>
+    <string name="anxieux">Anxieux</string>
+    <string name="triste">Triste</string>
+    <string name="deprime">Déprimé</string>
+    <string name="reconnaissant">Reconnaissant</string>
+    <string name="perdu">Perdu</string>
+    <string name="mefiant">Méfiant</string>
+    <string name="coupable">Coupable</string>
+    <string name="surpris">Surpris</string>
+    <string name="enerve">Énervé</string>
+    <string name="apeure">Apeuré</string>
+    <string name="embarrasse">Embarrassé</string>
+    <string name="autree">Autre</string>
+
+    <!-- MON ACTIVITE -->
+
+    <string name="aucuneffort">0. Aucun effort</string>
+    <string name="trestresfacile">1. Très, très facile</string>
+    <string name="tresfacile">2. Très facile</string>
+    <string name="facile">3. Facile</string>
+    <string name="effortmodere">4. Effort modéré</string>
+    <string name="moyen">5. Moyen</string>
+    <string name="unpeudifficile">6. Un peu difficile</string>
+    <string name="difficile">7. Difficile</string>
+    <string name="tresdifficile">8. Très difficile</string>
+    <string name="trestresdifficile">9. Très, très difficile</string>
+    <string name="maximal">10. Maximal</string>
+    <string name="intensite">Intensité de l\'effort :</string>
+
+    <!-- MON CORPS -->
+
+    <string name="sensations">Sensations</string>
+
+    <!-- MON POIDS -->
+
+    <string name="départ">Données de départ du </string>
+    <string name="actuel">Données actuelles du </string>
+    <string name="poidsdepart">Poids de départ</string>
+    <string name="ttdepart">TT de départ</string>
+    <string name="poidsactuel">Poids actuel</string>
+    <string name="ttactuel">TT actuel</string>
+    <string name="tailleactuelle">Taille actuelle :</string>
+    <string name="votreimc">VOTRE IMC :</string>
+    <string name="echellenbre"><![CDATA[<18,5]]></string>
+    <string name="echellenbre2"><![CDATA[18,5 – 25]]></string>
+    <string name="echellenbre3"><![CDATA[25 - 30]]></string>
+    <string name="echellenbre4"><![CDATA[>30]]></string>
+    <string name="maigreur">Maigreur</string>
+    <string name="normal">Normal</string>
+    <string name="surpoids">Surpoids</string>
+    <string name="obésité">Obésité</string>
+
+    <!-- MON PROFIL -->
+
+    <string name="nom">Nom</string>
+    <string name="prenom">Prénom</string>
+    <string name="sexe">Sexe</string>
+    <string name="profilemail">E-mail</string>
+    <string name="profildatedenaissance">Date de naissance</string>
+    <string name="telephone">Téléphone</string>
+    <string name="feminin">Féminin</string>
+    <string name="masculin">Masculin</string>
+    <string name="adresse">Adresse</string>
+    <string name="codepostal">Code postal</string>
+    <string name="ville">Ville</string>
+    <string name="adressepostale">Adresse postale</string>
+    <string name="contacturgence">Contact d urgence</string>
+    <string name="modifiermdp">Modifier votre mot de passe</string>
+    <string name="suppcompte">Supprimer votre compte</string>
+    <string name="deconnexion">Déconnexion</string>
+
+    <!-- MES REPAS -->
+
+    <string name="petitdej">Petit-déjeuner</string>
+    <string name="dej">Déjeuner</string>
+    <string name="collation">Collation</string>
+    <string name="diner">Dîner</string>
+    <string name="autre">Autre</string>
+    <string name="ajoutezphotos">Ajoutez des photos de votre repas</string>
     <string name="date">DATE</string>
+    <string name="heure">HEURE</string>
+    <string name="dateheure">Date et heure du repas</string>
+    <string name="duree">Durée du repas :</string>
+    <string name="min">minutes</string>
+    <string name="niveaudefaim">Niveau de faim</string>
+    <string name="decrire">Descreption et ressenti de votre repas</string>
+    <string name="pasfaimdutout">Absolument pas faim</string>
+    <string name="tresfaim">Très très faim</string>
+    <string name="ajouterRepas">Ajouter un repas</string>
+
+    <!-- EXPORTER DONNEES -->
+
+    <string name="format">Format</string>
+    <string name="exporter_donnees_date">Date</string>
+    <string name="exporter_mesressentis">Mes ressentis</string>
+    <string name="exporter_mesobjectifs">Mes objectifs</string>
+    <string name="exporter_mesrepas">Mes repas</string>
+    <string name="exporter_monpoids">Mon poids</string>
+
+    <!-- MES CONTACTS -->
+
+    <string name="rechercher">Rechercher</string>
+    <string name="ajouter_contact">Ajouter Contact</string>
+    <string name="nom_prenom">nom prenom</string>
+
+    <!-- MES OBJECTIFS -->
+
+    <string name="ajouter_un_objectif_perso">AJOUTER UN OBJECTIF PERSONNEL</string>
+    <string name="ajouter_un_objectif_partage">AJOUTER UN OBJECTIF PARTAGÉ</string>
+
+    <!-- AUTRES -->
+
+    <string name="enregistrer">Enregistrer</string>
+    <string name="commentaires">Commentaires...</string>
+
+    <string name="popup_message_confirmation_delete_account">Êtes-vous sur de vouloir supprimer votre compte ? Cette action est irréversible</string>
+    <string name="popup_message_choice_yes">Yess</string>
+    <string name="popup_message_choice_no">Nooo</string>
+    <string name="title_activity_mon_profil">MonProfil</string>
+
+    <string name="todo">TODO</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="definissez_vos_objs">Définissez vos propres objectifs !</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

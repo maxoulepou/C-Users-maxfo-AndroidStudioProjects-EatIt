@@ -1,28 +1,21 @@
 package Model;
 
-public class RessentiCorps {
+public class RessentiCorps extends Ressenti {
 
-    private String type; // faire enum
-    private String description;
+    private int niveau_bienetre;
+    private String sensations;
 
-    public RessentiCorps(String type, String description){
-        this.type = type;
-        this.description = description;
+    public RessentiCorps(int id, String date, String commentaire, int bienetre, String sensations) {
+        super(id, date, commentaire);
+        this.niveau_bienetre = bienetre;
+        this.sensations = sensations;
     }
 
-    public String getType() {
-        return type;
+    public int getNiveau_bienetre() {
+        return niveau_bienetre;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public String getSensations() {
+        return sensations;
     }
 }

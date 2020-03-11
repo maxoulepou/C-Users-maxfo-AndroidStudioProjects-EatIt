@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Fragment.MaTeteFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="390dp"
+        android:layout_height="360dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/mess_ma_tete"
+            android:textStyle="italic"
+            android:layout_centerHorizontal="true"/>
+
+            <ToggleButton
+                android:id="@+id/bouton_heureux"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="7sp"
+                android:layout_weight="1"
+                android:background="@drawable/heureux"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+            <ToggleButton
+                android:id="@+id/bouton_calme"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="80sp"
+                android:layout_weight="1"
+                android:background="@drawable/calme"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+            <ToggleButton
+                android:id="@+id/bouton_serein"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="153dp"
+                android:layout_weight="1"
+                android:background="@drawable/serein"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+            <ToggleButton
+                android:id="@+id/bouton_fier"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="226sp"
+                android:layout_weight="1"
+                android:background="@drawable/fier"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+            <ToggleButton
+                android:id="@+id/bouton_reconnaissant"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="310dp"
+                android:layout_weight="1"
+                android:background="@drawable/reconnaissant"/>
+
+            <TextView
+                android:id="@+id/heureux"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95sp"
+                android:text="@string/heureux" />
+
+            <TextView
+                android:id="@+id/calme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80sp"
+                android:layout_marginTop="95sp"
+                android:text="@string/calme" />
+
+            <TextView
+                android:id="@+id/serein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="155sp"
+                android:layout_marginTop="95sp"
+                android:text="@string/serein" />
+
+            <TextView
+                android:id="@+id/fier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="235sp"
+                android:layout_marginTop="95sp"
+                android:text="@string/fier" />
+
+            <TextView
+                android:id="@+id/reconnaissant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="290sp"
+                android:layout_marginTop="95sp"
+                android:text="@string/reconnaissant" />
+
+            <ToggleButton
+                android:id="@+id/bouton_pensif"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="7sp"
+                android:layout_marginTop="125dp"
+                android:background="@drawable/pensif" />
+
+            <ToggleButton
+                android:id="@+id/bouton_confiant"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="80sp"
+                android:layout_marginTop="125dp"
+                android:background="@drawable/confiant" />
+
+            <ToggleButton
+                android:id="@+id/bouton_anxieux"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="153sp"
+                android:layout_marginTop="125dp"
+                android:background="@drawable/anxieux" />
+
+            <ToggleButton
+                android:id="@+id/bouton_triste"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="226sp"
+                android:layout_marginTop="125dp"
+                android:background="@drawable/triste" />
+
+            <ToggleButton
+                android:id="@+id/bouton_deprime"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="310sp"
+                android:layout_marginTop="125dp"
+                android:background="@drawable/deprime" />
+
+            <TextView
+                android:id="@+id/pensif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7sp"
+                android:layout_marginTop="170dp"
+                android:text="@string/pensif" />
+
+            <TextView
+                android:id="@+id/confiant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="74sp"
+                android:layout_marginTop="170dp"
+                android:text="@string/confiant" />
+
+            <TextView
+                android:id="@+id/anxieux"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150sp"
+                android:layout_marginTop="170dp"
+                android:text="@string/anxieux" />
+
+            <TextView
+                android:id="@+id/triste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="227sp"
+                android:layout_marginTop="170dp"
+                android:text="@string/triste" />
+
+            <TextView
+                android:id="@+id/deprime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="301sp"
+                android:layout_marginTop="170dp"
+                android:text="@string/deprime" />
+
+            <ToggleButton
+                android:id="@+id/bouton_perdu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="7sp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/perdu" />
+
+            <ToggleButton
+                android:id="@+id/bouton_mefiant"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="80sp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/mefiant" />
+
+            <ToggleButton
+                android:id="@+id/bouton_coupable"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="153sp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/coupable" />
+
+            <ToggleButton
+                android:id="@+id/bouton_surpris"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="226sp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/surpris" />
+
+            <ToggleButton
+                android:id="@+id/bouton_enerve"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="310sp"
+                android:layout_marginTop="200dp"
+                android:background="@drawable/enerve" />
+
+            <TextView
+                android:id="@+id/perdu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="245dp"
+                android:text="@string/perdu" />
+
+            <TextView
+                android:id="@+id/mefiant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="78sp"
+                android:layout_marginTop="245dp"
+                android:text="@string/mefiant" />
+
+            <TextView
+                android:id="@+id/coupable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="143sp"
+                android:layout_marginTop="245dp"
+                android:text="@string/coupable" />
+
+            <TextView
+                android:id="@+id/surpris"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="225sp"
+                android:layout_marginTop="245dp"
+                android:text="@string/surpris" />
+
+            <TextView
+                android:id="@+id/enerve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="310sp"
+                android:layout_marginTop="245dp"
+                android:text="@string/enerve" />
+
+            <ToggleButton
+                android:id="@+id/bouton_apeure"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="7sp"
+                android:layout_marginTop="275dp"
+                android:background="@drawable/apeure" />
+
+            <ToggleButton
+                android:id="@+id/bouton_embarasse"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="275dp"
+                android:background="@drawable/embarasse" />
+
+            <ToggleButton
+                android:id="@+id/bouton_autree"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="153sp"
+                android:layout_marginTop="275dp"
+                android:background="@drawable/autree" />
+
+            <TextView
+                android:id="@+id/apeure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:layout_marginTop="320dp"
+                android:text="@string/apeure" />
+
+            <TextView
+                android:id="@+id/embarasse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62sp"
+                android:layout_marginTop="320dp"
+                android:text="@string/embarrasse" />
+
+            <TextView
+                android:id="@+id/autre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="158sp"
+                android:layout_marginTop="320dp"
+                android:text="@string/autree" />
+
+        </RelativeLayout>
+
+    <EditText
+        android:id="@+id/commentaires"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/fond_liste"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/commentaires"
+        android:textColor="@color/grey"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/bouton_enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <Button
+            android:id="@+id/bouton_enregistrer_tete"
+            android:layout_width="162dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rectanglejaune"
+            android:text="@string/enregistrer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentaires"
+            android:layout_marginTop="30dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

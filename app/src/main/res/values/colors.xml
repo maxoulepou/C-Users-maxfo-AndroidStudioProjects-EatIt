@@ -7,5 +7,13 @@
     <color name="blue">#76C0C5</color>
     <color name="grey">#757575</color>
     <color name="black">#5A5A5A</color>
+    <color name="greybis">#E5E5E5</color>
     <color name="white">#FBFBFB</color>
+    <color name="turquoise">#BBEAE9</color>
+    <color name="turquoisebis">#7CD6D4</color>
+    <color name="vert">#9CD99E</color>
+    <color name="jaune">#F8E593</color>
+    <color name="orange">#F5C183</color>
+    <color name="rouge">#F26262</color>
+    <color name="bordeaux">#D04141</color>
 </resources>

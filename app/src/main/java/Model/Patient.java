@@ -8,10 +8,11 @@ public class Patient {
     private long id;
     private String nom;
     private String prenom;
-    private Date dateNaissance;
+    private String dateNaissance;
     private String sexe; // restriction homme femme à faire
     private String email;
     private String adresse, ville, contactUrgence;
+    private String mdp;
     private int codePostal;
     private ArrayList<Repas> lCarnetRepas;
     private ArrayList<Intervention> lIntervention;
@@ -21,13 +22,23 @@ public class Patient {
     private ArrayList<Poids> lPoids;
 
 
-    public Patient(long id, String nom, String prenom, String sexe, Date date){ //peut etre ajouter des parametres, a voir lors de la creation du controlleur
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
+    public Patient(String email, String mdp, String nom, String prenom, String sexe, String dateN){ //peut etre ajouter des parametres, a voir lors de la creation du controlleur
         super();
-        this.id = id;
+       // this.id = id;
+        this.email = email;
+        this.mdp = mdp;
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
-        this.dateNaissance = date;
+        this.dateNaissance = dateN;
     }
 
     public void setEmail(String email) {
@@ -78,11 +89,11 @@ public class Patient {
         return sexe;
     }
 
-    public Date getDateNaissance() {
+    public String getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
@@ -114,7 +125,7 @@ public class Patient {
         return lIntervention;
     }
 
-    public void setlIntervention(ArrayList lIntervention) {
+    public void setlIntervention(ArrayList<Intervention> lIntervention) {
         this.lIntervention = lIntervention;
     }
 
@@ -122,7 +133,7 @@ public class Patient {
         return lContact;
     }
 
-    public void setlContact(ArrayList lContact) {
+    public void setlContact(ArrayList<Contact> lContact) {
         this.lContact = lContact;
     }
 
@@ -130,7 +141,7 @@ public class Patient {
         return lObjectif;
     }
 
-    public void setlObjectif(ArrayList lObjectif) {
+    public void setlObjectif(ArrayList<Objectifs> lObjectif) {
         this.lObjectif = lObjectif;
     }
 
@@ -138,7 +149,7 @@ public class Patient {
         return lCarnetRepas;
     }
 
-    public void setlCarnetRepas(ArrayList lCarnetRepas) {
+    public void setlCarnetRepas(ArrayList<Repas> lCarnetRepas) {
         this.lCarnetRepas = lCarnetRepas;
     }
 
@@ -146,7 +157,7 @@ public class Patient {
         return lCarnetEmotion;
     }
 
-    public void setlCarnetEmotion(ArrayList lCarnetEmotion) {
+    public void setlCarnetEmotion(ArrayList<Ressenti> lCarnetEmotion) {
         this.lCarnetEmotion = lCarnetEmotion;
     }
 
@@ -154,7 +165,7 @@ public class Patient {
         return lPoids;
     }
 
-    public void setlPoids(ArrayList lPoids) {
+    public void setlPoids(ArrayList<Poids> lPoids) {
         this.lPoids = lPoids;
     }
 }

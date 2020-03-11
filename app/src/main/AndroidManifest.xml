@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eatit">
 
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="false" />
+    <uses-feature
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +19,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MesRepas"></activity>
-        <activity android:name=".MesObjectifs" />
-        <activity android:name="Controleur.MainActivity">
+        <activity android:name="Controleur.AjouterPoidsActivity"/>
+        <activity android:name="Controleur.MenuBasActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="Controleur.Poids_SuiviActivity" />
+        <activity android:name="Controleur.AfficherUnContactActivity" />
+        <activity android:name="Controleur.AjouterContactActivity" />
+        <activity android:name="Controleur.AjouterRepasActivity"/>
+        <activity android:name="Controleur.AfficherListeContactsActivity"/>
+        <activity android:name="Controleur.MonProfilEtEvntActivity"/>
+        <activity android:name="Controleur.MonRessentiActivity"/>
+=======
+        <activity android:name="Controleur.CreationCompteActivity"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

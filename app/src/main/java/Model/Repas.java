@@ -1,50 +1,63 @@
 package Model;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-
-import com.example.eatit.R;
-
 public class Repas {
-    private int duree, niveauFaim;
-    private TypeRepas repas; // a modifier
-    private String description;
+    private String duree, niveauFaim;
+    private String typeRepas; // a modifier
+    private String description, mDate;
+    private String heure;
     //photo
 
-    public Repas (int duree, int niveauFaim, TypeRepas repas, String description){
+    public Repas (String date, String heure, String duree, String niveauFaim, String typeRepas, String description){
+        this.mDate = date;
         this.duree = duree;
         this. niveauFaim = niveauFaim;
-        this.repas = repas;
+        this.typeRepas = typeRepas;
         this.description = description;
+        this.heure = heure;
     }
 
-    public int getDuree() {
+    public String getHeure() {
+        return heure;
+    }
+
+    public void setHeure(String heure) {
+        this.heure = heure;
+    }
+
+    public String getDuree() {
         return duree;
     }
 
-    public int getNiveauFaim() {
+    public String getNiveauFaim() {
         return niveauFaim;
     }
 
-    public TypeRepas getRepas() {
-        return repas;
+    public String getTypeRepas() {
+        return typeRepas;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDuree(int duree) {
+    public void setDuree(String duree) {
         this.duree = duree;
     }
 
-    public void setNiveauFaim(int niveauFaim) {
+    public String getDate() {
+        return mDate;
+    }
+
+    public void setDate(String date) {
+        mDate = date;
+    }
+
+    public void setNiveauFaim(String niveauFaim) {
         this.niveauFaim = niveauFaim;
     }
 
-    public void setRepas(TypeRepas repas) {
-        this.repas = repas;
+    public void setTypeRepas(String typeRepas) {
+        this.typeRepas = typeRepas;
     }
 
     public void setDescription(String description) {
