@@ -263,7 +263,7 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
         liste_ressentis_tete = new ArrayList<RessentiTete>();
 
-        String requete = "select " + col_idRessenti_tete + "," + col_date_tete + "," + col_emotions + "," + col_comm_tete + " from " + TABLE_RESSENTI_TETE + " where " + col_date_tete + "=" + date;
+        String requete = "select " + col_idRessenti_tete + "," + col_date_tete + "," + col_emotions + "," + col_comm_tete + " from " + TABLE_RESSENTI_TETE + " where " + col_date_tete + "='" + date +"'";
 
         Cursor touslesressentistete = this.getWritableDatabase().rawQuery(requete, null);
 
@@ -280,6 +280,54 @@ public class BD_Ressenti extends SQLiteOpenHelper {
         return liste_ressentis_tete;
 
     }
+
+    public ArrayList<RessentiCorps> getTousLesRessentisCorps(String date) {
+
+        liste_ressentis_corps = new ArrayList<RessentiCorps>();
+
+        String requete = "select " + col_idRessenti_tete + "," + col_date_corps + "," + col_sensations + "," + col_comm_corps + "," + col_niveau_bienetre + " from " + TABLE_RESSENTI_CORPS + "where" + col_date_corps + "='" + date +"'";
+
+        Cursor touslesressentiscorps = this.getWritableDatabase().rawQuery(requete, null);
+
+        for (touslesressentiscorps.moveToFirst(); !touslesressentiscorps.isAfterLast(); touslesressentiscorps.moveToNext()) {
+
+            int idRessentiCorps = touslesressentiscorps.getInt(0);
+            String datee = touslesressentiscorps.getString(1);
+            String sensation = touslesressentiscorps.getString(2);
+            String comm = touslesressentiscorps.getString(3);
+            int bienetre = touslesressentiscorps.getInt(4);
+
+            liste_ressentis_corps.add(new RessentiCorps(idRessentiCorps, datee, comm, bienetre, sensation));
+        }
+
+        return liste_ressentis_corps;
+
+    }
+
+    public ArrayList<RessentiActivite> getTousLesRessentisActivite(String date) {
+
+        liste_ressentis_activite = new ArrayList<RessentiActivite>();
+
+        String requete = "select " + col_idRessenti_activite + "," + col_date_activite + "," + col_activite + "," + col_duree_activite + "," + col_comm_activite + "," + col_difficulte + " from " + TABLE_RESSENTI_ACTIVITE + " where " + col_date_corps + "='" + date +"'";
+
+        Cursor touslesressentisactivite = this.getWritableDatabase().rawQuery(requete, null);
+
+        for (touslesressentisactivite.moveToFirst(); !touslesressentisactivite.isAfterLast(); touslesressentisactivite.moveToNext()) {
+
+            int idRessentiCorps = touslesressentisactivite.getInt(0);
+            String datee = touslesressentisactivite.getString(1);
+            String activite = touslesressentisactivite.getString(2);
+            int duree = touslesressentisactivite.getInt(3);
+            String comm = touslesressentisactivite.getString(4);
+            int difficulte = touslesressentisactivite.getInt(5);
+
+            liste_ressentis_activite.add(new RessentiActivite(idRessentiCorps, datee, comm, duree, difficulte, activite));
+        }
+
+        return liste_ressentis_activite;
+
+    }
+
 
 }
 

@@ -28,7 +28,7 @@
             android:textStyle="italic"
             android:layout_centerHorizontal="true"/>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_heureux"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -38,7 +38,7 @@
                 android:background="@drawable/heureux"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_calme"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -48,7 +48,7 @@
                 android:background="@drawable/calme"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_serein"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -58,7 +58,7 @@
                 android:background="@drawable/serein"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_fier"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
@@ -68,7 +68,7 @@
                 android:background="@drawable/fier"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_reconnaissant"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
@@ -116,7 +116,7 @@
                 android:layout_marginTop="95sp"
                 android:text="@string/reconnaissant" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_pensif"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -124,7 +124,7 @@
                 android:layout_marginTop="125dp"
                 android:background="@drawable/pensif" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_confiant"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -132,7 +132,7 @@
                 android:layout_marginTop="125dp"
                 android:background="@drawable/confiant" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_anxieux"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -140,7 +140,7 @@
                 android:layout_marginTop="125dp"
                 android:background="@drawable/anxieux" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_triste"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -148,7 +148,7 @@
                 android:layout_marginTop="125dp"
                 android:background="@drawable/triste" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_deprime"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -196,7 +196,7 @@
                 android:layout_marginTop="170dp"
                 android:text="@string/deprime" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_perdu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -204,7 +204,7 @@
                 android:layout_marginTop="200dp"
                 android:background="@drawable/perdu" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_mefiant"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -212,7 +212,7 @@
                 android:layout_marginTop="200dp"
                 android:background="@drawable/mefiant" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_coupable"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -220,7 +220,7 @@
                 android:layout_marginTop="200dp"
                 android:background="@drawable/coupable" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_surpris"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -228,7 +228,7 @@
                 android:layout_marginTop="200dp"
                 android:background="@drawable/surpris" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_enerve"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -276,7 +276,7 @@
                 android:layout_marginTop="245dp"
                 android:text="@string/enerve" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_apeure"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
@@ -284,7 +284,7 @@
                 android:layout_marginTop="275dp"
                 android:background="@drawable/apeure" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_embarasse"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
@@ -292,7 +292,7 @@
                 android:layout_marginTop="275dp"
                 android:background="@drawable/embarasse" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bouton_autree"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
@@ -350,7 +350,7 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
         <Button
-            android:id="@+id/bouton_enregistrer"
+            android:id="@+id/bouton_enregistrer_tete"
             android:layout_width="162dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
