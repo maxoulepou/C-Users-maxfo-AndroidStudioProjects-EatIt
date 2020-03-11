@@ -9,6 +9,9 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,21 +21,25 @@
         android:theme="@style/AppTheme">
         <activity android:name="Controleur.MesObjectifsActivity" />
         <activity android:name="Controleur.AjouterPoidsActivity"/>
-        <activity android:name="Controleur.MenuBasActivity">
+        <activity android:name="Controleur.ConnexionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Controleur.ConnexionActivity" />
+        <activity android:name="Controleur.MenuBasActivity" />
         <activity android:name="Controleur.Poids_SuiviActivity" />
         <activity android:name="Controleur.AfficherUnContactActivity" />
         <activity android:name="Controleur.AjouterContactActivity" />
         <activity android:name="Controleur.MonPoidsActivity" />
         <activity android:name="Controleur.AjouterRepasActivity"/>
+<<<<<<< HEAD
         <activity android:name="Controleur.AfficherListeContactsActivity"/>
         <activity android:name="Controleur.MonProfilEtEvntActivity"/>
+=======
+        <activity android:name="Controleur.CreationCompteActivity"/>
+>>>>>>> controleurFragments_Repas
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"

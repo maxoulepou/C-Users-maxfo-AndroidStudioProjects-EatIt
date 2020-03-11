@@ -14,36 +14,45 @@ import com.example.eatit.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import Model.BD;
+
 public class ConnexionActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private Button mConnexionButton;
     private EditText mTextEmail, mTextPassword;
     private TextView mCreateCompte;
+    private BD mBd;
 
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
+        mBd = new BD(this);
         setContentView(R.layout.activity_connexion);
         mConnexionButton = (Button) findViewById(R.id.activity_connexion_button_connexion);
-        mTextEmail = (EditText) findViewById(R.id.editText_PersonName);
+        mTextEmail = (EditText) findViewById(R.id.editText_email);
         mTextPassword = (EditText) findViewById(R.id.editText_Password);
         mCreateCompte = (TextView) findViewById(R.id.activity_connexion_textview_createCompte);
 
         mConnexionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signInWithEmailAndPassword(mTextEmail.getText().toString(), mTextPassword.getText().toString());
-                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBasActivity.class);
-                startActivity(MenuBas);
+                //mAuth.signInWithEmailAndPassword(mTextEmail.getText().toString(), mTextPassword.getText().toString());
+                if (mBd.seConnecter(mTextEmail.getText().toString(), mTextPassword.getText().toString()) == true){
+                    Intent MenuBas = new Intent(ConnexionActivity.this, MenuBasActivity.class);
+                    startActivity(MenuBas);
+                }
+                else {
+                    System.out.println("MDP erroné");
+                }
             }
         });
 
         mCreateCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent MenuBas = new Intent(ConnexionActivity.this, MenuBasActivity.class);
+                Intent MenuBas = new Intent(ConnexionActivity.this, CreationCompteActivity.class);
                 startActivity(MenuBas);
             }
         });

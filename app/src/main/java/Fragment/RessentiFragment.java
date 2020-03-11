@@ -35,6 +35,8 @@ import java.util.Locale;
 
 import Controleur.MonRessentiActivity;
 import Model.BD_Ressenti;
+import Model.RessentiActivite;
+import Model.RessentiCorps;
 import Model.RessentiTete;
 
 
@@ -43,13 +45,19 @@ public class RessentiFragment extends Fragment {
     TextView date, commentaires, emotions;
     String datepicked;
     EditText et_date;
-    RecyclerView rv_tete;
-    RecyclerView rv_corps;
-    RecyclerView rv_activite;
+    RecyclerView rv_tete, rv_corps, rv_activite;
     BD_Ressenti bdr;
+
     RessentiTeteAdapter rt_adapter;
+    RessentiCorpsAdapter rc_adapter;
+    RessentiActiviteAdapter ra_adapter;
+
     private static final int espace = 10;
+
     ArrayList<RessentiTete> mes_rt;
+    ArrayList<RessentiCorps> mes_rc;
+    ArrayList<RessentiActivite> mes_ra;
+
     Button bouton_ajouter_ressenti;
     ImageButton menu;
 
@@ -70,6 +78,14 @@ public class RessentiFragment extends Fragment {
             et_date = (EditText) view.findViewById(R.id.et_datepick);
             rv_tete = (RecyclerView) view.findViewById(R.id.rv_ma_tete);
 
+        bouton_ajouter_ressenti = (Button) view.findViewById(R.id.but_ajouter_ressenti);
+        date = (TextView) view.findViewById(R.id.tv_date);
+        commentaires = (TextView) view.findViewById(R.id.tv_commentaire);
+        emotions = (TextView) view.findViewById(R.id.tv_emotion);
+        et_date = (EditText) view.findViewById(R.id.et_datepick);
+        rv_tete = (RecyclerView) view.findViewById(R.id.rv_ma_tete);
+        rv_corps = (RecyclerView) view.findViewById(R.id.rv_mon_corps);
+        rv_activite = (RecyclerView) view.findViewById(R.id.rv_mon_activite);
 
             et_date.setOnClickListener(new View.OnClickListener() {
                                            @Override
@@ -77,13 +93,12 @@ public class RessentiFragment extends Fragment {
                                                final Calendar cldr = Calendar.getInstance();
                                                final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
-                                                   @Override
-                                                   //Cette méthode elle nous sert à enregistrer la date sélectionnée
-                                                   public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                                                         int dayOfMonth) {
-                                                       cldr.set(Calendar.YEAR, year);
-                                                       cldr.set(Calendar.MONTH, monthOfYear);
-                                                       cldr.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+        et_date.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           final Calendar cldr = Calendar.getInstance();
+                                           final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
                                                        //On formate pour la recherche dans la BD.
                                                        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);
@@ -105,7 +120,28 @@ public class RessentiFragment extends Fragment {
                                                        et_date.setText(dateDF);
                                                    }
 
-                                               };
+
+                                                   mes_rc = bdr.getTousLesRessentisCorps(datepicked);
+
+                                                   rc_adapter = new RessentiCorpsAdapter(mes_rc);
+                                                   rv_corps.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+                                                   rv_corps.setAdapter(rc_adapter);
+                                                   rv_corps.addItemDecoration(new VerticalSpaceItemDecoration(espace));
+
+
+                                                   mes_ra = bdr.getTousLesRessentisActivite(datepicked);
+
+                                                   ra_adapter = new RessentiActiviteAdapter(mes_ra);
+                                                   rv_activite.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+                                                   rv_activite.setAdapter(ra_adapter);
+                                                   rv_activite.addItemDecoration(new VerticalSpaceItemDecoration(espace));
+
+
+                                                   //Formatage pour l'affichage de l'edittext qui s'appelle "et_date"
+                                                   DateFormat df_date = DateFormat.getDateInstance(DateFormat.SHORT, Locale.FRANCE); //DateFormat.LONG ça met la date sous la forme 28 février 2020.
+                                                   String dateDF = df_date.format(cldr.getTime());
+                                                   et_date.setText(dateDF);
+                                               }
 
                                                new DatePickerDialog(getActivity(), date, cldr
                                                        .get(Calendar.YEAR), cldr.get(Calendar.MONTH),
@@ -156,6 +192,8 @@ public class RessentiFragment extends Fragment {
 
         return view;
     }
+
+
 
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(getContext(), nouvelle_classe);
