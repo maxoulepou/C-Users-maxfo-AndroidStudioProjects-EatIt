@@ -186,8 +186,11 @@ public class AjouterRepasActivity extends AppCompatActivity {
                 System.out.println(typeRepas);
                 if (isEnregistre == true) {
                     System.out.println("repas enregistré");
-                    Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
-                    startActivity(MenuBas);
+                   // Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
+                   // startActivity(MenuBas);
+                    Intent intentforBackButton = NavUtils.getParentActivityIntent(getParent());
+                    intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    NavUtils.navigateUpTo(getParent(), intentforBackButton);
                 } else {
                     System.out.println("erreur lors de l'enregistrement du repas");
                 }
@@ -266,21 +269,6 @@ public class AjouterRepasActivity extends AppCompatActivity {
         inflater.inflate(R.menu.pop_up_menu, menu);
         return true;
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // handle button click here
-        if (item.getItemId() == android.R.id.home) {
-            Intent intentforBackButton = NavUtils.getParentActivityIntent(this);
-            intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            NavUtils.navigateUpTo(this, intentforBackButton);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-
 
     //Decode a scaled image --> pour sauvegarder des images davec un format moins lourd
     // Error: static method/non static ccntext. imageview doit être le containers de l'image a afficher ?
