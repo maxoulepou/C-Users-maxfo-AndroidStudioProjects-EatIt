@@ -12,24 +12,18 @@
 
         <ImageView
             android:id="@+id/logo_eatie"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="30dp"
             android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.166"
-            app:srcCompat="@drawable/eatie" />
+            app:srcCompat="@drawable/eatie"
+            tools:layout_editor_absoluteY="16dp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
-            android:layout_marginEnd="136dp"
             android:text="@string/mes_ressentis"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +32,7 @@
 
 
         <LinearLayout
+            android:id="@+id/linearLayoutdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -49,17 +44,50 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
                 android:text="@string/date"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="168dp"
                 tools:layout_editor_absoluteY="108dp" />
 
-            <EditText
-                android:id="@+id/et_datepick"
-                android:layout_width="150dp"
-                android:layout_height="36dp"
-                android:background="@drawable/fond_liste" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutdate">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_datepick"
+                    android:layout_width="150dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/fond_liste"
+                    android:paddingStart="10dp"
+                    android:text="Entrez une date"
+                    android:textColor="@color/grey"
+                    android:textSize="12dp"
+                    android:textStyle="italic" />
+
+                <Button
+                    android:id="@+id/but_ajouter_ressenti"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ajout" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,6 +130,7 @@
                 android:id="@+id/rv_mon_activite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
 
         </LinearLayout>
 

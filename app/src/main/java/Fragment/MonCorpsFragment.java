@@ -10,14 +10,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.eatit.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+
+import Model.BD_Ressenti;
 
 
 /**
@@ -29,6 +37,17 @@ public class MonCorpsFragment extends Fragment {
     TextView mOutputSpinnerTv;
     TextView mOutputSpinnerTv2;
     TextView mOutputSpinnerTv3;
+    TextView valeur_seekbar;
+
+    private BD_Ressenti bdr;
+    private String liste_sensations;
+    private String commentaires;
+    SeekBar seekbar;
+    EditText et_commentaires;
+    Button enregistrer;
+    String date_selectionne;
+    int valeurSB;
+
 
     public MonCorpsFragment() {
         // Required empty public constructor
@@ -39,13 +58,33 @@ public class MonCorpsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_mon_corps, container, false);
+
+        bdr = new BD_Ressenti(getContext());
+
         mSpinner = view.findViewById(R.id.spinner);
         mOutputSpinnerTv = view.findViewById(R.id.outputSpinnerTv);
         mOutputSpinnerTv2 = view.findViewById(R.id.outputSpinnerTv2);
         mOutputSpinnerTv3 = view.findViewById(R.id.outputSpinnerTv3);
+        valeur_seekbar = view.findViewById(R.id.valeurSeekBar);
+
+        seekbar = (SeekBar) view.findViewById(R.id.seekBarCorps);
+        et_commentaires = (EditText) view.findViewById(R.id.commentaires);
+        enregistrer = (Button) view.findViewById(R.id.bouton_enregistrer);
+
+        //On récupère la date picked dans le fragment afficher ressentis (RessentiFragment)
+        date_selectionne = getActivity().getIntent().getStringExtra("date_choisie");
+
+        //Si il n'y a aucune date sélectionnée dans RessentiFragment, alors on affecte la date à la date du jour.
+        if (date_selectionne == null) {
+            Calendar cldr = Calendar.getInstance();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);
+            date_selectionne = dateFormat.format(cldr.getTime());
+
+        }
+
 
         List<String> categories = new ArrayList<>();
-        categories.add(0,"Votre ressenti physique");
+        categories.add(0, "Votre ressenti");
         categories.add("Fatigué");
         categories.add("Plein d'énergie");
         categories.add("Nausées");
@@ -67,7 +106,7 @@ public class MonCorpsFragment extends Fragment {
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent.getItemAtPosition(position).equals("Votre ressenti physique")) {
+                if (parent.getItemAtPosition(position).equals("Votre ressenti")) {
 
                 } else {
 
@@ -75,12 +114,10 @@ public class MonCorpsFragment extends Fragment {
                         mOutputSpinnerTv.setText(parent.getItemAtPosition(position).toString());
                     } else if (mOutputSpinnerTv2.getText().toString().isEmpty()) {
                         mOutputSpinnerTv2.setText(parent.getItemAtPosition(position).toString());
-                    }
-                    else if (mOutputSpinnerTv3.getText().toString().isEmpty()) {
+                    } else if (mOutputSpinnerTv3.getText().toString().isEmpty()) {
                         mOutputSpinnerTv3.setText(parent.getItemAtPosition(position).toString());
-                    }
-                    else {
-                        Toast.makeText(getActivity(), "Vous ne pouvez choisir que 3 ressentis physiques au maximum  ", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Vous ne pouvez choisir que 3 ressentis au maximum  ", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -91,8 +128,64 @@ public class MonCorpsFragment extends Fragment {
             }
         });
 
+
+        //On récupère la valeur de la seekbar et on la stocke dans le int valeurSB.
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                // TODO Auto-generated method stub
+                valeur_seekbar.setText(String.valueOf(progress));
+                valeurSB = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        ajouterRessentiCorps();
         // Inflate the layout for this fragment
         return view;
+
+    }
+
+
+    public void ajouterRessentiCorps() {
+        enregistrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                liste_sensations = mOutputSpinnerTv.getText().toString() + ", " + mOutputSpinnerTv2.getText().toString() + ", " + mOutputSpinnerTv3.getText().toString();
+
+                if (liste_sensations.isEmpty()) {
+                    liste_sensations = "Aucune";
+                }
+
+                commentaires = et_commentaires.getText().toString();
+
+
+                boolean isInserted = bdr.insererRessentiCorps(date_selectionne, liste_sensations, commentaires, valeurSB);
+
+
+                if (isInserted == true) {
+                    Toast.makeText(getActivity(), "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
+                    System.out.println("HELLO WORLD");
+                } else {
+                    Toast.makeText(getActivity(), "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
+                    System.out.println("NOT WORLD");
+                }
+
+            }
+        });
+
     }
 
 }
