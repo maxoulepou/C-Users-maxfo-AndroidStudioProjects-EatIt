@@ -14,7 +14,7 @@
     <item
         android:id="@+id/navigation_accueil"
         android:icon="@drawable/iconaccueil"
-        android:title="@string/titremaison" />
+        android:title="@string/titremaison"/>
 
     <item
         android:id="@+id/navigation_objectifs"

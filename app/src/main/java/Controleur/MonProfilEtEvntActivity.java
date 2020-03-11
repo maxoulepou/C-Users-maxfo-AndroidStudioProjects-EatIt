@@ -20,7 +20,7 @@ public class MonProfilEtEvntActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_poids);
+        setContentView(R.layout.fragment_profil);
 
         tabLayout=(TabLayout) findViewById(R.id.tablayout);
         tab1=(TabItem) findViewById(R.id.Tab1);

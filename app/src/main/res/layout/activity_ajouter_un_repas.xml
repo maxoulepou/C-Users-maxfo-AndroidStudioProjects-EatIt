@@ -228,7 +228,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
                 <EditText
-                    android:id="@+id/editTextDureeRepas"
+                    android:id="@+id/editTextDuree"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -274,7 +274,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <SeekBar
-                    android:id="@+id/seekBar"
+                    android:id="@+id/seekBar2"
                     android:layout_width="267dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -354,7 +354,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/bouton_enregistrer"
+                android:id="@+id/button_enregister_ajout_repas"
                 android:layout_width="400px"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
@@ -368,7 +368,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editTextDescription"
+                android:id="@+id/editTextComm"
                 android:layout_width="350dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="37dp"

@@ -31,6 +31,8 @@
         <activity android:name="Controleur.AjouterContactActivity" />
         <activity android:name="Controleur.MonPoidsActivity" />
         <activity android:name="Controleur.AjouterRepasActivity"/>
+        <activity android:name="Controleur.AfficherListeContactsActivity"/>
+        <activity android:name="Controleur.MonProfilEtEvntActivity"/>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"

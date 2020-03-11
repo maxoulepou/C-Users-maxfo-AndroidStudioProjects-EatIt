@@ -8,8 +8,6 @@ import androidx.fragment.app.FragmentTransaction;
 import Fragment.*;
 import android.os.Bundle;
 import android.view.MenuItem;
-
-
 import com.example.eatit.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -29,6 +27,7 @@ public class MenuBasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_bas);
 
         bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.navigation_accueil);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
@@ -46,7 +45,7 @@ public class MenuBasActivity extends AppCompatActivity {
                     fragment = new RessentiFragment();
                     break;
                 case R.id.navigation_repas:
-                    fragment = new RepasMainFragment();
+                    fragment = new RepasFragment();
                     break;
                 case R.id.navigation_accueil:
                     fragment = new AccueilFragment();
