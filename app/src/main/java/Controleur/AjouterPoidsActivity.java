@@ -166,7 +166,7 @@ public class AjouterPoidsActivity extends AppCompatActivity {
 
                 if (isInserted == true) {
                     Toast.makeText(AjouterPoidsActivity.this, "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
-                    openNewActivity(MonPoidsActivity.class);
+                    openNewActivity(MenuBasActivity.class);
                 } else {
                     Toast.makeText(AjouterPoidsActivity.this, "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
                 }

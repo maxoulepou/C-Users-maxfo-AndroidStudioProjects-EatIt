@@ -86,7 +86,7 @@
         android:layout_marginBottom="3dp"
         android:text="@string/identifiant"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/editText_email"
+        app:layout_constraintBottom_toTopOf="@+id/editText_email_creationCompte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +107,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText_email"
+        android:id="@+id/editText_email_creationCompte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
