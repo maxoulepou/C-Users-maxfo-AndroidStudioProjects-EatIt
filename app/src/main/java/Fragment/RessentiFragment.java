@@ -26,6 +26,8 @@ import java.util.Locale;
 
 import Controleur.MonRessentiActivity;
 import Model.BD_Ressenti;
+import Model.RessentiActivite;
+import Model.RessentiCorps;
 import Model.RessentiTete;
 
 
@@ -34,13 +36,19 @@ public class RessentiFragment extends Fragment {
     TextView date, commentaires, emotions;
     String datepicked;
     EditText et_date;
-    RecyclerView rv_tete;
-    RecyclerView rv_corps;
-    RecyclerView rv_activite;
+    RecyclerView rv_tete, rv_corps, rv_activite;
     BD_Ressenti bdr;
+
     RessentiTeteAdapter rt_adapter;
+    RessentiCorpsAdapter rc_adapter;
+    RessentiActiviteAdapter ra_adapter;
+
     private static final int espace = 10;
+
     ArrayList<RessentiTete> mes_rt;
+    ArrayList<RessentiCorps> mes_rc;
+    ArrayList<RessentiActivite> mes_ra;
+
     Button bouton_ajouter_ressenti;
 
     public RessentiFragment() {
@@ -61,6 +69,9 @@ public class RessentiFragment extends Fragment {
         emotions = (TextView) view.findViewById(R.id.tv_emotion);
         et_date = (EditText) view.findViewById(R.id.et_datepick);
         rv_tete = (RecyclerView) view.findViewById(R.id.rv_ma_tete);
+        rv_corps = (RecyclerView) view.findViewById(R.id.rv_mon_corps);
+        rv_activite = (RecyclerView) view.findViewById(R.id.rv_mon_activite);
+
 
 
         et_date.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +102,23 @@ public class RessentiFragment extends Fragment {
                                                    rv_tete.setAdapter(rt_adapter);
                                                    rv_tete.addItemDecoration(new VerticalSpaceItemDecoration(espace));
 
+
+                                                   mes_rc = bdr.getTousLesRessentisCorps(datepicked);
+
+                                                   rc_adapter = new RessentiCorpsAdapter(mes_rc);
+                                                   rv_corps.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+                                                   rv_corps.setAdapter(rc_adapter);
+                                                   rv_corps.addItemDecoration(new VerticalSpaceItemDecoration(espace));
+
+
+                                                   mes_ra = bdr.getTousLesRessentisActivite(datepicked);
+
+                                                   ra_adapter = new RessentiActiviteAdapter(mes_ra);
+                                                   rv_activite.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+                                                   rv_activite.setAdapter(ra_adapter);
+                                                   rv_activite.addItemDecoration(new VerticalSpaceItemDecoration(espace));
+
+
                                                    //Formatage pour l'affichage de l'edittext qui s'appelle "et_date"
                                                    DateFormat df_date = DateFormat.getDateInstance(DateFormat.SHORT, Locale.FRANCE); //DateFormat.LONG ça met la date sous la forme 28 février 2020.
                                                    String dateDF = df_date.format(cldr.getTime());
@@ -119,7 +147,6 @@ public class RessentiFragment extends Fragment {
 
         return view;
     }
-
 
 
     public void openNewActivity(Class nouvelle_classe) {
