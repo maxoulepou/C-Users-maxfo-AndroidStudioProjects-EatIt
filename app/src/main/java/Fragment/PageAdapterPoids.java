@@ -23,7 +23,7 @@ public class PageAdapterPoids extends FragmentPagerAdapter {
             case 1:
                 return new MesDonneesFragment();
             default:
-                return null;
+                return new MonSuiviFragment();
         }
     }
 
