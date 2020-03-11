@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iconautre"
         android:layout_width="44dp"
         android:layout_height="47dp"
         android:layout_marginEnd="32dp"
@@ -56,12 +56,12 @@
         android:contentDescription="@string/todo" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/icondejeuner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         app:layout_constraintBottom_toTopOf="@id/textView8"
-        app:layout_constraintEnd_toStartOf="@id/imageView6"
+        app:layout_constraintEnd_toStartOf="@id/iconcollation"
         app:srcCompat="@drawable/dej"
         android:contentDescription="@string/todo" />
 
@@ -76,24 +76,24 @@
         app:layout_constraintEnd_toStartOf="@id/textView13" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/iconcollation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toTopOf="@id/text_view_collation"
-        app:layout_constraintEnd_toStartOf="@id/imageView8"
+        app:layout_constraintEnd_toStartOf="@id/icondiner"
         app:srcCompat="@drawable/gouter" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/icondiner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="6dp"
         app:layout_constraintBottom_toTopOf="@id/textView13"
-        app:layout_constraintEnd_toStartOf="@id/imageView3"
+        app:layout_constraintEnd_toStartOf="@id/iconautre"
         app:srcCompat="@drawable/diner"
         android:contentDescription="@string/todo" />
 
@@ -138,12 +138,12 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/iconpetitdej"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         app:layout_constraintBottom_toTopOf="@id/textView7"
-        app:layout_constraintEnd_toStartOf="@id/imageView7"
+        app:layout_constraintEnd_toStartOf="@id/icondejeuner"
         app:srcCompat="@drawable/petitdej"
         android:contentDescription="@string/todo" />
 

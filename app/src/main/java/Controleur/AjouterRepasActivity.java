@@ -17,10 +17,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.NavUtils;
 import androidx.core.content.FileProvider;
 
 import com.example.eatit.R;
@@ -43,11 +45,13 @@ public class AjouterRepasActivity extends AppCompatActivity {
     private Button mButtonEnregister;
     private String typeRepas;
     private ImageView petitDej, dejeuner, collation, diner, autre;
-    private EditText mDate, mHeure, mDuree, mCommentaire;
+    private EditText mHeure, mDuree, mCommentaire;
+    private TextView mDate, valeur_seekbar;
     private SeekBar mNiveauFaim;
     public BD_Repas mBD_repas;
     private boolean isEnregistre;
     private String datepicked;
+    int valeurSB;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +60,17 @@ public class AjouterRepasActivity extends AppCompatActivity {
 
         mButtonTakePhoto = (ImageButton) findViewById(R.id.imageButton_ajoutRepas);
         mButtonEnregister = (Button) findViewById(R.id.button_enregister_ajout_repas);
-        petitDej = (ImageView) findViewById(R.id.imageView5);
-        dejeuner = (ImageView) findViewById(R.id.imageView7);
-        collation = (ImageView) findViewById(R.id.imageView6);
-        diner = (ImageView) findViewById(R.id.imageView8);
-        autre = (ImageView) findViewById(R.id.imageView3);
-        mDate = (EditText) findViewById(R.id.editTextDate);
-        mHeure = (EditText) findViewById(R.id.editTextHeure);
+        petitDej = (ImageView) findViewById(R.id.iconpetitdej);
+        dejeuner = (ImageView) findViewById(R.id.icondejeuner);
+        collation = (ImageView) findViewById(R.id.iconcollation);
+        diner = (ImageView) findViewById(R.id.icondiner);
+        autre = (ImageView) findViewById(R.id.iconautre);
+        mDate = (TextView) findViewById(R.id.TextDate);
+        mHeure = (EditText) findViewById(R.id.TextHeure);
         mDuree = (EditText) findViewById(R.id.editTextDuree);
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
+        valeur_seekbar = (TextView) findViewById(R.id.valeurSeekBar);
 
 //        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -103,6 +108,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
                                                  .get(Calendar.YEAR), cldr.get(Calendar.MONTH),
                                                  cldr.get(Calendar.DAY_OF_MONTH)).show();
                                      }
+
                                  }
         );
 
@@ -170,7 +176,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 isEnregistre = mBD_repas.addRepas(mDate.getText().toString(), mHeure.getText().toString(),
-                        mDuree.getText().toString(),  mNiveauFaim.getProgress(),
+                        mDuree.getText().toString(), mNiveauFaim.getProgress(),
                         mCommentaire.getText().toString(), typeRepas);
                 System.out.println("enregistré");
                 System.out.println(mDate.getText().toString());
@@ -179,7 +185,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
                 System.out.println(mCommentaire.getText().toString());
                 System.out.println(typeRepas);
                 if (isEnregistre == true) {
-                    System.out.println("repas enregister");
+                    System.out.println("repas enregistré");
                     Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
                     startActivity(MenuBas);
                 } else {
@@ -189,7 +195,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
         });
     }
 
-    public void addPhoto(){
+    public void addPhoto() {
         System.out.println("it works !");
     }
 
@@ -197,19 +203,19 @@ public class AjouterRepasActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int REQUEST_TAKE_PHOTO = 1;
 
-    private void dispatchTakePictureIntent(){
+    private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         //Ensure that there is a camera activity to handle the intent
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null){
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             //Create the File where the photo should go
             File photoFile = null;
             try {
                 photoFile = createImageFile();
-            } catch(IOException ex){
+            } catch (IOException ex) {
                 //Error occurred while creating the file
             }
             //Continue only if the File was successfully created
-            if(photoFile != null){
+            if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this, "com.example.android.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
@@ -229,7 +235,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
 //    }
 
     //Creation du fichier de sauvegarde pour enregistrer l'image en full size
-    private File createImageFile() throws IOException{
+    private File createImageFile() throws IOException {
         //Create an image file name using date
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
@@ -263,20 +269,19 @@ public class AjouterRepasActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item1:
-                Toast.makeText(this, "Mes contacts selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item2:
-                Toast.makeText(this, "Exporter mes données selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item3:
-                Toast.makeText(this, "F.A.Q selected", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        // handle button click here
+        if (item.getItemId() == android.R.id.home) {
+            Intent intentforBackButton = NavUtils.getParentActivityIntent(this);
+            intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            NavUtils.navigateUpTo(this, intentforBackButton);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
+
+
+
+
     //Decode a scaled image --> pour sauvegarder des images davec un format moins lourd
     // Error: static method/non static ccntext. imageview doit être le containers de l'image a afficher ?
 //    private void setPic() {

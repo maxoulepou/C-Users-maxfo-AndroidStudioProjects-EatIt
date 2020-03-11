@@ -24,7 +24,7 @@
 
                 <ImageView
                     android:id="@+id/logo"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/mes_repas"
@@ -57,49 +57,49 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/iconpetitdej"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="28dp"
                     android:contentDescription="@string/todo"
                     app:layout_constraintBottom_toTopOf="@+id/textView7"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                    app:layout_constraintEnd_toStartOf="@+id/icondejeuner"
                     app:srcCompat="@drawable/petitdej" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/icondejeuner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="28dp"
                     android:contentDescription="@string/todo"
                     app:layout_constraintBottom_toTopOf="@+id/textView8"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                    app:layout_constraintEnd_toStartOf="@+id/iconcollation"
                     app:srcCompat="@drawable/dej" />
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/iconcollation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="28dp"
                     android:layout_marginBottom="6dp"
                     android:contentDescription="@string/todo"
                     app:layout_constraintBottom_toTopOf="@+id/textView9"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView8"
+                    app:layout_constraintEnd_toStartOf="@+id/icondiner"
                     app:srcCompat="@drawable/gouter" />
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/icondiner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="28dp"
                     android:layout_marginBottom="6dp"
                     android:contentDescription="@string/todo"
                     app:layout_constraintBottom_toTopOf="@+id/textView13"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintEnd_toStartOf="@+id/iconautre"
                     app:srcCompat="@drawable/diner" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/iconautre"
                     android:layout_width="44dp"
                     android:layout_height="47dp"
                     android:contentDescription="@string/todo"
@@ -175,34 +175,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="210dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true">
 
-                <EditText
-                    android:id="@+id/editTextDate"
-                    android:layout_width="170dp"
+                <TextView
+                    android:id="@+id/TextDate"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="5dp"
-                    android:autofillHints=""
-                    android:background="@drawable/rectanglebleu"
-                    android:ems="10"
+                    android:background="@drawable/fond_liste"
                     android:gravity="center"
+                    android:padding="6dp"
                     android:hint="@string/date"
                     android:inputType="date"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textDateHeure" />
+                    app:layout_constraintTop_toBottomOf="@+id/textDateHeure"/>
 
                 <EditText
-                    android:id="@+id/editTextHeure"
-                    android:layout_width="120dp"
+                    android:id="@+id/TextHeure"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="50dp"
-                    android:autofillHints=""
-                    android:background="@drawable/rectanglebleu"
-                    android:ems="10"
+                    android:background="@drawable/fond_liste"
                     android:gravity="center"
+                    android:padding="6dp"
                     android:hint="@string/heure"
                     android:inputType="time"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -234,8 +229,11 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="11dp"
-                    android:background="@drawable/rectanglebleu"
+                    android:background="@drawable/fond_liste"
+                    android:padding="4dp"
                     android:ems="10"
+                    android:gravity="center"
+                    android:hint="0"
                     app:layout_constraintEnd_toStartOf="@+id/textMinutes"
                     app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
@@ -260,18 +258,19 @@
                 android:layout_marginTop="320dp"
                 android:layout_marginEnd="146dp"
                 android:text="@string/niveaudefaim"
+                android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
                 android:layout_marginTop="390dp"
-                android:layout_marginEnd="60dp"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true">
 
                 <SeekBar
                     android:id="@+id/seekBar2"
@@ -279,10 +278,17 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:indeterminate="false"
-                    android:max="100"
+                    android:max="10"
                     android:progress="0"
                     android:progressDrawable="@drawable/track"
                     android:thumb="@drawable/thumb" />
+
+                <TextView
+                    android:id="@+id/valeurSeekBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_gravity="center"/>
 
             </LinearLayout>
 
@@ -291,7 +297,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="370dp"
+                android:layout_marginTop="360dp"
                 android:text="Pas du tout faim" />
 
             <TextView
@@ -299,7 +305,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="300dp"
-                android:layout_marginTop="370dp"
+                android:layout_marginTop="360dp"
                 android:text="Très faim" />
 
             <LinearLayout
@@ -313,19 +319,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="70dp"
-                    android:layout_marginTop="440dp"
+                    android:layout_marginTop="450dp"
                     android:layout_marginEnd="71dp"
                     android:text="@string/ajoutezphotos"
+                    android:textAlignment="center"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toTopOf="@+id/bouton_appareil_photo"
+                    app:layout_constraintBottom_toTopOf="@+id/imageButton_ajoutRepas"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
-                <Button
-                    android:id="@+id/bouton_appareil_photo"
+                <ImageButton
+                    android:id="@+id/imageButton_ajoutRepas"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/addphoto" />
 
             </LinearLayout>
@@ -334,14 +341,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="520dp"
+                android:layout_marginTop="560dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/bouton_photo1"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
                     android:text="Photo 1" />
 
                 <Button
@@ -349,16 +355,15 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="30dp"
                     android:text="Photo 2" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/button_enregister_ajout_repas"
-                android:layout_width="400px"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="700dp"
+                android:layout_marginTop="720dp"
                 android:layout_marginEnd="127dp"
                 android:background="@drawable/button"
                 android:text="@string/enregistrer"
@@ -372,12 +377,13 @@
                 android:layout_width="350dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="37dp"
-                android:layout_marginTop="610dp"
+                android:layout_marginTop="630dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/rectanglebleu"
+                android:background="@drawable/fond_liste"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="      Décrivez votre repas et vos ressentis."
+                android:hint="Décrivez votre repas et vos ressentis."
+                android:gravity="center"
                 app:layout_constraintBottom_toTopOf="@+id/bouton_enregistrer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

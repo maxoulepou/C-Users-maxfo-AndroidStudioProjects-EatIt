@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import Controleur.AfficherListeContactsActivity;
 import Controleur.MesRepasActivity;
@@ -21,6 +23,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eatit.R;
+
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -41,7 +45,7 @@ public class RepasFragment extends Fragment {
     private ArrayList<Repas> lRepas;
     private RepasAdapter mAdapter;
     private String mDate;
-    private EditText mTextDate;
+    private TextView mTextDate;
     private BD_Repas mBD_repas;
     private RepasAdapter mRepasAdapter;
     private RecyclerView mRecyclerView;
@@ -57,7 +61,7 @@ public class RepasFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity_mes_repas, container, false);
-        mTextDate = (EditText) view.findViewById(R.id.jourRepas_mesRepas);
+        mTextDate = (TextView) view.findViewById(R.id.jourRepas_mesRepas);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView_mesRepas);
         buttonAjoutRepas = (Button) view.findViewById(R.id.button_add_repas);
         mBD_repas = new BD_Repas(getContext());
@@ -170,6 +174,7 @@ public class RepasFragment extends Fragment {
         this.lRepas.addAll(lRepas);
         mAdapter.notifyDataSetChanged();
     }
+
 
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(getContext(), nouvelle_classe);

@@ -17,7 +17,7 @@ public class MesRepasActivity extends AppCompatActivity {
     private static final String TAG="MesRepas";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateListener;
-    private EditText jourRepas;
+    private TextView jourRepas;
     private RepasFragment mFragment;
     private String mDate;
 
@@ -26,7 +26,7 @@ public class MesRepasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mes_repas);
 
-        jourRepas = (EditText) findViewById(R.id.jourRepas_mesRepas);
+        jourRepas = (TextView) findViewById(R.id.jourRepas_mesRepas);
         jourRepas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

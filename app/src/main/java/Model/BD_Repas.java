@@ -37,13 +37,13 @@ public class BD_Repas extends SQLiteOpenHelper {
         String strSQL = "create table " + TABLE_NAME +"("
                 + col_idRepas + " integer primary key autoincrement, "
                 + col_Type_Repas + " text not null, "
-                + col_Date + " text, "
-                + col_Heure + " text, "
+                + col_Date + " text not null, "
+                + col_Heure + " text not null, "
                 + col_Duree + " text, "
                 + col_Niv_faim + " text, "
                 + col_Commentaire + " text)";
         db.execSQL(strSQL);
-        System.out.println("BD_Repas créer");
+        System.out.println("BD_Repas créée");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -64,6 +64,12 @@ public class BD_Repas extends SQLiteOpenHelper {
 
         long result = this.getWritableDatabase().insert(TABLE_NAME, null, cv);
 
+        if (date.isEmpty()) {
+            return false;
+        }
+        if (heure.isEmpty()) {
+            return false;
+        }
         if (result == -1){
             return false;
         } else {

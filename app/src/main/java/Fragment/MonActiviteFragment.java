@@ -59,34 +59,4 @@ public class MonActiviteFragment extends Fragment {
         return view;
     }
 
-
-    public void ajouterRessentiActivite() {
-        enregistrer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                liste_sensations = mOutputSpinnerTv.getText().toString() + ", " + mOutputSpinnerTv2.getText().toString() + ", " + mOutputSpinnerTv3.getText().toString();
-
-                if (liste_sensations.isEmpty()) {
-                    liste_sensations = "Aucune";
-                }
-
-                commentaires = et_commentaires.getText().toString();
-
-
-                boolean isInserted = bdr.insererRessentiCorps(date_selectionne, liste_sensations, commentaires, valeurSB);
-
-
-                if (isInserted == true) {
-                    Toast.makeText(getActivity(), "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
-                    System.out.println("HELLO WORLD");
-                } else {
-                    Toast.makeText(getActivity(), "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
-                    System.out.println("NOT WORLD");
-                }
-
-            }
-        });
-
-    }
 }
