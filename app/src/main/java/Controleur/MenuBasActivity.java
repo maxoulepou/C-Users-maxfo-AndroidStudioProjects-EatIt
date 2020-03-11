@@ -29,6 +29,7 @@ public class MenuBasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_bas);
 
         bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.navigation_accueil);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {

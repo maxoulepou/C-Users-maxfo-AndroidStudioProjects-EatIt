@@ -15,11 +15,12 @@ public class MonRessentiActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabItem tab1,tab2,tab3;
     public PageAdapterRessenti pageradapter;
+    String date_selectionnee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_ressenti);
+        setContentView(R.layout.activity_ajouter_ressenti);
 
         tabLayout=(TabLayout) findViewById(R.id.tablayout);
         tab1=(TabItem) findViewById(R.id.Tab1);
