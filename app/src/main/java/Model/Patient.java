@@ -32,9 +32,17 @@ public class Patient {
 
     public Patient(String email, String mdp, String nom, String prenom, String sexe, String dateN){ //peut etre ajouter des parametres, a voir lors de la creation du controlleur
         super();
-       // this.id = id;
         this.email = email;
         this.mdp = mdp;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+        this.dateNaissance = dateN;
+    }
+
+    public Patient(String email, String nom, String prenom, String sexe, String dateN, String ville, String adresse, String codePostal, String NumUrgence){ //peut etre ajouter des parametres, a voir lors de la creation du controlleur
+        super();
+        this.email = email;
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;

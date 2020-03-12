@@ -69,7 +69,7 @@ public class MonCorpsFragment extends Fragment {
 
         seekbar = (SeekBar) view.findViewById(R.id.seekBarCorps);
         et_commentaires = (EditText) view.findViewById(R.id.commentaires);
-        enregistrer = (Button) view.findViewById(R.id.bouton_enregistrer);
+        enregistrer = (Button) view.findViewById(R.id.bouton_enregistrer_monProfil);
 
         //On récupère la date picked dans le fragment afficher ressentis (RessentiFragment)
         date_selectionne = getActivity().getIntent().getStringExtra("date_choisie");

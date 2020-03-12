@@ -26,6 +26,11 @@ public class BD extends SQLiteOpenHelper {
     public static final String col_Prenom = "Prenom";
     public static final String col_DateNaissance = "Date_de_naissance";
     public static final String col_Sexe = "Sexe";
+    public static final String col_ville = "Ville";
+    public static final String col_adresse = "Adresse";
+    public static final String col_codePostal = "CodePostale";
+    public static final String col_Num_Urgence = "ContactDurgence";
+
 
     public static String TABLE_NAME_BD_OBJ = "tableObjectifs";
     public static String col_idUtilisateurObj = "IdUtilisateurDeLobjectif";
@@ -52,21 +57,25 @@ public class BD extends SQLiteOpenHelper {
                 + col_Nom + " text, "
                 + col_Prenom + " text, "
                 + col_DateNaissance + " text, "
+                + col_ville + " text, "
+                + col_adresse + " text, "
+                + col_codePostal + " varchar(5), "
+                + col_Num_Urgence + " varchar(10), "
                 + col_Sexe + " text)";
         db.execSQL(strSQLUtilisateur);
         System.out.println("BD_Repas créer");
 
         String strSQLObj = "create table " + TABLE_NAME_BD_OBJ +" ("
                 + col_id_obj + " integer primary key autoincrement, "
-                + col_idUtilisateurObj + " integer not null, foreign key (referecences) " + col_idUtilisateur +", "
+                + col_idUtilisateurObj + " integer not null, "//foreign key (referecences) " + col_idUtilisateur +", " //TODO chechez references
                 + col_intitule + " text not null, "
                 + col_type_obj + " text not null, "
                 + col_date_debut + " text, "
                 + col_date_fin + " text, "
                 + col_Commentaire + "text, "
                 + col_accomplissement + " text not null, "
-                + col_atteint + "text not null, "
-                + "Foreign key (" + col_idUtilisateur + ") references " + TABLE_NAME_UTILISATEUR + "(" + col_idUtilisateur+ ")";
+                + col_atteint + "text not null) ";
+               // + "Foreign key (" + col_idUtilisateur + ") references " + TABLE_NAME_UTILISATEUR + "(" + col_idUtilisateur + ")";
         db.execSQL(strSQLObj);
         System.out.println("BD_Repas créer");
     }
@@ -118,6 +127,10 @@ public class BD extends SQLiteOpenHelper {
                 }
                 return "Pas de mail trouve";
     }
+
+    public boolean addAdresse(String ville, String adresse, String codePostal){
+        return false; //TODO
+     }
 
     public boolean seConnecter(String mail, String mdp){
         boolean peutSeConnecter = false;
@@ -240,6 +253,28 @@ public class BD extends SQLiteOpenHelper {
             values.put(col_atteint, "oui");
             this.getWritableDatabase().update(TABLE_NAME_BD_OBJ, values, col_id_obj + " = ? ", new String[]{String.valueOf(id)});
 
+        }
+    }
+
+    public boolean modifierInfosUtilisateurs(Patient p){
+        ContentValues cv = new ContentValues();
+        cv.put(col_Email, p.getEmail());
+        cv.put(col_Mdp, p.getMdp());
+        cv.put(col_Nom, p.getNom());
+        cv.put(col_Prenom, p.getPrenom());
+        cv.put(col_DateNaissance, p.getDateNaissance());
+        cv.put(col_ville, p.getVille());
+        cv.put(col_adresse, p.getAdresse());
+        cv.put(col_codePostal, p.getCodePostal());
+        cv.put(col_Num_Urgence, p.getContactUrgence());
+        cv.put(col_Sexe, p.getSexe());
+
+        int nombre = this.getWritableDatabase().update(TABLE_NAME_UTILISATEUR, cv, col_idUtilisateur + "= ?", new String[]{String.valueOf(idCo)});
+
+        if (nombre == 1) {
+            return true;
+        } else {
+            return false;
         }
     }
 

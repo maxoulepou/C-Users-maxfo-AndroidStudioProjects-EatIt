@@ -384,7 +384,7 @@
                 android:inputType="textPersonName"
                 android:hint="Décrivez votre repas et vos ressentis."
                 android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/bouton_enregistrer"
+                app:layout_constraintBottom_toTopOf="@+id/bouton_enregistrer_monProfil"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
