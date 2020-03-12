@@ -84,6 +84,7 @@ public class BD_Repas extends SQLiteOpenHelper {
     }
 
     public ArrayList<Repas> getlRepas(){
+        lRepas = new ArrayList<>();
         Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
         while (!result.isAfterLast()) {
             String mRepas = result.getString(1);

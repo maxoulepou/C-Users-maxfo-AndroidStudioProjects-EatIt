@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -15,6 +17,9 @@ import android.view.ViewGroup;
  */
 public class MonProfilFragment extends Fragment {
 
+    private EditText champNom, champPrenom, champAdrresse, champMasculin, champFeminin;
+    private EditText email, tel, adresse, codePostale, ville, adressePostale;
+    private Button enregistrer;
 
     public MonProfilFragment() {
         // Required empty public constructor

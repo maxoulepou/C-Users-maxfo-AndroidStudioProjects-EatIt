@@ -2,14 +2,19 @@ package Model;
 
 public class Objectifs {
 
-    private String intitule;
-    private int etat, id;
+    private String intitule, type, atteint, idUtilisateur, dateDebut, dateFin, commentaire, accomplissement;
     // TypeObjet a voir
 
-    public Objectifs(String intitule, int etat, int id){
+    public Objectifs(String idUtilisateur, String intitule, String type, String dateDebut,
+                     String dateFin, String commentaire){
+        this.idUtilisateur = idUtilisateur;
         this.intitule = intitule;
-        this.etat = etat;
-        this.id = id;
+        this.type = type;
+        this.atteint = "non";
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.commentaire = commentaire;
+        this.accomplissement = "0";
     }
 
     public String getIntitule() {
@@ -20,19 +25,15 @@ public class Objectifs {
         this.intitule = intitule;
     }
 
-    public int getEtat() {
-        return etat;
+    public String getEtat() {
+        return atteint;
     }
 
-    public void setEtat(int etat) {
-        this.etat = etat;
+    public void setEtat(String etat) {
+        this.atteint = etat;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public String getId() {
+        return idUtilisateur;
     }
 }
