@@ -33,20 +33,20 @@ import Model.BD_Ressenti;
  */
 public class MonCorpsFragment extends Fragment {
 
-    Spinner mSpinner;
-    TextView mOutputSpinnerTv;
-    TextView mOutputSpinnerTv2;
-    TextView mOutputSpinnerTv3;
-    TextView valeur_seekbar;
+    private Spinner mSpinner;
+    private TextView mOutputSpinnerTv;
+    private TextView mOutputSpinnerTv2;
+    private TextView mOutputSpinnerTv3;
+    private TextView valeur_seekbar;
 
     private BD_Ressenti bdr;
     private String liste_sensations;
     private String commentaires;
-    SeekBar seekbar;
-    EditText et_commentaires;
-    Button enregistrer;
-    String date_selectionne;
-    int valeurSB;
+    private SeekBar seekbar;
+    private EditText et_commentaires;
+    private Button enregistrer;
+    private String date_selectionne;
+    private int valeurSB;
 
 
     public MonCorpsFragment() {
