@@ -25,7 +25,7 @@ public class PageAdapterObjectifs extends FragmentPagerAdapter {
             case 2:
                 return new MesObjsAtteintsFragment();
             default:
-                return null;
+                return new MesObjPersonnelsFragment();
         }
     }
 

@@ -1,8 +1,10 @@
 package Controleur;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +37,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.SimpleTimeZone;
+import java.util.TimeZone;
 
 import Model.BD_Repas;
 
@@ -45,13 +50,14 @@ public class AjouterRepasActivity extends AppCompatActivity {
     private Button mButtonEnregister;
     private String typeRepas;
     private ImageView petitDej, dejeuner, collation, diner, autre;
-    private EditText mHeure, mDuree, mCommentaire;
-    private TextView mDate, valeur_seekbar;
+    private EditText mDuree, mCommentaire;
+    private TextView mDate, mHeure, valeur_seekbar;
     private SeekBar mNiveauFaim;
     public BD_Repas mBD_repas;
     private boolean isEnregistre;
     private String datepicked;
     int valeurSB;
+    private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +72,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
         diner = (ImageView) findViewById(R.id.icondiner);
         autre = (ImageView) findViewById(R.id.iconautre);
         mDate = (TextView) findViewById(R.id.TextDate);
-        mHeure = (EditText) findViewById(R.id.TextHeure);
+        mHeure = (TextView) findViewById(R.id.TextHeure);
         mDuree = (EditText) findViewById(R.id.editTextDuree);
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
@@ -111,6 +117,28 @@ public class AjouterRepasActivity extends AppCompatActivity {
 
                                  }
         );
+
+       mHeure.setOnClickListener(new View.OnClickListener() {
+                                     @Override
+                                     public void onClick(View v) {
+                                         final Calendar cldr2 = Calendar.getInstance();
+                                         int hour = cldr2.get(Calendar.HOUR);
+                                         int minute = cldr2.get(Calendar.MINUTE);
+
+                                         TimePickerDialog timePickerDialog = new TimePickerDialog(AjouterRepasActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth, mTimeSetListener, hour, minute, true);
+                                         timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                         timePickerDialog.show();
+                                     }
+       });
+
+        mTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            public void onTimeSet(TimePicker view, int hour, int minute) {
+
+                String time = "à " + hour + ":" + minute;
+                mHeure.setText(time);
+            }
+
+        };
 
         petitDej.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,31 +200,63 @@ public class AjouterRepasActivity extends AppCompatActivity {
             }
         });
 
-        mButtonEnregister.setOnClickListener(new View.OnClickListener() {
+        //On récupère la valeur de la seekbar et on la stocke dans le int valeurSB.
+        mNiveauFaim.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             @Override
-            public void onClick(View v) {
-                isEnregistre = mBD_repas.addRepas(mDate.getText().toString(), mHeure.getText().toString(),
-                        mDuree.getText().toString(), mNiveauFaim.getProgress(),
-                        mCommentaire.getText().toString(), typeRepas);
-                System.out.println("enregistré");
-                System.out.println(mDate.getText().toString());
-                System.out.println(mDuree.getText().toString());
-                System.out.println(mNiveauFaim.getProgress());
-                System.out.println(mCommentaire.getText().toString());
-                System.out.println(typeRepas);
-                if (isEnregistre == true) {
-                    System.out.println("repas enregistré");
-                   // Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
-                   // startActivity(MenuBas);
-                    Intent intentforBackButton = NavUtils.getParentActivityIntent(getParent());
-                    intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    NavUtils.navigateUpTo(getParent(), intentforBackButton);
-                } else {
-                    System.out.println("erreur lors de l'enregistrement du repas");
-                }
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                // TODO Auto-generated method stub
+                valeur_seekbar.setText(String.valueOf(progress));
+                valeurSB = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
             }
         });
+
+      ajouterRepas();
     }
+
+
+public void ajouterRepas (){
+    mButtonEnregister.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            isEnregistre = mBD_repas.addRepas(mDate.getText().toString(), mHeure.getText().toString(),
+                    mDuree.getText().toString(), mNiveauFaim.getProgress(),
+                    mCommentaire.getText().toString(), typeRepas);
+            System.out.println("enregistré");
+            System.out.println(mDate.getText().toString());
+            System.out.println(mDuree.getText().toString());
+            System.out.println(mNiveauFaim.getProgress());
+            System.out.println(mCommentaire.getText().toString());
+            System.out.println(typeRepas);
+            if (isEnregistre == true) {
+                System.out.println("repas enregistré");
+                // Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
+                // startActivity(MenuBas);
+                Intent intentforBackButton = NavUtils.getParentActivityIntent(getParent());
+                intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                NavUtils.navigateUpTo(getParent(), intentforBackButton);
+            } else {
+                System.out.println("erreur lors de l'enregistrement du repas");
+            }
+        }
+    });
+}
+
+    private void initializeVariables() {
+        mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
+    }
+
 
     public void addPhoto() {
         System.out.println("it works !");

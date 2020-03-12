@@ -190,7 +190,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textDateHeure"/>
 
-                <EditText
+                <TextView
                     android:id="@+id/TextHeure"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
