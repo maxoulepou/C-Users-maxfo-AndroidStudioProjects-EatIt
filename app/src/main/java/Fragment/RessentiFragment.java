@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import Controleur.AfficherListeContactsActivity;
+import Controleur.ExporterDonneesActivity;
 import Controleur.MesRepasActivity;
 import Controleur.MonProfilEtEvntActivity;
 import androidx.fragment.app.Fragment;
@@ -39,9 +39,9 @@ import Model.RessentiTete;
 
 public class RessentiFragment extends Fragment {
 
+    TextView et_date;
     TextView date, commentaires, emotions;
     String datepicked;
-    EditText et_date;
     RecyclerView rv_tete, rv_corps, rv_activite;
     BD_Ressenti bdr;
 
@@ -74,7 +74,7 @@ public class RessentiFragment extends Fragment {
         date = (TextView) view.findViewById(R.id.tv_date);
         commentaires = (TextView) view.findViewById(R.id.tv_commentaire);
         emotions = (TextView) view.findViewById(R.id.tv_emotion);
-        et_date = (EditText) view.findViewById(R.id.et_datepick);
+        et_date = (TextView) view.findViewById(R.id.et_datepick);
         rv_tete = (RecyclerView) view.findViewById(R.id.rv_ma_tete);
         rv_corps = (RecyclerView) view.findViewById(R.id.rv_mon_corps);
         rv_activite = (RecyclerView) view.findViewById(R.id.rv_mon_activite);
@@ -169,7 +169,7 @@ public class RessentiFragment extends Fragment {
                                 openNewActivity(AfficherListeContactsActivity.class);
                                 break;
                             case R.id.item3:
-                                openNewActivity(MesRepasActivity.class);
+                                openNewActivity(ExporterDonneesActivity.class);
                                 break;
                         }
 

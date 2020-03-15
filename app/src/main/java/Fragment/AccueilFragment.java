@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
 import Controleur.AfficherListeContactsActivity;
+import Controleur.ExporterDonneesActivity;
 import Controleur.MesRepasActivity;
 import Controleur.MonProfilEtEvntActivity;
 import androidx.annotation.NonNull;
@@ -90,7 +91,7 @@ public class AccueilFragment extends Fragment {
                                 openNewActivity(AfficherListeContactsActivity.class);
                                 break;
                             case R.id.item3:
-                                openNewActivity(MesRepasActivity.class);
+                                openNewActivity(ExporterDonneesActivity.class);
                                 break;
                         }
 

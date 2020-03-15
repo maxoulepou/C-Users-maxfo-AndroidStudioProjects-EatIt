@@ -26,7 +26,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="12dp"
-                android:text="Sensations :"
+                android:text="Sensation(s) :"
                 android:textStyle="bold"
                 android:textColor="@color/blue"/>
 
@@ -82,11 +82,10 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="Commentaire :"
+                android:text="Commentaires :"
                 android:textStyle="bold"
                 android:textColor="@color/blue"
                 />
-
 
             <TextView
                 android:id="@+id/commentaire"

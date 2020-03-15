@@ -81,7 +81,7 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="210dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10sp"
@@ -90,45 +90,40 @@
         <TextView
             android:id="@+id/outputSpinnerTv"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:background="@drawable/rectanglejaunebis"
             android:gravity="center"
-            android:textColor="#000"
-            android:textSize="25dp" />
+            android:textColor="#000"/>
 
         <TextView
             android:id="@+id/outputSpinnerTv2"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/rectanglejaunebis"
             android:gravity="center"
-            android:textColor="#000"
-            android:textSize="25dp" />
+            android:textColor="#000"/>
 
         <TextView
             android:id="@+id/outputSpinnerTv3"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/rectanglejaunebis"
             android:gravity="center"
-            android:textColor="#000"
-            android:textSize="25sp" />
+            android:textColor="#000"/>
 
     </LinearLayout>
 
     <EditText
         android:id="@+id/commentaires"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="30dp"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/fond_liste"
         android:ems="10"
@@ -137,7 +132,7 @@
         android:lines="3"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:text="@string/commentaires"
+        android:hint="Commentaires..."
         android:textColor="@color/grey"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,8 +141,8 @@
 
     <Button
         android:id="@+id/bouton_enregistrer"
-        android:layout_width="162dp"
-        android:layout_height="40dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/rectanglejaune"
         android:layout_marginTop="35dp"
