@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.eatit.R;
 
+import java.text.DecimalFormat;
+
 import Model.BD_Poids;
 
 /**
@@ -25,6 +27,8 @@ public class MonSuiviFragment extends Fragment {
 
     BD_Poids bdp;
     TextView poids_act, poids_dep, tt_act, tt_dep, taille_act, imc_act;
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
+
 
     public MonSuiviFragment() {
         // Required empty public constructor
@@ -52,7 +56,7 @@ public class MonSuiviFragment extends Fragment {
         tt_act.setText(String.valueOf(bdp.getTTActuel()));
         tt_dep.setText(String.valueOf(bdp.getTTDepart()));
         taille_act.setText(String.valueOf(bdp.getTailleActuelle()));
-        imc_act.setText(String.valueOf(bdp.getIMC()));
+        imc_act.setText(String.valueOf(df2.format(bdp.getIMC())));
 
         return view;
     }

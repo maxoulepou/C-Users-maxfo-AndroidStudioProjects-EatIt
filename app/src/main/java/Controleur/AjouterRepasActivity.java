@@ -241,11 +241,11 @@ public void ajouterRepas (){
             System.out.println(typeRepas);
             if (isEnregistre == true) {
                 System.out.println("repas enregistré");
-                // Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
-                // startActivity(MenuBas);
-                Intent intentforBackButton = NavUtils.getParentActivityIntent(getParent());
-                intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                NavUtils.navigateUpTo(getParent(), intentforBackButton);
+                 Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
+                 startActivity(MenuBas);
+//                Intent intentforBackButton = NavUtils.getParentActivityIntent(getParent());
+//                intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//                NavUtils.navigateUpTo(getParent(), intentforBackButton);
             } else {
                 System.out.println("erreur lors de l'enregistrement du repas");
             }

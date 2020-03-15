@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="Controleur.AjouterPoidsActivity"/>
-        <activity android:name="Controleur.MainActivity">
+        <activity android:name="Controleur.MenuBasActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,8 +35,11 @@
         <activity android:name="Controleur.MonProfilEtEvntActivity"/>
         <activity android:name="Controleur.MonRessentiActivity"/>
         <activity android:name="Controleur.CreationCompteActivity"/>
-        <activity android:name="Controleur.MenuBasActivity"/>
         <activity android:name="Controleur.ConnexionActivity"/>
+
+        <activity android:name="Controleur.AjouterObjectifPersoActivity"/>
+        <activity android:name="Controleur.AjouterObjectifPartageActivity"/>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"
