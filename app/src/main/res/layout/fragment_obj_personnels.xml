@@ -10,6 +10,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/ajouter_obj_perso"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="52dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button"
+            android:text="Ajouter un objectif"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view" />
+
         <TextView
             android:id="@+id/textobjperso"
             android:layout_width="wrap_content"
@@ -26,7 +43,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
+            android:paddingTop="25dp"
             app:layout_constraintTop_toBottomOf="@+id/textobjperso" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

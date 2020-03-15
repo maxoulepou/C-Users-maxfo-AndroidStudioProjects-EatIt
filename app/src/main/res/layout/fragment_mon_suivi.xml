@@ -27,14 +27,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/départ"/>
+                    android:text="Données de départ" />
 
                 <TextView
                     android:id="@+id/date_depart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:text="TextView"/>
+                    android:layout_marginStart="3dp" />
 
             </LinearLayout>
 
@@ -101,15 +100,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/actuel" />
+                    android:text="Données actuelles" />
 
 
                 <TextView
                     android:id="@+id/date_actuel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:text="TextView"/>
+                    android:layout_marginStart="3dp" />
 
             </LinearLayout>
 
@@ -206,7 +204,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="45dp"
                 android:layout_weight="1"
-                android:text="@string/votreimc" />
+                android:text="Votre IMC : " />
 
             <TextView
                 android:id="@+id/tv_imc_act"

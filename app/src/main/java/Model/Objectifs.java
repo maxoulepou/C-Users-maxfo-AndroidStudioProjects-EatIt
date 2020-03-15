@@ -1,20 +1,27 @@
 package Model;
 
-public class Objectifs {
+public abstract class Objectifs {
 
-    private String intitule, type, atteint, idUtilisateur, dateDebut, dateFin, commentaire, accomplissement;
+    private int idObjectif;
+    private String intitule;
+    private String type;
+    private String dateDebut;
+    private String dateFin;
+    private int accomplissement;
+    private String commentaire;
+//    private String atteint;
+
     // TypeObjet a voir
 
-    public Objectifs(String idUtilisateur, String intitule, String type, String dateDebut,
-                     String dateFin, String commentaire){
-        this.idUtilisateur = idUtilisateur;
-        this.intitule = intitule;
-        this.type = type;
-        this.atteint = "non";
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.commentaire = commentaire;
-        this.accomplissement = "0";
+    public Objectifs(int idobjectif, String intitule, String type, String dateDebut,
+                     String dateFin, String commentaire, int accomplissement){
+        this.setIdObjectif(idobjectif);
+        this.setIntitule(intitule);
+        this.setType(type);
+        this.setDateDebut(dateDebut);
+        this.setDateFin(dateFin);
+        this.setCommentaire(commentaire);
+        this.setAccomplissement(accomplissement);
     }
 
     public String getIntitule() {
@@ -25,15 +32,71 @@ public class Objectifs {
         this.intitule = intitule;
     }
 
-    public String getEtat() {
-        return atteint;
+//    public String getEtat() {
+//        return getAtteint();
+//    }
+//
+//    public void setEtat(String etat) {
+//        this.setAtteint(etat);
+//    }
+
+    public int getId() {
+        return getIdObjectif();
     }
 
-    public void setEtat(String etat) {
-        this.atteint = etat;
+    public String getType() {
+        return type;
     }
 
-    public String getId() {
-        return idUtilisateur;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+//    public String getAtteint() {
+//        return atteint;
+//    }
+//
+//    public void setAtteint(String atteint) {
+//        this.atteint = atteint;
+//    }
+
+    public int getIdObjectif() {
+        return idObjectif;
+    }
+
+    public void setIdObjectif(int idObjectif) {
+        this.idObjectif = idObjectif;
+    }
+
+    public String getDateDebut() {
+        return dateDebut;
+    }
+
+    public void setDateDebut(String dateDebut) {
+        this.dateDebut = dateDebut;
+    }
+
+    public String getDateFin() {
+        return dateFin;
+    }
+
+    public void setDateFin(String dateFin) {
+        this.dateFin = dateFin;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+    }
+
+    public int getAccomplissement() {
+        return accomplissement;
+    }
+
+    public void setAccomplissement(int accomplissement) {
+        this.accomplissement = accomplissement;
     }
 }

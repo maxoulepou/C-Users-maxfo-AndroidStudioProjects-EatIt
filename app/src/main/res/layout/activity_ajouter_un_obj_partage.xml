@@ -2,6 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -75,14 +76,6 @@
                 android:layout_marginEnd="50dp"
                 android:text="Fin prévue"/>
 
-            <TextView
-                android:id="@+id/textEchelle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="43dp"
-                android:layout_marginEnd="50dp"
-                android:text="Note de likert"/>
-
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +88,7 @@
                 android:id="@+id/editObjectif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fond_objectif_atteint"
+                android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -106,43 +99,32 @@
                 android:id="@+id/editAvec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/fond_objectif_atteint"
+                android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
                 android:layout_marginTop="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 android:padding="6dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/editDateDebut"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/fond_objectif_atteint"
+                android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
                 android:drawableLeft="@drawable/sablier"
                 android:padding="6dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/editDateFin"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/fond_objectif_atteint"
+                android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
                 android:drawableLeft="@drawable/sablier"
                 android:padding="6dp"/>
-
-            <EditText
-                android:id="@+id/editEchelle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/fond_objectif_atteint"
-                android:ems="10"
-                android:drawableLeft="@drawable/echelle"
-                android:padding="6dp"
-                android:layout_gravity="center_horizontal"/>
 
             <!-- <EditText
                  android:id="@+id/editEchelle"
@@ -158,40 +140,11 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textpasdutoutatteint"
-        android:layout_width="61dp"
-        android:layout_height="wrap_content"
-        android:text="Pas du tout atteint"
-        android:textSize="12dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/echellelikert"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/texttotalementatteint"
-        android:layout_width="61dp"
-        android:layout_height="wrap_content"
-        android:textSize="12dp"
-        android:text="Totalement atteint"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/echellelikert"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/echellelikert"
-        android:layout_width="420dp"
-        android:layout_height="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:srcCompat="@drawable/echellelikertpartage"
-        android:layout_marginTop="70dp"/>
-
     <EditText
         android:id="@+id/editCommentaires"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:background="@drawable/fond_liste"
         android:ems="10"
         android:gravity="start|top"
@@ -199,13 +152,13 @@
         android:lines="3"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:text="@string/commentaires"
-        android:layout_marginTop="30dp"
+        android:hint="@string/commentaires"
         android:textColor="@color/grey"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/echellelikert" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/but_contact_enregistrer"
