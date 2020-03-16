@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_supp_obj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/supprimer_objectif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_contact_enregistrer" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
@@ -23,7 +33,7 @@
         android:id="@+id/ajout_objectifs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ajouter_un_objectif_perso"
+        android:text="@string/modifier_un_objectif_perso"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,14 +162,17 @@
 
     <Button
         android:id="@+id/but_contact_enregistrer"
-        android:layout_width="130dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:background="@drawable/button"
-        android:text="@string/enregistrer"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/modifier_objectif"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="486dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editCommentaires" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

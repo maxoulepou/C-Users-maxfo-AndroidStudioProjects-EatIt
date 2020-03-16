@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import Model.Contact;
-import Model.UnContactListener;
+import Model.UnItemListener;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,12 +17,12 @@ import java.util.ArrayList;
 public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
 
     ArrayList<Contact> mes_contacts;
-    private UnContactListener monContactListener;
+    private UnItemListener monContactListener;
 
 
-    public ContactAdapter(ArrayList<Contact> mes_contacts, UnContactListener unContactListener) {
+    public ContactAdapter(ArrayList<Contact> mes_contacts, UnItemListener unItemListener) {
         this.mes_contacts = mes_contacts;
-        this.monContactListener = unContactListener;
+        this.monContactListener = unItemListener;
     }
 
     @NonNull

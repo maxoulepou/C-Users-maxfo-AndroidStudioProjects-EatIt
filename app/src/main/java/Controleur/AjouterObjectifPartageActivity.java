@@ -60,13 +60,9 @@ public class AjouterObjectifPartageActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-
                         String intitule = editIntitule.getText().toString();
                         String commentaire = editCommentaire.getText().toString();
-                        System.out.println("COOOOOOOOOOMMENTAAAAAIRE " + commentaire);
                         String prof = pro.getText().toString();
-                        System.out.println("PROOOOOOOOOOOOOOOOOOOF " + prof);
-
 
                         boolean isInserted = bd.addObjectifs(intitule, "partage", datepicked_debut, datepicked_fin,commentaire,0,prof);
 

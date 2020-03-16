@@ -17,15 +17,18 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
+import Controleur.AfficherUnContactActivity;
 import Controleur.AjouterObjectifPersoActivity;
+import Controleur.ModifierObjectifPersoActivity;
 import Model.BD;
 import Model.ObjectifPersonnel;
+import Model.UnItemListener;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MesObjPersonnelsFragment extends Fragment {
+public class MesObjPersonnelsFragment extends Fragment implements UnItemListener {
 
     RecyclerView rv_objectifs_personnels;
     BD bd;
@@ -53,7 +56,7 @@ public class MesObjPersonnelsFragment extends Fragment {
 
         mes_obj = bd.getObjectifsPersonnels();
 
-        obj_adapter = new ObjectifPersoAdapter(mes_obj);
+        obj_adapter = new ObjectifPersoAdapter(mes_obj, this);
         rv_objectifs_personnels.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         rv_objectifs_personnels.setAdapter(obj_adapter);
 
@@ -67,6 +70,14 @@ public class MesObjPersonnelsFragment extends Fragment {
         );
 
         return view;
+    }
+
+    @Override
+    public void clicSurUnItem(int position) {
+        Intent intent = new Intent(getActivity(), ModifierObjectifPersoActivity.class);
+        intent.putExtra("objectif_perso", mes_obj.get(position).getId());
+        System.out.println(mes_obj.get(position).getId());
+        startActivity(intent);
     }
 
     public void openNewActivity(Class nouvelle_activite) {

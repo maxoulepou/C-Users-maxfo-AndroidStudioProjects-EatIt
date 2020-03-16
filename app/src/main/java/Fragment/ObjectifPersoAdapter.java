@@ -13,14 +13,16 @@ import java.util.ArrayList;
 
 import Model.ObjectifPersonnel;
 import Model.Objectifs;
+import Model.UnItemListener;
 
 public class ObjectifPersoAdapter extends RecyclerView.Adapter<ObjectifPersoViewHolder> {
 
     ArrayList<ObjectifPersonnel> mes_obj;
+UnItemListener item;
 
-
-    public ObjectifPersoAdapter(ArrayList<ObjectifPersonnel> mes_ressentis) {
+    public ObjectifPersoAdapter(ArrayList<ObjectifPersonnel> mes_ressentis, UnItemListener itemListener) {
         this.mes_obj = mes_ressentis;
+        this.item = itemListener;
     }
 
     @NonNull
@@ -29,7 +31,7 @@ public class ObjectifPersoAdapter extends RecyclerView.Adapter<ObjectifPersoView
         //Permet de chercher la vue
         LayoutInflater layoutinflater = LayoutInflater.from(parent.getContext());
         View view = layoutinflater.inflate(R.layout.ligne_objectifs_personnel, parent, false);
-        return new ObjectifPersoViewHolder(view);
+        return new ObjectifPersoViewHolder(view, item);
     }
 
 

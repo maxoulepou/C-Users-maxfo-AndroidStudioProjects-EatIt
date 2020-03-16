@@ -23,7 +23,7 @@
         android:id="@+id/ajout_objectifs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/modifier_un_objectif_part"
+        android:text="@string/ajouter_un_objectif_partage"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +76,14 @@
                 android:layout_marginEnd="50dp"
                 android:text="Fin prévue"/>
 
+            <TextView
+                android:id="@+id/textEchelle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="43dp"
+                android:layout_marginEnd="50dp"
+                android:text="Note de likert"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -126,6 +134,17 @@
                 android:drawableLeft="@drawable/sablier"
                 android:padding="6dp"/>
 
+            <EditText
+                android:id="@+id/editEchelle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/fond_objectif_partage"
+                android:ems="10"
+                android:padding="6dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/echelle"/>
+
             <!-- <EditText
                  android:id="@+id/editEchelle"
                  android:layout_width="50dp"
@@ -162,11 +181,13 @@
 
     <Button
         android:id="@+id/but_contact_enregistrer"
-        android:layout_width="130dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="@string/enregistrer"
         android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/modifier_objectif"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

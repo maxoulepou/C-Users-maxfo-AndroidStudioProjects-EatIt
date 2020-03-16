@@ -27,9 +27,6 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
     String datepicked_debut;
     String datepicked_fin;
 
-    // On crée des variables qui correspondent aux différents EditText + bouton du layout
-    // "activity_ajouter_contact"
-
     EditText editIntitule, editAvancement, editCommentaire;
     TextView editDateDebut, editDateFin;
     Button boutonAjouter;
@@ -96,9 +93,8 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
                                 cldr.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                                 //On formate pour la recherche dans la BD.
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE);
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
                                 datepicked_debut = dateFormat.format(cldr.getTime());
-                                System.out.println("BLABLAAAAAAAAAAAAAAAAAAAAA : " + datepicked_debut);
 
                                 //Formatage pour l'affichage de l'edittext qui s'appelle "et_date"
                                 DateFormat df_date = DateFormat.getDateInstance(DateFormat.SHORT, Locale.FRANCE); //DateFormat.LONG ça met la date sous la forme 28 février 2020.
@@ -135,10 +131,9 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
                                 cldr.set(Calendar.MONTH, monthOfYear);
                                 cldr.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-                                //On formate pour la recherche dans la BD.
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE);
+                                //On formate pour l'ajout dans la BD.
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
                                 datepicked_fin = dateFormat.format(cldr.getTime());
-                                System.out.println("BLABLAAAAAAAAAAAAAAAAAAAAA : " + datepicked_fin);
 
                                 //Formatage pour l'affichage de l'edittext qui s'appelle "et_date"
                                 DateFormat df_date = DateFormat.getDateInstance(DateFormat.SHORT, Locale.FRANCE); //DateFormat.LONG ça met la date sous la forme 28 février 2020.

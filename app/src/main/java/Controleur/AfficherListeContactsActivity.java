@@ -9,7 +9,7 @@ import android.widget.Button;
 import Model.BD_Contact;
 import Model.Contact;
 import Fragment.ContactAdapter;
-import Model.UnContactListener;
+import Model.UnItemListener;
 import Fragment.VerticalSpaceItemDecoration;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +19,7 @@ import com.example.eatit.R;
 
 import java.util.ArrayList;
 
-public class AfficherListeContactsActivity extends AppCompatActivity implements UnContactListener {
+public class AfficherListeContactsActivity extends AppCompatActivity implements UnItemListener {
 
     private RecyclerView rv;
     private ArrayList<Contact> mes_contacts;
@@ -55,7 +55,7 @@ public class AfficherListeContactsActivity extends AppCompatActivity implements 
     }
 
     @Override
-    public void clicSurUnContact(int position) {
+    public void clicSurUnItem(int position) {
         Intent intent = new Intent(this, AfficherUnContactActivity.class);
         intent.putExtra("contact", mes_contacts.get(position));
         startActivity(intent);
