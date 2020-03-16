@@ -33,7 +33,7 @@
 
                 <TextView
                     android:id="@+id/nom_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/nom"/>
 
@@ -57,7 +57,7 @@
 
                 <TextView
                     android:id="@+id/prenom_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/prenom" />
 
@@ -82,7 +82,7 @@
 
                 <TextView
                     android:id="@+id/sexe_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/sexe" />
 
@@ -120,7 +120,7 @@
 
                 <TextView
                     android:id="@+id/email"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/profilemail" />
 
@@ -147,7 +147,7 @@
 
                 <TextView
                     android:id="@+id/telephone"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/telephone" />
 
@@ -174,7 +174,7 @@
 
                 <TextView
                     android:id="@+id/date_naissancep_atient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/profildatedenaissance" />
 
@@ -201,7 +201,7 @@
 
                 <TextView
                     android:id="@+id/adresse_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/adresse" />
 
@@ -229,7 +229,7 @@
 
                 <TextView
                     android:id="@+id/code_postal_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/codepostal" />
 
@@ -257,7 +257,7 @@
 
                 <TextView
                     android:id="@+id/ville_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/ville" />
 
@@ -281,7 +281,7 @@
 
                 <TextView
                     android:id="@+id/adresse_postale_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/adressepostale" />
 
@@ -305,7 +305,7 @@
 
                 <TextView
                     android:id="@+id/contact_urgence_patient"
-                    android:layout_width="117dp"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:text="@string/contacturgence" />
 

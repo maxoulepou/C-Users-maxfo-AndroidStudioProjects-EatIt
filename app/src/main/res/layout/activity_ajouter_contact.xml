@@ -47,9 +47,9 @@
 
         <TextView
             android:id="@+id/profession"
-            android:layout_width="69dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Profession"
+            android:text="*Profession"
             app:layout_constraintEnd_toStartOf="@+id/et_contact_profession"/>
 
         <EditText
@@ -73,9 +73,9 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="69dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Nom"/>
+            android:text="*Nom"/>
 
         <EditText
             android:id="@+id/et_contact_nom"
@@ -98,9 +98,9 @@
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="69dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Prénom"/>
+            android:text="*Prénom"/>
 
         <EditText
             android:id="@+id/et_contact_prenom"
@@ -124,9 +124,9 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="69dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Email"/>
+            android:text="*Email"/>
 
         <EditText
             android:id="@+id/et_contact_telephone"

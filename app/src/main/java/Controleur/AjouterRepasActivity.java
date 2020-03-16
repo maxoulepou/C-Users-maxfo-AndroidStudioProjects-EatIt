@@ -56,6 +56,7 @@ public class AjouterRepasActivity extends AppCompatActivity {
     public BD_Repas mBD_repas;
     private boolean isEnregistre;
     private String datepicked;
+    private String timepicked;
     int valeurSB;
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
@@ -84,6 +85,24 @@ public class AjouterRepasActivity extends AppCompatActivity {
 //                System.out.println("test image boutton");
 //            }
 //        });
+
+        final Calendar cldr = Calendar.getInstance();
+
+        cldr.getInstance().get(Calendar.MONTH);
+        cldr.getInstance().get(Calendar.YEAR);
+        cldr.getInstance().get(Calendar.DAY_OF_MONTH);
+
+        //On formate pour la recherche dans la BD.
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
+        datepicked = dateFormat.format(cldr.getTime());
+        mDate.setText(datepicked);
+
+        final Calendar cldr2 = Calendar.getInstance();
+        cldr2.getInstance().get(Calendar.HOUR_OF_DAY);
+        cldr2.getInstance().get(Calendar.MINUTE);
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("HH:mm", Locale.FRANCE);
+        timepicked = dateFormat2.format(cldr.getTime());
+        mHeure.setText(timepicked);
 
         mDate.setOnClickListener(new View.OnClickListener() {
                                      @Override
@@ -122,8 +141,11 @@ public class AjouterRepasActivity extends AppCompatActivity {
                                      @Override
                                      public void onClick(View v) {
                                          final Calendar cldr2 = Calendar.getInstance();
-                                         int hour = cldr2.get(Calendar.HOUR);
+                                         int hour = cldr2.get(Calendar.HOUR_OF_DAY);
                                          int minute = cldr2.get(Calendar.MINUTE);
+
+                                         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.FRANCE);
+                                         timepicked = dateFormat.format(cldr.getTime());
 
                                          TimePickerDialog timePickerDialog = new TimePickerDialog(AjouterRepasActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth, mTimeSetListener, hour, minute, true);
                                          timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -139,6 +161,37 @@ public class AjouterRepasActivity extends AppCompatActivity {
             }
 
         };
+
+        /* mHeure.setOnClickListener(new View.OnClickListener() {
+                                     @Override
+                                     public void onClick(View v) {
+                                         final Calendar cldr = Calendar.getInstance();
+                                         final TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener() {
+
+                                             @Override
+                                             //Cette méthode elle nous sert à enregistrer la date sélectionnée
+                                             public void onTimeSet(TimePicker view, int hour, int minute,
+                                                                   int dayOfMonth) {
+                                                 cldr.set(Calendar.HOUR_OF_DAY, hour);
+                                                 cldr.set(Calendar.MINUTE, minute);
+
+                                                 //On formate pour la recherche dans la BD.
+                                                 SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.FRANCE);
+                                                 timepicked = dateFormat.format(cldr.getTime());
+
+                                                 //Formatage pour l'affichage de l'edittext qui s'appelle "et_date"
+                                                 DateFormat df_date = DateFormat.getDateInstance(DateFormat.SHORT, Locale.FRANCE); //DateFormat.LONG ça met la date sous la forme 28 février 2020.
+                                                 String dateDF = df_date.format(cldr.getTime());
+                                                 mHeure.setText(dateDF);
+                                             }
+                                         };
+
+                                         new TimePickerDialog(AjouterRepasActivity.this, time, cldr
+                                                 .get(Calendar.HOUR_OF_DAY), cldr.get(Calendar.MINUTE)).show();
+                                     }
+
+                                 }
+        ); */
 
         petitDej.setOnClickListener(new View.OnClickListener() {
             @Override

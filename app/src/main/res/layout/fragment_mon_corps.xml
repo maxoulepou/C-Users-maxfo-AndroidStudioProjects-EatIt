@@ -87,35 +87,78 @@
             android:layout_marginTop="10sp"
             android:background="@drawable/rectanglebleujaune"></Spinner>
 
-        <TextView
-            android:id="@+id/outputSpinnerTv"
-            android:layout_width="180dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/rectanglejaunebis"
-            android:gravity="center"
-            android:textColor="#000"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="35dp">
+
+            <TextView
+                android:id="@+id/outputSpinnerTv"
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rectanglejaunebis"
+                android:gravity="center"
+                android:textColor="#000"/>
+
+            <Button
+                android:id="@+id/button_supp_1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/croixrouge"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/outputSpinnerTv2"
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             android:background="@drawable/rectanglejaunebis"
             android:gravity="center"
             android:textColor="#000"/>
+
+
+            <Button
+                android:id="@+id/button_supp_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/croixrouge"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/outputSpinnerTv3"
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             android:background="@drawable/rectanglejaunebis"
             android:gravity="center"
             android:textColor="#000"/>
+
+        <Button
+            android:id="@+id/button_supp_3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/croixrouge"/>
+    </LinearLayout>
 
     </LinearLayout>
 

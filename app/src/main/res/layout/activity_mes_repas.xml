@@ -79,7 +79,6 @@
                 android:layout_width="150dp"
                 android:layout_height="36dp"
                 android:background="@drawable/fond_liste"
-                android:hint="Choisissez une date"
                 android:textColor="@color/grey"
                 android:textSize="12dp"
                 android:gravity="center"

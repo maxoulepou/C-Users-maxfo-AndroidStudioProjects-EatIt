@@ -44,9 +44,9 @@
 
             <TextView
                 android:id="@+id/textevntsante"
-                android:layout_width="129dp"
+                android:layout_width="136dp"
                 android:layout_height="wrap_content"
-                android:text="Événement de santé"/>
+                android:text="*Événement de santé"/>
 
             <EditText
                 android:id="@+id/evnt_sante"
@@ -69,15 +69,15 @@
 
             <TextView
                 android:id="@+id/textdate"
-                android:layout_width="129dp"
+                android:layout_width="136dp"
                 android:layout_height="wrap_content"
-                android:text="Date"/>
+                android:text="*Date"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:id="@+id/date"
-                android:layout_width="wrap_content"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="15dp"
                 android:background="@drawable/rectanglebleu"
@@ -95,7 +95,7 @@
                 android:layout_marginTop="20dp">
             <TextView
                 android:id="@+id/textcommentaires"
-                android:layout_width="129dp"
+                android:layout_width="136dp"
                 android:layout_height="wrap_content"
                 android:text="Commentaires"/>
 

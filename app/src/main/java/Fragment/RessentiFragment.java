@@ -79,7 +79,41 @@ public class RessentiFragment extends Fragment {
         rv_corps = (RecyclerView) view.findViewById(R.id.rv_mon_corps);
         rv_activite = (RecyclerView) view.findViewById(R.id.rv_mon_activite);
 
+        final Calendar cldr = Calendar.getInstance();
 
+        cldr.getInstance().get(Calendar.MONTH);
+        cldr.getInstance().get(Calendar.YEAR);
+        cldr.getInstance().get(Calendar.DAY_OF_MONTH);
+
+        //On formate pour la recherche dans la BD.
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
+        datepicked = dateFormat.format(cldr.getTime());
+        et_date.setText(datepicked);
+
+        // On récupère les ressentis_tete qui sont à la date selectionnée :
+        mes_rt = bdr.getTousLesRessentisTete(datepicked);
+        //System.out.println("BLAAAAAAAAAABLABLABLABLABLAAAA LA DATE EST = " + mes_rt.get(0).getDate());
+
+        rt_adapter = new RessentiTeteAdapter(mes_rt);
+        rv_tete.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        rv_tete.setAdapter(rt_adapter);
+        rv_tete.addItemDecoration(new VerticalSpaceItemDecoration(espace));
+
+
+        mes_rc = bdr.getTousLesRessentisCorps(datepicked);
+
+        rc_adapter = new RessentiCorpsAdapter(mes_rc);
+        rv_corps.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        rv_corps.setAdapter(rc_adapter);
+        rv_corps.addItemDecoration(new VerticalSpaceItemDecoration(espace));
+
+
+        mes_ra = bdr.getTousLesRessentisActivite(datepicked);
+
+        ra_adapter = new RessentiActiviteAdapter(mes_ra);
+        rv_activite.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        rv_activite.setAdapter(ra_adapter);
+        rv_activite.addItemDecoration(new VerticalSpaceItemDecoration(espace));
 
         et_date.setOnClickListener(new View.OnClickListener() {
                                        @Override

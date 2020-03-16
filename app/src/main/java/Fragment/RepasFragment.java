@@ -72,6 +72,25 @@ public class RepasFragment extends Fragment {
         ButterKnife.bind(this, view);
         menu = (ImageButton) view.findViewById(R.id.menu);
 
+        final Calendar cldr = Calendar.getInstance();
+
+            cldr.getInstance().get(Calendar.MONTH);
+            cldr.getInstance().get(Calendar.YEAR);
+            cldr.getInstance().get(Calendar.DAY_OF_MONTH);
+
+            //On formate pour la recherche dans la BD.
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
+            mDate = dateFormat.format(cldr.getTime());
+            mTextDate.setText(mDate);
+
+            lRepas = mBD_repas.getlRepasDate(mDate);
+
+            mRepasAdapter = new RepasAdapter(lRepas);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+            mRecyclerView.setAdapter(mRepasAdapter);
+
+
+
         mTextDate.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
