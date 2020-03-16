@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 import Controleur.AfficherListeContactsActivity;
+import Controleur.ExporterDonneesActivity;
 import Controleur.MesRepasActivity;
 import Controleur.MonProfilEtEvntActivity;
 import androidx.annotation.NonNull;
@@ -99,7 +100,7 @@ public class ObjectifsFragment extends Fragment {
                                 openNewActivity(AfficherListeContactsActivity.class);
                                 break;
                             case R.id.item3:
-                                openNewActivity(MesRepasActivity.class);
+                                openNewActivity(ExporterDonneesActivity.class);
                                 break;
                         }
 

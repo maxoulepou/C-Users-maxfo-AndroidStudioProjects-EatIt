@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import Controleur.AfficherListeContactsActivity;
+import Controleur.ExporterDonneesActivity;
 import Controleur.MesRepasActivity;
 import Controleur.MonProfilEtEvntActivity;
 import androidx.fragment.app.Fragment;
@@ -137,7 +138,7 @@ public class RepasFragment extends Fragment {
                                 openNewActivity(AfficherListeContactsActivity.class);
                                 break;
                             case R.id.item3:
-                                openNewActivity(MesRepasActivity.class);
+                                openNewActivity(ExporterDonneesActivity.class);
                                 break;
                         }
 

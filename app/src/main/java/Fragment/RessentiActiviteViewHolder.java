@@ -29,7 +29,7 @@ public class RessentiActiviteViewHolder extends RecyclerView.ViewHolder {
     public void display(RessentiActivite pds) {
         activite.setText(pds.getActivite());
         difficulte.setText(String.valueOf(pds.getDifficulte()));
-        duree.setText(String.valueOf(pds.getDifficulte()));
+        duree.setText(String.valueOf(pds.getDifficulte()) + " minutes");
         commentaire.setText(pds.getCommentaire());
     }
 

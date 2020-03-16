@@ -36,6 +36,7 @@
         <activity android:name="Controleur.MonRessentiActivity"/>
         <activity android:name="Controleur.CreationCompteActivity"/>
         <activity android:name="Controleur.ConnexionActivity"/>
+        <activity android:name="Controleur.ExporterDonneesActivity"/>
         <activity android:name="Controleur.ModifierObjectifPersoActivity"/>
         <activity android:name="Controleur.ModifierObjectifPartageActivity"/>
 

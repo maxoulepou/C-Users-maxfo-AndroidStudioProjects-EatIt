@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -29,55 +28,25 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ajout_evnt_sante"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="60dp">
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textevntsante"
-                android:layout_width="wrap_content"
+                android:layout_width="129dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:text="Événement de santé"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ajout_evnt_sante" />
-
-            <TextView
-                android:id="@+id/textdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="Date"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-            <TextView
-                android:id="@+id/textcommentaires"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="41dp"
-                android:text="Commentaires"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="20dp">
+                android:text="Événement de santé"/>
 
             <EditText
                 android:id="@+id/evnt_sante"
@@ -85,42 +54,73 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectanglebleu"
                 android:ems="10"
+                android:paddingLeft="15dp"
                 android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ajout_evnt_sante" />
+                android:layout_marginStart="15dp"/>
 
-            <EditText
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/textdate"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:text="Date"/>
+
+            <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:paddingLeft="15dp"
+                android:background="@drawable/rectanglebleu"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_contact_prenom"
-                android:background="@drawable/rectanglebleu"/>
-
-            <EditText
-                android:id="@+id/commentaires"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_contact_nom"
-                android:background="@drawable/rectanglebleu"/>
+                android:layout_marginStart="15dp"/>
 
         </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/textcommentaires"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:text="Commentaires"/>
+
+                <EditText
+                    android:id="@+id/commentaires"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:paddingLeft="15dp"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/rectanglebleu"
+                    android:layout_marginStart="15dp"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <Button
         android:id="@+id/but_contact_enregistrer"
-        android:layout_width="162dp"
-        android:layout_height="40dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/button"
         android:text="@string/enregistrer"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

@@ -55,7 +55,7 @@ public class MonSuiviFragment extends Fragment {
         poids_dep.setText(String.valueOf(bdp.getPoidsDépart()));
         tt_act.setText(String.valueOf(bdp.getTTActuel()));
         tt_dep.setText(String.valueOf(bdp.getTTDepart()));
-        taille_act.setText(String.valueOf(bdp.getTailleActuelle()));
+        taille_act.setText(String.valueOf(bdp.getTailleActuelle()) + " m ");
         imc_act.setText(String.valueOf(df2.format(bdp.getIMC())));
 
         return view;

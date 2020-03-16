@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/logo"
@@ -29,248 +19,298 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/mes_repas"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.166"
                     app:srcCompat="@drawable/eatie" />
 
                 <TextView
                     android:id="@+id/mes_repas"
                     android:layout_width="70dp"
                     android:layout_height="14dp"
-                    android:layout_marginStart="166dp"
-                    android:layout_marginEnd="166dp"
                     android:text="@string/mes_repas"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mes_repas">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="90dp"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/iconpetitdej"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="28dp"
+                    android:layout_height="55dp"
                     android:contentDescription="@string/todo"
-                    app:layout_constraintBottom_toTopOf="@+id/textView7"
-                    app:layout_constraintEnd_toStartOf="@+id/icondejeuner"
                     app:srcCompat="@drawable/petitdej" />
-
-                <ImageView
-                    android:id="@+id/icondejeuner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="28dp"
-                    android:contentDescription="@string/todo"
-                    app:layout_constraintBottom_toTopOf="@+id/textView8"
-                    app:layout_constraintEnd_toStartOf="@+id/iconcollation"
-                    app:srcCompat="@drawable/dej" />
-
-                <ImageView
-                    android:id="@+id/iconcollation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="28dp"
-                    android:layout_marginBottom="6dp"
-                    android:contentDescription="@string/todo"
-                    app:layout_constraintBottom_toTopOf="@+id/textView9"
-                    app:layout_constraintEnd_toStartOf="@+id/icondiner"
-                    app:srcCompat="@drawable/gouter" />
-
-                <ImageView
-                    android:id="@+id/icondiner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="28dp"
-                    android:layout_marginBottom="6dp"
-                    android:contentDescription="@string/todo"
-                    app:layout_constraintBottom_toTopOf="@+id/textView13"
-                    app:layout_constraintEnd_toStartOf="@+id/iconautre"
-                    app:srcCompat="@drawable/diner" />
-
-                <ImageView
-                    android:id="@+id/iconautre"
-                    android:layout_width="44dp"
-                    android:layout_height="47dp"
-                    android:contentDescription="@string/todo"
-                    app:layout_constraintBottom_toTopOf="@+id/textView14"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@drawable/autre" />
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="140dp">
 
                 <TextView
                     android:id="@+id/textPetitDej"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:text="@string/petitdej"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textDej" />
+                    android:text="@string/petitdej" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icondejeuner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/dej" />
+
 
                 <TextView
                     android:id="@+id/textDej"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="109dp"
-                    android:text="@string/dej"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textCollation" />
+                    android:text="@string/dej" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iconcollation"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/gouter" />
 
                 <TextView
                     android:id="@+id/textCollation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="186dp"
-                    android:text="@string/collation"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textDiner" />
+                    android:text="@string/collation" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/icondiner"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/diner" />
 
                 <TextView
                     android:id="@+id/textDiner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="272dp"
-                    android:text="@string/diner"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textAutre" />
+                    android:text="@string/diner" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/iconautre"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/autre" />
+
 
                 <TextView
                     android:id="@+id/textAutre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="345dp"
-                    android:text="@string/autre"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:text="@string/autre" />
 
-            </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textDateHeure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/dateheure"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDateHeure">
 
             <TextView
-                android:id="@+id/textDateHeure"
+                android:id="@+id/TextDate"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fond_liste"
+                android:gravity="center"
+                android:hint="@string/date"
+                android:inputType="date"
+                android:padding="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDateHeure" />
+
+            <TextView
+                android:id="@+id/TextHeure"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/fond_liste"
+                android:gravity="center"
+                android:hint="@string/heure"
+                android:inputType="time"
+                android:padding="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDateHeure" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+            <TextView
+                android:id="@+id/textDuree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="180dp"
-                android:text="@string/dateheure"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="23dp"
+                android:text="@string/duree"
                 android:textSize="18sp"
-                android:layout_centerHorizontal="true"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editTextDuree"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="210dp"
-                android:orientation="horizontal"
-                android:layout_centerHorizontal="true">
-
-                <TextView
-                    android:id="@+id/TextDate"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/fond_liste"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:hint="@string/date"
-                    android:inputType="date"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textDateHeure"/>
-
-                <TextView
-                    android:id="@+id/TextHeure"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/fond_liste"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:hint="@string/heure"
-                    android:inputType="time"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textDateHeure" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textDuree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="23dp"
-                    android:text="@string/duree"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
-
-                <EditText
-                    android:id="@+id/editTextDuree"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="11dp"
-                    android:background="@drawable/fond_liste"
-                    android:padding="4dp"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="0"
-                    app:layout_constraintEnd_toStartOf="@+id/textMinutes"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
-
-                <TextView
-                    android:id="@+id/textMinutes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="23dp"
-                    android:layout_marginEnd="52dp"
-                    android:text="@string/min"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextHeure" />
-
-            </LinearLayout>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="11dp"
+                android:background="@drawable/fond_liste"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="0"
+                android:padding="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/textMinutes"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
             <TextView
-                android:id="@+id/textNiveauFaim"
+                android:id="@+id/textMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="146dp"
-                android:layout_marginTop="320dp"
-                android:layout_marginEnd="146dp"
-                android:text="@string/niveaudefaim"
-                android:textAlignment="center"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="52dp"
+                android:text="@string/min"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextHeure" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textNiveauFaim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/niveaudefaim"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout15" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNiveauFaim">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="390dp"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_centerHorizontal="true">
+                app:layout_constraintTop_toBottomOf="@+id/textNiveauFaim">
+
+                <TextView
+                    android:id="@+id/textpasdutoutfaim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="Pas du tout faim" />
+
+                <TextView
+                    android:id="@+id/texttresfaim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="160dp"
+                    android:text="Très faim" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <SeekBar
                     android:id="@+id/seekBar2"
@@ -287,109 +327,97 @@
                     android:id="@+id/valeurSeekBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:text="0" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout17">
 
             <TextView
-                android:id="@+id/textpasdutoutfaim"
+                android:id="@+id/textViewAjouterRepas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="360dp"
-                android:text="Pas du tout faim" />
+                android:text="@string/ajoutezphotos"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageButton_ajoutRepas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/texttresfaim"
-                android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/imageButton_ajoutRepas"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="300dp"
-                android:layout_marginTop="360dp"
-                android:text="Très faim" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/addphoto" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textViewAjouterRepas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="450dp"
-                    android:layout_marginEnd="71dp"
-                    android:text="@string/ajoutezphotos"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toTopOf="@+id/imageButton_ajoutRepas"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <ImageButton
-                    android:id="@+id/imageButton_ajoutRepas"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/addphoto" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="560dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/bouton_photo1"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:text="Photo 1" />
-
-                <Button
-                    android:id="@+id/bouton_photo2"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:text="Photo 2" />
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout16">
 
             <Button
-                android:id="@+id/button_enregister_ajout_repas"
-                android:layout_width="400dp"
+                android:id="@+id/bouton_photo1"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="132dp"
-                android:layout_marginTop="720dp"
-                android:layout_marginEnd="127dp"
-                android:background="@drawable/button"
-                android:text="@string/enregistrer"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:text="Photo 1" />
 
-            <EditText
-                android:id="@+id/editTextComm"
-                android:layout_width="350dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="37dp"
-                android:layout_marginTop="630dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/fond_liste"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Décrivez votre repas et vos ressentis."
-                android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/bouton_enregistrer"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/bouton_photo2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Photo 2" />
+        </LinearLayout>
 
-        </RelativeLayout>
+        <Button
+            android:id="@+id/button_enregister_ajout_repas"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:text="@string/enregistrer"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextComm" />
 
-    </ScrollView>
+        <EditText
+            android:id="@+id/editTextComm"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:background="@drawable/fond_liste"
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="Décrivez votre repas et vos ressentis."
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout11" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
