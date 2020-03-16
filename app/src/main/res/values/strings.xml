@@ -183,7 +183,7 @@
 
     <!-- AUTRES -->
 
-    <string name="enregistrer">Enregistrer</string>
+    <string name="enregistrer">ENREGISTRER</string>
     <string name="commentaires">Commentaires...</string>
 
     <string name="popup_message_confirmation_delete_account">Êtes-vous sur de vouloir supprimer votre compte ? Cette action est irréversible</string>

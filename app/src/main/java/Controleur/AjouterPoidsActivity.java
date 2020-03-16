@@ -9,12 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.eatit.R;
+
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,7 +35,8 @@ public class AjouterPoidsActivity extends AppCompatActivity {
     // On crée des variables qui correspondent aux différents EditText + bouton du layout
     // "activity_ajouter_poids"
 
-    EditText editPoids, editTaille, editDate, editTT, editMuscle, editGraisse;
+    EditText editPoids, editTaille, editTT, editMuscle, editGraisse;
+    TextView editDate;
     Button boutonAjouter;
 
 
@@ -47,7 +51,7 @@ public class AjouterPoidsActivity extends AppCompatActivity {
 
         editPoids = (EditText) findViewById(R.id.et_poids_poids);
         editTaille = (EditText) findViewById(R.id.et_poids_taille);
-        editDate = (EditText) findViewById(R.id.et_poids_date);
+        editDate = (TextView) findViewById(R.id.et_poids_date);
         editDate.setInputType(InputType.TYPE_NULL);
         editTT = (EditText) findViewById(R.id.et_poids_tt);
         editMuscle = (EditText) findViewById(R.id.et_poids_muscle);

@@ -45,7 +45,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/heureux" />
+                        android:background="@drawable/heureuxbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/heureux"
@@ -67,9 +69,10 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/calme"
+                        android:background="@drawable/calmebis"
                         android:checked="false"
-                        android:textOff="OFF" />
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/calme"
@@ -91,7 +94,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/serein" />
+                        android:background="@drawable/sereinbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/serein"
@@ -113,7 +118,9 @@
                         android:layout_width="44dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/fier" />
+                        android:background="@drawable/fierbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/fier"
@@ -135,7 +142,9 @@
                         android:layout_width="44dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/reconnaissant" />
+                        android:background="@drawable/reconnaissantbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/reconnaissant"
@@ -163,11 +172,13 @@
             android:orientation="vertical"
             android:gravity="center">
 
-                    <ToggleButton
-                        android:id="@+id/bouton_pensif"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/pensif" />
+            <ToggleButton
+                android:id="@+id/bouton_pensif"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pensifbis"
+                android:textOff=" "
+                android:textOn=" " />
 
                     <TextView
                         android:id="@+id/pensif"
@@ -188,7 +199,9 @@
                         android:id="@+id/bouton_confiant"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/confiant" />
+                        android:background="@drawable/confiantbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/confiant"
@@ -208,7 +221,9 @@
                         android:id="@+id/bouton_anxieux"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/anxieux" />
+                        android:background="@drawable/anxieuxbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/anxieux"
@@ -229,7 +244,9 @@
                         android:id="@+id/bouton_triste"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/triste" />
+                        android:background="@drawable/tristebis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/triste"
@@ -249,7 +266,9 @@
                         android:id="@+id/bouton_deprime"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/deprime" />
+                        android:background="@drawable/deprimebis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/deprime"
@@ -277,11 +296,13 @@
                 android:orientation="vertical"
                 android:gravity="center">
 
-                    <ToggleButton
-                        android:id="@+id/bouton_perdu"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/perdu" />
+                <ToggleButton
+                    android:id="@+id/bouton_perdu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/perdubis"
+                    android:textOff=" "
+                    android:textOn=" " />
 
                     <TextView
                         android:id="@+id/perdu"
@@ -301,7 +322,9 @@
                         android:id="@+id/bouton_mefiant"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/mefiant"/>
+                        android:background="@drawable/mefiantbis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/mefiant"
@@ -321,7 +344,9 @@
                         android:id="@+id/bouton_coupable"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/coupable" />
+                        android:background="@drawable/coupablebis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/coupable"
@@ -342,7 +367,9 @@
                         android:id="@+id/bouton_surpris"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/surpris" />
+                        android:background="@drawable/surprisbis"
+                        android:textOff=" "
+                        android:textOn="  " />
 
                     <TextView
                         android:id="@+id/surpris"
@@ -363,7 +390,9 @@
                         android:id="@+id/bouton_enerve"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/enerve" />
+                        android:background="@drawable/enervebis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/enerve"
@@ -393,11 +422,13 @@
                 android:orientation="vertical"
                 android:gravity="center">
 
-                    <ToggleButton
-                        android:id="@+id/bouton_apeure"
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/apeure" />
+                <ToggleButton
+                    android:id="@+id/bouton_apeure"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/apeurebis"
+                    android:textOff=" "
+                    android:textOn=" " />
 
                     <TextView
                         android:id="@+id/apeure"
@@ -418,7 +449,9 @@
                         android:id="@+id/bouton_embarasse"
                         android:layout_width="44dp"
                         android:layout_height="44dp"
-                        android:background="@drawable/embarasse" />
+                        android:background="@drawable/embarassebis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/embarasse"
@@ -439,7 +472,9 @@
                         android:id="@+id/bouton_autree"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/autree" />
+                        android:background="@drawable/autreebis"
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <TextView
                         android:id="@+id/autre"
@@ -466,22 +501,24 @@
             android:paddingTop="10dp"
             android:textColor="@color/grey"
             android:textStyle="italic"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
         <Button
             android:id="@+id/bouton_enregistrer_tete"
-            android:layout_width="130dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
             android:background="@drawable/rectanglejaune"
             android:text="@string/enregistrer"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/commentaires"/>
+            app:layout_constraintTop_toBottomOf="@+id/commentaires" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

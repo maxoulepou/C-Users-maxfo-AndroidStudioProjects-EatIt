@@ -146,7 +146,6 @@
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"/>
 
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

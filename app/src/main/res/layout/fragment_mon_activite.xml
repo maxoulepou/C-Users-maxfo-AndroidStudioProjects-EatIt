@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_width="wrap_content"
@@ -81,7 +80,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:layout_marginStart="15dp"
-                    android:hint="Durée de l'activité"
+                    android:hint="Durée (minutes)"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
                     android:textStyle="italic"
@@ -243,12 +242,14 @@
 
         <Button
             android:id="@+id/bouton_enregistrer_activite"
-            android:layout_width="162dp"
-            android:layout_height="40dp"
+            android:layout_marginBottom="35dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="35dp"
             android:background="@drawable/rectanglejaune"
             android:text="@string/enregistrer"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/commentaires" />
