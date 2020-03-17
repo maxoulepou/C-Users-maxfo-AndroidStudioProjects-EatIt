@@ -9,9 +9,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import Model.BD_Contact;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.eatit.R;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class AjouterContactActivity extends AppCompatActivity {
@@ -48,20 +52,29 @@ public class AjouterContactActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = bdc.insererContact(editPrenom.getText().toString(),
-                                editNom.getText().toString(),
-                                editProfession.getText().toString(),
-                                editEmail.getText().toString(),
-                                editTelephone.getText().toString(),
-                                editAdresse.getText().toString());
 
-                        if (isInserted == true)
-                            Toast.makeText(AjouterContactActivity.this, "Contact ajouté", Toast.LENGTH_SHORT).show();
-                        else
-                            Toast.makeText(AjouterContactActivity.this, "Contact pas ajouté", Toast.LENGTH_SHORT).show();
+                        Pattern pattern1 = Pattern.compile( "^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\\.([a-zA-Z])+([a-zA-Z])+");
 
-                        openNewActivity(AfficherListeContactsActivity.class);
+                        Matcher matcher1 = pattern1.matcher(editEmail.getText().toString());
+
+                        if (matcher1.matches()) {
+                            boolean isInserted = bdc.insererContact(editPrenom.getText().toString(),
+                                    editNom.getText().toString(),
+                                    editProfession.getText().toString(),
+                                    editEmail.getText().toString(),
+                                    editTelephone.getText().toString(),
+                                    editAdresse.getText().toString());
+                            if (isInserted == true) {
+                                Toast.makeText(AjouterContactActivity.this, "Contact ajouté", Toast.LENGTH_SHORT).show();
+                                openNewActivity(AfficherListeContactsActivity.class);
+                            }
+                        } else {
+                            Toast.makeText(AjouterContactActivity.this, "Veuillez renseigner une adresse mail valide.", Toast.LENGTH_SHORT).show();
+                        }
+
+
                     }
+
                 }
 
         );
@@ -73,4 +86,7 @@ public class AjouterContactActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 }

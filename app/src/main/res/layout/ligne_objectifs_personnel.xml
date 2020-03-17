@@ -94,18 +94,6 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/likert"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:drawableLeft="@drawable/echelle"
-                android:text="Avancement : "
-                android:textColor="@color/grey"
-                android:textStyle="bold" />
-
 
             <TextView
                 android:id="@+id/valeurlikert"
@@ -131,7 +119,6 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:drawableLeft="@drawable/comment1"
                 android:text="Commentaire : "
                 android:textColor="@color/grey"
                 android:textStyle="bold" />
