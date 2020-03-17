@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import Model.Contact;
-import Model.UnContactListener;
+import Model.UnItemListener;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eatit.R;
@@ -16,14 +16,14 @@ public class ContactViewHolder extends RecyclerView.ViewHolder implements View.O
     private TextView profession;
     private TextView prenom;
     private TextView nom;
-    UnContactListener unContactListener;
+    UnItemListener unItemListener;
 
-    public ContactViewHolder(View itemView, UnContactListener unContactListener) {
+    public ContactViewHolder(View itemView, UnItemListener unItemListener) {
         super(itemView);
         profession = (TextView) itemView.findViewById(R.id.tv_contact_profession);
         prenom = (TextView) itemView.findViewById(R.id.tv_contact_prenom);
         nom = (TextView) itemView.findViewById(R.id.tv_contact_nom);
-        this.unContactListener = unContactListener;
+        this.unItemListener = unItemListener;
         itemView.setOnClickListener(this);
 
     }
@@ -39,7 +39,7 @@ public class ContactViewHolder extends RecyclerView.ViewHolder implements View.O
 
     @Override
     public void onClick(View v) {
-        unContactListener.clicSurUnContact(getAdapterPosition());
+        unItemListener.clicSurUnItem(getAdapterPosition());
 
     }
 }

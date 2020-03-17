@@ -180,6 +180,13 @@
 
     <string name="ajouter_un_objectif_perso">AJOUTER UN OBJECTIF PERSONNEL</string>
     <string name="ajouter_un_objectif_partage">AJOUTER UN OBJECTIF PARTAGÉ</string>
+    <string name="modifier_un_objectif_perso">MODIFIER UN OBJECTIF PERSONNEL</string>
+    <string name="modifier_un_objectif_part">MODIFIER UN OBJECTIF PARTAGÉ</string>
+
+    <string name="modifier_objectif">Mettre à jour l\'objectif</string>
+    <string name="supprimer_objectif"><u>Supprimer l\'objectif</u></string>
+
+
 
     <!-- AUTRES -->
 

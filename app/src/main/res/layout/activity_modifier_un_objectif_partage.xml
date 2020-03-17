@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_supp_obj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/supprimer_objectif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/but_contact_enregistrer" />
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
@@ -33,7 +23,7 @@
         android:id="@+id/ajout_objectifs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/modifier_un_objectif_perso"
+        android:text="@string/ajouter_un_objectif_partage"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,44 +39,52 @@
         app:layout_constraintTop_toBottomOf="@+id/ajout_objectifs"
         android:layout_marginTop="50dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textObjectifs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:text="*Objectif"/>
-
-    <TextView
-        android:id="@+id/textDateDebut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="50dp"
-        android:text="*Début prévu"/>
-
-        <TextView
-            android:id="@+id/textDateFin"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="50dp"
-            android:text="*Fin prévue"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textEchelle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="50dp"
-            android:text="*Note de likert"/>
+            <TextView
+                android:id="@+id/textObjectifs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="Objectif"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textAvec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="50dp"
+                android:text="Avec"/>
+
+            <TextView
+                android:id="@+id/textDateDebut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="50dp"
+                android:text="Début prévu"/>
+
+            <TextView
+                android:id="@+id/textDateFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="43dp"
+                android:layout_marginEnd="50dp"
+                android:text="Fin prévue"/>
+
+            <TextView
+                android:id="@+id/textEchelle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="43dp"
+                android:layout_marginEnd="50dp"
+                android:text="Note de likert"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -94,33 +92,44 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editObjectif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectanglebleu"
-        android:ems="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:drawableLeft="@drawable/cible"
-        android:padding="6dp"/>
-
-    <EditText
-        android:id="@+id/editDateDebut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/rectanglebleu"
-        android:ems="10"
-        android:drawableLeft="@drawable/sablier"
-        android:padding="6dp"/>
-
             <EditText
-                android:id="@+id/editDateFin"
+                android:id="@+id/editObjectif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/fond_objectif_partage"
+                android:ems="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                android:drawableLeft="@drawable/cible"
+                android:padding="6dp"/>
+
+            <EditText
+                android:id="@+id/editAvec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fond_objectif_partage"
+                android:ems="10"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/rectanglebleu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/editDateDebut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/fond_objectif_partage"
+                android:ems="10"
+                android:drawableLeft="@drawable/sablier"
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/editDateFin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
                 android:drawableLeft="@drawable/sablier"
                 android:padding="6dp"/>
@@ -130,13 +139,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/rectanglebleu"
+                android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
                 android:padding="6dp"
                 android:layout_gravity="center_horizontal"
                 android:drawableLeft="@drawable/echelle"/>
 
-    </LinearLayout>
+            <!-- <EditText
+                 android:id="@+id/editEchelle"
+                 android:layout_width="50dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="25dp"
+                 android:background="@drawable/fond_edit_echelle_likert"
+                 android:ems="10"
+                 android:padding="6dp"
+                 android:layout_gravity="center_horizontal"/> <! -->
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -144,7 +163,7 @@
         android:id="@+id/editCommentaires"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/fond_liste"
         android:ems="10"
         android:gravity="start|top"
@@ -152,7 +171,7 @@
         android:lines="3"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:text="@string/commentaires"
+        android:hint="@string/commentaires"
         android:textColor="@color/grey"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"

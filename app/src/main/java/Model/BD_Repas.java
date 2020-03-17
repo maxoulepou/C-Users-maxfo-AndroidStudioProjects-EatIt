@@ -117,7 +117,6 @@ public class BD_Repas extends SQLiteOpenHelper {
             Repas r = new Repas(mDate, mHeure, mDuree,  mNivFaim, mRepas, mCommentaire);
 
             lRepas.add(r);
-            result.moveToNext();
             System.out.println("addRepasDate fonctionne");
         }
         result.close();

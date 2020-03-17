@@ -13,14 +13,17 @@ import java.util.ArrayList;
 
 import Model.ObjectifPartage;
 import Model.ObjectifPersonnel;
+import Model.UnItemListener;
 
 public class ObjectifPartAdapter extends RecyclerView.Adapter<ObjectifPartViewHolder> {
 
     ArrayList<ObjectifPartage> mes_obj;
+    UnItemListener item;
 
 
-    public ObjectifPartAdapter(ArrayList<ObjectifPartage> mes_ressentis) {
+    public ObjectifPartAdapter(ArrayList<ObjectifPartage> mes_ressentis, UnItemListener itemListener) {
         this.mes_obj = mes_ressentis;
+        this.item = itemListener;
     }
 
     @NonNull
@@ -29,7 +32,7 @@ public class ObjectifPartAdapter extends RecyclerView.Adapter<ObjectifPartViewHo
         //Permet de chercher la vue
         LayoutInflater layoutinflater = LayoutInflater.from(parent.getContext());
         View view = layoutinflater.inflate(R.layout.ligne_objectifs_partage, parent, false);
-        return new ObjectifPartViewHolder(view);
+        return new ObjectifPartViewHolder(view, item);
     }
 
 

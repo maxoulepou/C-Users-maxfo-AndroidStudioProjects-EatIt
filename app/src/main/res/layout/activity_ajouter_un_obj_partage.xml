@@ -22,7 +22,7 @@
         android:id="@+id/ajout_objectifs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ajouter_un_objectif_partage"
+        android:text="@string/modifier_un_objectif_part"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

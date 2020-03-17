@@ -28,7 +28,6 @@ public class BD extends SQLiteOpenHelper {
     public static final String col_Sexe = "Sexe";
 
     public static String TABLE_NAME_BD_OBJ = "tableObjectifs";
-    //    public static String col_idUtilisateurObj = "IdUtilisateurDeLobjectif";
     public static String col_id_obj = "IdObjectif";
     public static String col_intitule = "Intitule";
     public static String col_type_obj = "TypeObjectif";
@@ -103,7 +102,6 @@ public class BD extends SQLiteOpenHelper {
 
     public void creerCompte(Patient p) {
         ContentValues cv = new ContentValues();
-//        formatedDate = sdf.format(date);
 
         cv.put(col_Email, p.getEmail());
         cv.put(col_Mdp, p.getMdp());
@@ -161,8 +159,7 @@ public class BD extends SQLiteOpenHelper {
 
     public boolean addObjectifs(String intitule, String type, String dateDebut, String dateFin, String commentaire, int accomplissement, String professionnel) {
         ContentValues cv = new ContentValues();
-//        formatedDate = sdf.format(date);
-//        cv.put(col_idUtilisateurObj, id);
+
         cv.put(col_intitule, intitule);
         cv.put(col_type_obj, type);
         cv.put(col_date_debut, dateDebut);
@@ -224,7 +221,7 @@ public class BD extends SQLiteOpenHelper {
             String mCommentaire = result.getString(6);
             String pro = result.getString(7);
 
-            ObjectifPartage obj = new ObjectifPartage(id, intitule, type, dateDebut, dateFin, mCommentaire, accomplissement,pro);
+            ObjectifPartage obj = new ObjectifPartage(id, intitule, type, dateDebut, dateFin, mCommentaire, accomplissement, pro);
 
             liste_objectifs_part.add(obj);
         }
@@ -257,37 +254,6 @@ public class BD extends SQLiteOpenHelper {
         result.close();
         return liste_objectifs_perso;
     }
-
-//    public ArrayList<Objectifs> getObjectifsPartage() {
-//        liste_objectifs_perso = new ArrayList<>();
-//        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'partage'", null);
-//        while (!result.isAfterLast()) {
-//            String idUtilisateur = result.getString(1);
-//            String intitule = result.getString(2);
-//            String type = result.getString(3);
-//            String dateDebut = result.getString(4);
-//            String dateFin = result.getString(5);
-//            String mNivFaim = result.getString(6);
-//            String mCommentaire = result.getString(7);
-//
-//            Objectifs obj = new Objectifs(idUtilisateur, intitule, type, dateDebut, dateFin, mCommentaire);
-//
-//            liste_objectifs_perso.add(obj);
-//            result.moveToNext();
-//        }
-//        result.close();
-//        return liste_objectifs_perso;
-//    }
-
-//    public void objAtteint(String id) {
-//        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_id_obj + " = '" + id + "'", null);
-//        while (!result.isAfterLast()) {
-//            ContentValues values = new ContentValues();
-//            values.put(col_atteint, "oui");
-//            this.getWritableDatabase().update(TABLE_NAME_BD_OBJ, values, col_id_obj + " = ? ", new String[]{String.valueOf(id)});
-//
-//        }
-//    }
 
     public ArrayList<ObjectifPersonnel> getObjectifPersoAtteint() {
 
@@ -338,5 +304,177 @@ public class BD extends SQLiteOpenHelper {
         return liste_objectifs_part_att;
     }
 
+    public ObjectifPersonnel getObjectifPerso(int id) {
+        String requete = "select * from " + TABLE_NAME_BD_OBJ + " where " + col_id_obj + " = " + id;
 
+        Cursor result = this.getWritableDatabase().rawQuery(requete, null);
+
+        result.moveToFirst();
+
+        int idobj = result.getInt(0);
+        String intitule = result.getString(1);
+        String type = result.getString(2);
+        String datedebut = result.getString(3);
+        String datefin = result.getString(4);
+        int accomplissement = result.getInt(5);
+        String comm = result.getString(6);
+
+        ObjectifPersonnel obj = new ObjectifPersonnel(idobj, intitule, type, datedebut, datefin, comm, accomplissement);
+        result.close();
+        return obj;
+    }
+
+
+    public boolean modifierObjPerso(int id, String intitule, String type, String dateDebut, String dateFin, String commentaire, int accomplissement) {
+
+        ContentValues cv = new ContentValues();
+        cv.put(col_intitule, intitule);
+        cv.put(col_type_obj, type);
+        cv.put(col_date_debut, dateDebut);
+        cv.put(col_date_fin, dateFin);
+        cv.put(col_accomplissement, accomplissement);
+
+        if (intitule.isEmpty()) {
+            return false;
+        }
+
+        if (type.isEmpty()) {
+            return false;
+        }
+
+        if (dateDebut.isEmpty()) {
+            return false;
+        }
+
+        if (dateFin.isEmpty()) {
+            return false;
+        }
+
+        if (commentaire.isEmpty()) {
+            cv.put(col_Commentaire, "Aucun");
+        } else {
+            cv.put(col_Commentaire, commentaire);
+        }
+
+        long result = this.getWritableDatabase().update(TABLE_NAME_BD_OBJ, cv, col_id_obj + "= ?", new String[]{String.valueOf(id)});
+
+        if (result == -1) {
+            return false;
+        } else {
+            System.out.println("Objectif ajouté");
+            return true;
+        }
+
+    }
+
+    public ObjectifPartage getObjectifPartage(int id) {
+        String requete = "select * from " + TABLE_NAME_BD_OBJ + " where " + col_id_obj + " = " + id;
+
+        Cursor result = this.getWritableDatabase().rawQuery(requete, null);
+
+        result.moveToFirst();
+
+        int idobj = result.getInt(0);
+        String intitule = result.getString(1);
+        String type = result.getString(2);
+        String datedebut = result.getString(3);
+        String datefin = result.getString(4);
+        int accomplissement = result.getInt(5);
+        String comm = result.getString(6);
+        String pro = result.getString(7);
+
+        ObjectifPartage obj = new ObjectifPartage(idobj, intitule, type, datedebut, datefin, comm, accomplissement,pro);
+        result.close();
+        return obj;
+    }
+
+    public boolean modifierObjPartage(int id, String intitule, String type, String dateDebut, String dateFin, String commentaire, int accomplissement, String pro) {
+
+        ContentValues cv = new ContentValues();
+        cv.put(col_intitule, intitule);
+        cv.put(col_type_obj, type);
+        cv.put(col_date_debut, dateDebut);
+        cv.put(col_date_fin, dateFin);
+        cv.put(col_accomplissement, accomplissement);
+        cv.put(col_professionnel, pro);
+
+        if (intitule.isEmpty()) {
+            return false;
+        }
+
+        if (type.isEmpty()) {
+            return false;
+        }
+
+        if (dateDebut.isEmpty()) {
+            return false;
+        }
+
+        if (dateFin.isEmpty()) {
+            return false;
+        }
+
+        if (pro.isEmpty()) {
+            return false;
+        }
+
+        if (commentaire.isEmpty()) {
+            cv.put(col_Commentaire, "Aucun");
+        } else {
+            cv.put(col_Commentaire, commentaire);
+        }
+
+        long result = this.getWritableDatabase().update(TABLE_NAME_BD_OBJ, cv, col_id_obj + "= ?", new String[]{String.valueOf(id)});
+
+        if (result == -1) {
+            return false;
+        } else {
+            System.out.println("Objectif modifié");
+            return true;
+        }
+
+    }
+
+
+    public ArrayList<Objectifs> getObjectifsAtteints() {
+
+        ArrayList<Objectifs> liste_objectifs_att = new ArrayList<Objectifs>();
+
+        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_accomplissement + "=10 ", null);
+
+        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()) {
+            int id = result.getInt(0);
+            String intitule = result.getString(1);
+            String type = result.getString(2);
+            String dateDebut = result.getString(3);
+            String dateFin = result.getString(4);
+            int accomplissement = result.getInt(5);
+            String mCommentaire = result.getString(6);
+
+           if (!result.isNull(7)) {
+               String pro = result.getString(7);
+               Objectifs obj = new ObjectifPartage(id,intitule,type,dateDebut,dateFin,mCommentaire,accomplissement,pro);
+               liste_objectifs_att.add(obj);
+           }
+           else {
+               Objectifs obj = new ObjectifPersonnel(id,intitule,type,dateDebut,dateFin,mCommentaire,accomplissement);
+               liste_objectifs_att.add(obj);
+           }
+
+        }
+
+        result.close();
+        return liste_objectifs_att;
+    }
+
+    public boolean supprimerObj(int idContact) {
+
+        int nombre = this.getWritableDatabase().delete(TABLE_NAME_BD_OBJ, col_id_obj + "=?", new String[]{String.valueOf(idContact)});
+
+        if (nombre == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
