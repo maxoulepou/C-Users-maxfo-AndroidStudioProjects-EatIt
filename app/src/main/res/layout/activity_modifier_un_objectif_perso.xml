@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
-        android:text="Objectif"/>
+        android:text="*Objectif"/>
 
     <TextView
         android:id="@+id/textDateDebut"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="50dp"
-        android:text="Début prévu"/>
+        android:text="*Début prévu"/>
 
         <TextView
             android:id="@+id/textDateFin"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="43dp"
             android:layout_marginEnd="50dp"
-            android:text="Fin prévue"/>
+            android:text="*Fin prévue"/>
 
         <TextView
             android:id="@+id/textEchelle"
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="43dp"
             android:layout_marginEnd="50dp"
-            android:text="Note de likert"/>
+            android:text="*Note de likert"/>
 
     </LinearLayout>
 

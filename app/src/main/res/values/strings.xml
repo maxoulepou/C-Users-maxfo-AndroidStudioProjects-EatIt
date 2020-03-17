@@ -125,11 +125,11 @@
 
     <!-- MON PROFIL -->
 
-    <string name="nom">Nom</string>
-    <string name="prenom">Prénom</string>
-    <string name="sexe">Sexe</string>
-    <string name="profilemail">E-mail</string>
-    <string name="profildatedenaissance">Date de naissance</string>
+    <string name="nom">*Nom</string>
+    <string name="prenom">*Prénom</string>
+    <string name="sexe">*Sexe</string>
+    <string name="profilemail">*E-mail</string>
+    <string name="profildatedenaissance">*Date de naissance</string>
     <string name="telephone">Téléphone</string>
     <string name="feminin">Féminin</string>
     <string name="masculin">Masculin</string>

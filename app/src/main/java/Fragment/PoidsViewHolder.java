@@ -17,6 +17,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
     private TextView poids;
     private TextView date;
     private TextView imc;
+    private TextView taille;
     private TextView muscle;
     private TextView graisse;
     private TextView tt;
@@ -28,6 +29,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         poids = (TextView) itemView.findViewById(R.id.tv_valeurpoids);
         date = (TextView) itemView.findViewById(R.id.tv_date);
+        taille = (TextView) itemView.findViewById(R.id.tv_valeurtaille);
         imc = (TextView) itemView.findViewById(R.id.tv_valeurimc);
         muscle = (TextView) itemView.findViewById(R.id.tv_valeurm);
         graisse = (TextView) itemView.findViewById(R.id.tv_valeurg);
@@ -40,6 +42,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
     void display(Poids pds){
 
         poids.setText(String.valueOf(pds.getPoids()));
+        taille.setText(String.valueOf(pds.getTaille()));
         date.setText(pds.getDate());
         imc.setText(String.valueOf(df2.format(pds.getImc())));
         if(pds.getGraisse()==0){

@@ -187,7 +187,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/fond_liste"
                 android:gravity="center"
-                android:hint="@string/date"
                 android:inputType="date"
                 android:padding="6dp"
                 app:layout_constraintStart_toStartOf="parent"

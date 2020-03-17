@@ -44,7 +44,7 @@ public class MonCorpsFragment extends Fragment {
     private String commentaires;
     private SeekBar seekbar;
     private EditText et_commentaires;
-    private Button enregistrer;
+    private Button enregistrer, supp1, supp2, supp3;
     private String date_selectionne;
     private int valeurSB;
 
@@ -70,6 +70,9 @@ public class MonCorpsFragment extends Fragment {
         seekbar = (SeekBar) view.findViewById(R.id.seekBarCorps);
         et_commentaires = (EditText) view.findViewById(R.id.commentaires);
         enregistrer = (Button) view.findViewById(R.id.bouton_enregistrer);
+        supp1=(Button) view.findViewById(R.id.button_supp_1);
+        supp2=(Button) view.findViewById(R.id.button_supp_2);
+        supp3=(Button) view.findViewById(R.id.button_supp_3);
 
         //On récupère la date picked dans le fragment afficher ressentis (RessentiFragment)
         date_selectionne = getActivity().getIntent().getStringExtra("date_choisie");
@@ -128,6 +131,27 @@ public class MonCorpsFragment extends Fragment {
             }
         });
 
+        supp1.setOnClickListener(new View.OnClickListener() {
+                                     @Override
+                                     public void onClick(View v) {
+                                         mOutputSpinnerTv.setText("");
+                                     }
+    });
+
+        supp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOutputSpinnerTv2.setText("");
+            }
+        });
+
+        supp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOutputSpinnerTv3.setText("");
+            }
+        });
+
 
         //On récupère la valeur de la seekbar et on la stocke dans le int valeurSB.
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -156,6 +180,7 @@ public class MonCorpsFragment extends Fragment {
         return view;
 
     }
+
 
 
     public void ajouterRessentiCorps() {
