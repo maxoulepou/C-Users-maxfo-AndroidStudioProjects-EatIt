@@ -150,7 +150,6 @@ public class BD_Contact extends SQLiteOpenHelper {
     public boolean modifierContact(int idContact, String prenom, String nom, String profession, String email, String telephone, String adresse) {
 
         ContentValues cv = new ContentValues();
-
         cv.put(col_idContact, idContact);
         cv.put(col_prenom, prenom);
         cv.put(col_nom, nom);
@@ -160,7 +159,6 @@ public class BD_Contact extends SQLiteOpenHelper {
         cv.put(col_adresse, adresse);
 
         int nombre = this.getWritableDatabase().update(TABLE_NAME, cv, col_idContact + "= ?", new String[]{String.valueOf(idContact)});
-
         if (nombre == 1) {
             return true;
         } else {
@@ -168,7 +166,6 @@ public class BD_Contact extends SQLiteOpenHelper {
         }
 
     }
-
 
     public boolean supprimerContact(int idContact) {
 
