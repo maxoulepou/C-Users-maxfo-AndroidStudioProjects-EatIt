@@ -53,6 +53,24 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         tt.setText(String.valueOf(df2.format(pds.getTt())));
         unitegraisse.setText(pds.getUniteGraisse());
         unitemuscle.setText(pds.getUniteMuscle());
+        if(pds.getGraisse()==0){
+            graisse.setText("---");
+        }
+        else {
+            graisse.setText(String.valueOf(df2.format(pds.getGraisse())));
+        }
 
+        if(pds.getMuscle()==0){
+            muscle.setText("---");
+        }
+        else {
+            muscle.setText(String.valueOf(df2.format(pds.getMuscle())));
+        }
+        if(pds.getTt()==0){
+            tt.setText("---");
+        }
+        else {
+            tt.setText(String.valueOf(df2.format(pds.getTt())));
+        }
     }
 }

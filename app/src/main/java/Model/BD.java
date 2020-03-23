@@ -26,6 +26,11 @@ public class BD extends SQLiteOpenHelper {
     public static final String col_Prenom = "Prenom";
     public static final String col_DateNaissance = "Date_de_naissance";
     public static final String col_Sexe = "Sexe";
+    public static final String col_ville = "Ville";
+    public static final String col_adresse = "Adresse";
+    public static final String col_codePostal = "CodePostale";
+    public static final String col_Num_Urgence = "ContactDurgence";
+
 
     public static String TABLE_NAME_BD_OBJ = "tableObjectifs";
     public static String col_id_obj = "IdObjectif";
@@ -56,6 +61,10 @@ public class BD extends SQLiteOpenHelper {
                 + col_Nom + " text, "
                 + col_Prenom + " text, "
                 + col_DateNaissance + " text, "
+                + col_ville + " text, "
+                + col_adresse + " text, "
+                + col_codePostal + " varchar(5), "
+                + col_Num_Urgence + " varchar(10), "
                 + col_Sexe + " text)";
         db.execSQL(strSQLUtilisateur);
         System.out.println("BD_Repas créer");
@@ -125,7 +134,11 @@ public class BD extends SQLiteOpenHelper {
         return "Pas de mail trouve";
     }
 
-    public boolean seConnecter(String mail, String mdp) {
+    public boolean addAdresse(String ville, String adresse, String codePostal){
+        return false; //TODO
+     }
+
+    public boolean seConnecter(String mail, String mdp){
         boolean peutSeConnecter = false;
         Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_UTILISATEUR + " where " + col_Email + " = '" + mail + "'", null);
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()) { //J'aurai bien mis juste result.moveTofirst() mais fonctionne pas...
@@ -477,4 +490,26 @@ public class BD extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean modifierInfosUtilisateurs(Patient p){
+        ContentValues cv = new ContentValues();
+        cv.put(col_Email, p.getEmail());
+        cv.put(col_Mdp, p.getMdp());
+        cv.put(col_Nom, p.getNom());
+        cv.put(col_Prenom, p.getPrenom());
+        cv.put(col_DateNaissance, p.getDateNaissance());
+        cv.put(col_ville, p.getVille());
+        cv.put(col_adresse, p.getAdresse());
+        cv.put(col_codePostal, p.getCodePostal());
+        cv.put(col_Num_Urgence, p.getContactUrgence());
+        cv.put(col_Sexe, p.getSexe());
+
+        int nombre = this.getWritableDatabase().update(TABLE_NAME_UTILISATEUR, cv, col_idUtilisateur + "= ?", new String[]{String.valueOf(idCo)});
+
+        if (nombre == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
