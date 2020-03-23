@@ -21,6 +21,7 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
     private TextView muscle;
     private TextView graisse;
     private TextView tt;
+    private TextView unitegraisse, unitemuscle;
     private static DecimalFormat df2 = new DecimalFormat("#.##");
 
 
@@ -34,7 +35,9 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         muscle = (TextView) itemView.findViewById(R.id.tv_valeurm);
         graisse = (TextView) itemView.findViewById(R.id.tv_valeurg);
         tt = (TextView) itemView.findViewById(R.id.tv_valeurtt);
-
+        tt = (TextView) itemView.findViewById(R.id.tv_valeurtt);
+        unitegraisse = (TextView) itemView.findViewById(R.id.unitegraisse);
+        unitemuscle = (TextView) itemView.findViewById(R.id.unitemuscle);
 
     }
 
@@ -48,6 +51,8 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         muscle.setText(String.valueOf(df2.format(pds.getMuscle())));
         graisse.setText(String.valueOf(df2.format(pds.getGraisse())));
         tt.setText(String.valueOf(df2.format(pds.getTt())));
+        unitegraisse.setText(pds.getUniteGraisse());
+        unitemuscle.setText(pds.getUniteMuscle());
 
     }
 }

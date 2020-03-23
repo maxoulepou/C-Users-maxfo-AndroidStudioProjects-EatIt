@@ -40,20 +40,17 @@
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/bonhommesport" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/activite_realisee"
-                    android:layout_width="wrap_content"
+                    android:layout_width="210dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="15dp"
                     android:background="@drawable/fond_liste"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Activité réalisée"
                     android:paddingStart="15dp"
                     android:textStyle="italic"
-                    android:paddingEnd="15dp"
-                    />
+                    android:paddingEnd="15dp"/>
 
             </LinearLayout>
 
@@ -73,7 +70,7 @@
 
                 <EditText
                     android:id="@+id/duree_activite"
-                    android:layout_width="wrap_content"
+                    android:layout_width="210dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/fond_liste"

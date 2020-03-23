@@ -39,8 +39,8 @@
         <activity android:name="Controleur.ExporterDonneesActivity"/>
         <activity android:name="Controleur.ModifierObjectifPersoActivity"/>
         <activity android:name="Controleur.ModifierObjectifPartageActivity"/>
-
-
+        <activity android:name="Controleur.AjouterEvntActivity"/>
+        <activity android:name="Controleur.AfficherEvenementsSanteActivity"/>
         <activity android:name="Controleur.AjouterObjectifPersoActivity"/>
         <activity android:name="Controleur.AjouterObjectifPartageActivity"/>
 

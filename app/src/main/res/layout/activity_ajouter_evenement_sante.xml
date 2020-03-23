@@ -79,7 +79,7 @@
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:paddingLeft="15dp"
+                android:gravity="center"
                 android:background="@drawable/rectanglebleu"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="15dp"/>

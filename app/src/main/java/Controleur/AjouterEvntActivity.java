@@ -1,80 +1,47 @@
 package Controleur;
 
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import com.example.eatit.R;
-
-import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import Model.BD_Poids;
+import Model.BD_Evenement;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class AjouterPoidsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AjouterEvntActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    String date_selectionnee;
+    BD_Evenement bde;
 
-    String date_selectionnee;    //Nous sert à récupérer la date sélectionnée dans le calendrier
-    BD_Poids bdp;    //Nous sert à appeler les fonctions qu'on trouve dans BD_Poids, notamment "insererPoids"
-
-    // On crée des variables qui correspondent aux différents EditText + bouton du layout
-    // "activity_ajouter_poids"
-
-    EditText editPoids, editTaille, editTT, editMuscle, editGraisse;
+    EditText editEvenement, editCommentaire;
     TextView editDate;
     Button boutonAjouter;
-
-    private Spinner mSpinner, mSpinner2;
-
 
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajouter_poids);
-        bdp = new BD_Poids(this);
-        mSpinner = findViewById(R.id.spinner);
-        mSpinner2 = findViewById(R.id.spinner2);
-
-        // On cast les variables EditText et Button en recherchant les edittext et boutons grâce à leur ID
-
-        editPoids = (EditText) findViewById(R.id.et_poids_poids);
-        editTaille = (EditText) findViewById(R.id.et_poids_taille);
-        editDate = (TextView) findViewById(R.id.et_poids_date);
+        setContentView(R.layout.activity_ajouter_evenement_sante);
+        bde = new BD_Evenement(this);
+        editEvenement = (EditText) findViewById(R.id.evnt_sante);
+        editCommentaire = (EditText) findViewById(R.id.commentaires);
+        editDate = (TextView) findViewById(R.id.date);
         editDate.setInputType(InputType.TYPE_NULL);
-        editTT = (EditText) findViewById(R.id.et_poids_tt);
-        editMuscle = (EditText) findViewById(R.id.et_poids_muscle);
-        editGraisse = (EditText) findViewById(R.id.et_poids_graisse);
+        boutonAjouter = (Button) findViewById(R.id.but_contact_enregistrer);
 
-        boutonAjouter = (Button) findViewById(R.id.but_poids_enregistrer);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.numbers, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpinner.setAdapter(adapter);
-        mSpinner.setOnItemSelectedListener(this);
-
-        mSpinner2.setAdapter(adapter);
-        mSpinner2.setOnItemSelectedListener(this);
-
-        //On va ajouter un listener sur le champ qui sert à rentrer la date pour déclencher l'ouverture du calendrier
         editDate.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -100,7 +67,7 @@ public class AjouterPoidsActivity extends AppCompatActivity implements AdapterVi
                                                     //pour l'utilisateur.
 
                                                     //Formatage pour la BD.
-                                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.FRANCE);
+                                                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE);
                                                     date_selectionnee = dateFormat.format(cldr.getTime()); //cldr.getTime() envoie un objet de type Date. La date est formatée en String de la forme "yyyy-MM-dd HH:mm:ss".
 
                                                     //Formatage pour l'affichage de l'edittext qui s'appelle "editDate"
@@ -111,7 +78,7 @@ public class AjouterPoidsActivity extends AppCompatActivity implements AdapterVi
 
                                             };
 
-                                            new DatePickerDialog(AjouterPoidsActivity.this, date, cldr
+                                            new DatePickerDialog(AjouterEvntActivity.this, date, cldr
                                                     .get(Calendar.YEAR), cldr.get(Calendar.MONTH),
                                                     cldr.get(Calendar.DAY_OF_MONTH)).show();
 
@@ -121,75 +88,34 @@ public class AjouterPoidsActivity extends AppCompatActivity implements AdapterVi
                                     }
         );
 
-        ajouterPoids();
+        ajouterEvenement();
     }
 
-
-    public void ajouterPoids() {
-
+    private void ajouterEvenement() {
         boutonAjouter.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
                 String date;
-                double poids;
-                double taille;
-                double imc;
-                double tt;
-                double muscle;
-                double graisse;
+                String evenement;
+                String commentaire;
 
                 date = date_selectionnee;
+                evenement = editEvenement.getText().toString();
+                commentaire = editCommentaire.getText().toString();
 
-                if (editPoids.getText().toString().isEmpty()) {
-                    poids = -1;
-                } else {
-                    poids = Double.parseDouble(editPoids.getText().toString());
-                }
-
-                if (editTaille.getText().toString().isEmpty()) {
-                    taille = -1;
-                } else {
-                    taille = Double.parseDouble(editTaille.getText().toString());
-                }
-
-                if (editTT.getText().toString().isEmpty()) {
-                    tt = -1;
-                } else {
-                    tt = Double.parseDouble(editTT.getText().toString());
-                }
-
-                if (editGraisse.getText().toString().isEmpty()) {
-                    graisse = -1;
-                } else {
-                    graisse = Double.parseDouble(editGraisse.getText().toString());
-                }
-
-                if (editMuscle.getText().toString().isEmpty()) {
-                    muscle = -1;
-                } else {
-                    muscle = Double.parseDouble(editMuscle.getText().toString());
-                }
-
-                if (taille == -1 || poids == -1) {
-                    imc = -1;
-                } else {
-                    imc = poids / (Math.pow(taille, 2));
-                }
-
-
-                boolean isInserted = bdp.insererPoids(date, poids, taille, imc, tt, graisse, muscle);
-
+                boolean isInserted = bde.insererEvenement(date, evenement, commentaire);
 
                 if (isInserted == true) {
-                    Toast.makeText(AjouterPoidsActivity.this, "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
-                    openNewActivity(MenuBasActivity.class);
+                    Toast.makeText(AjouterEvntActivity.this, "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
+                    System.out.println("HELLO WORLD");
                 } else {
-                    Toast.makeText(AjouterPoidsActivity.this, "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AjouterEvntActivity.this, "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
+                    System.out.println("NOT WORLD");
                 }
             }
-        });
+            });
     }
 
     public void openNewActivity(Class nouvelle_classe) {
@@ -208,4 +134,3 @@ public class AjouterPoidsActivity extends AppCompatActivity implements AdapterVi
 
     }
 }
-

@@ -33,7 +33,7 @@ public class BD_Evenement extends SQLiteOpenHelper {
                 + col_idEvenement + " integer primary key autoincrement,"
                 + col_date + " text not null,"
                 + col_evenement + " text not null,"
-                + col_comm + " text,"
+                + col_comm + " text "
                 + ")";
 
         db.execSQL(strSQL);
@@ -85,7 +85,7 @@ public class BD_Evenement extends SQLiteOpenHelper {
             String evenement = touslesevenements.getString(2);
             String comm = touslesevenements.getString(3);
 
-            liste_evenement.add(new Evenement(idEvenement, date, comm, evenement));
+            liste_evenement.add(new Evenement(idEvenement, date, evenement, comm));
         }
 
         return liste_evenement;
