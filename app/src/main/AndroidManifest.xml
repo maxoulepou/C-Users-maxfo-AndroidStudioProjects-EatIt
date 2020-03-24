@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="Controleur.AjouterPoidsActivity" />
-        <activity android:name="Controleur.MainActivity">
+        <activity android:name="Controleur.MenuBasActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

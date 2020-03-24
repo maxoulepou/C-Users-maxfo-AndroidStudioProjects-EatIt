@@ -146,6 +146,22 @@ public class AjouterPoidsActivity extends AppCompatActivity implements AdapterVi
                 double tt;
                 double muscle;
                 double graisse;
+                String unitegraisse="";
+                String unitemuscle="";
+
+                if(mSpinner.getSelectedItem().toString().isEmpty()){
+                    Toast.makeText(AjouterPoidsActivity.this, "Renseignez une unité.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    unitemuscle = mSpinner.getSelectedItem().toString();
+                }
+
+                if(mSpinner.getSelectedItem().toString().isEmpty()){
+                    Toast.makeText(AjouterPoidsActivity.this, "Renseignez une unité.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    unitegraisse = mSpinner2.getSelectedItem().toString();;
+                }
 
                 date = date_selectionnee;
 
@@ -186,7 +202,7 @@ public class AjouterPoidsActivity extends AppCompatActivity implements AdapterVi
                 }
 
 
-                boolean isInserted = bdp.insererPoids(date, poids, taille, imc, tt, graisse, muscle);
+                boolean isInserted = bdp.insererPoids(date, poids, taille, imc, tt, graisse, unitegraisse, muscle, unitemuscle);
 
 
                 if (isInserted == true) {

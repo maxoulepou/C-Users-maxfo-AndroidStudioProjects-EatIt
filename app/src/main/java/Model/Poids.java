@@ -25,7 +25,7 @@ public class Poids {
      * @param graisse
      * @param tt
      */
-    public Poids(double poids, double taille, String date, double muscle, double graisse, double tt) {
+    public Poids(double poids, double taille, String date, double muscle, String unitemuscle, double graisse, String unitegraisse, double tt) {
         this.poids = poids;
         this.taille = taille;
         this.setImc();

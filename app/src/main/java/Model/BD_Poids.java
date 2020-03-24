@@ -26,7 +26,10 @@ public class BD_Poids extends SQLiteOpenHelper {
     public static final String col_date = "Date";
     public static final String col_tt = "TT";
     public static final String col_graisse = "Graisse";
+    public static final String col_unite_graisse = "UniteGraisse";
     public static final String col_muscle = "Muscle";
+    public static final String col_unite_muscle = "UniteMuscle";
+
 
 
 //    ---------------- LISTE DE CONTACTS -------------------------------------------
@@ -52,7 +55,9 @@ public class BD_Poids extends SQLiteOpenHelper {
                 + col_imc + " double not null,"
                 + col_tt + " double,"
                 + col_graisse + " double,"
+                + col_unite_graisse + " text,"
                 + col_muscle + " double,"
+                + col_unite_muscle + " text,"
                 + "CONSTRAINT regle CHECK(" + col_poids + " BETWEEN 5 AND 400 AND " + col_taille + " BETWEEN 0 AND 400)"
                 + ")";
 
@@ -78,7 +83,7 @@ public class BD_Poids extends SQLiteOpenHelper {
      * @param muscle
      * @return
      */
-    public boolean insererPoids(String date, double poids, double taille, double imc, double tt, double graisse, double muscle) {
+    public boolean insererPoids(String date, double poids, double taille, double imc, double tt, double graisse, String unitegraisse, double muscle, String unitemuscle) {
 
         ContentValues cv = new ContentValues();
 
@@ -106,6 +111,20 @@ public class BD_Poids extends SQLiteOpenHelper {
             cv.putNull(col_muscle);
         } else {
             cv.put(col_muscle, muscle);
+        }
+
+        if(unitegraisse.isEmpty()) {
+            cv.put(col_unite_graisse, "(?)");
+        }
+        else{
+            cv.put(col_unite_graisse,unitegraisse);
+        }
+
+        if(unitemuscle.isEmpty()) {
+            cv.put(col_unite_muscle, "(?)");
+        }
+        else{
+            cv.put(col_unite_muscle,unitemuscle);
         }
 
 
@@ -231,20 +250,23 @@ public class BD_Poids extends SQLiteOpenHelper {
 
         liste_poids = new ArrayList<Poids>();
 
-        String requete = "select " + col_date + "," + col_poids + "," + col_taille + "," + col_tt + "," + col_graisse + "," + col_muscle + " from " + TABLE_NAME + " order by " + col_date + " desc";
+        String requete = "select * from " + TABLE_NAME + " order by " + col_date + " desc";
 
         Cursor touslespoids = this.getWritableDatabase().rawQuery(requete, null);
 
         for (touslespoids.moveToFirst(); !touslespoids.isAfterLast(); touslespoids.moveToNext()) {
 
-            String date = touslespoids.getString(0);
-            double poids = touslespoids.getDouble(1);
-            double taille = touslespoids.getDouble(2);
-            double tt = touslespoids.getDouble(3);
-            double graisse = touslespoids.getDouble(4);
-            double muscle = touslespoids.getDouble(5);
+            String date = touslespoids.getString(1);
+            double poids = touslespoids.getDouble(2);
+            double taille = touslespoids.getDouble(3);
+            double tt = touslespoids.getDouble(5);
+            double graisse = touslespoids.getDouble(6);
+            String unitegraisse = touslespoids.getString(7);
+            double muscle = touslespoids.getDouble(8);
+            String unitemuscle = touslespoids.getString(9);
 
-            liste_poids.add(new Poids(poids,taille,date,muscle,graisse,tt));
+
+            liste_poids.add(new Poids(poids,taille,date,muscle,unitemuscle,graisse,unitegraisse,tt));
         }
 
         return liste_poids;
