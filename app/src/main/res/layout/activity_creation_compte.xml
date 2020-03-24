@@ -54,6 +54,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rectanglebleu"
             android:ems="10"
+            android:paddingLeft="15dp"
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@+id/text_mdp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +81,7 @@
             android:background="@drawable/rectanglebleu"
             android:ems="10"
             android:inputType="textPassword"
+            android:paddingLeft="15dp"
             app:layout_constraintBottom_toTopOf="@+id/text_nom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +105,7 @@
             android:background="@drawable/rectanglebleu"
             android:ems="10"
             android:inputType="textPersonName"
+            android:paddingLeft="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_nom" />
@@ -128,6 +131,7 @@
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:paddingLeft="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_prenom" />
@@ -151,6 +155,7 @@
             android:ems="10"
             android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
+            android:paddingLeft="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_date_naissance" />
 

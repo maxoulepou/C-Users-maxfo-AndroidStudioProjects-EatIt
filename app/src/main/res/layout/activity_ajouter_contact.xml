@@ -149,7 +149,7 @@
 
         <TextView
             android:id="@+id/textView14"
-            android:layout_width="90dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:text="Téléphone"/>
 
@@ -174,7 +174,7 @@
 
         <TextView
             android:id="@+id/textView10"
-            android:layout_width="90dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:text="Adresse"/>
 

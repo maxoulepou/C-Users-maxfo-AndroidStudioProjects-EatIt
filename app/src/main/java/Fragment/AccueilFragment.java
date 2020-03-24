@@ -1,23 +1,28 @@
 package Fragment;
 
 import com.example.eatit.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.timessquare.CalendarPickerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 
 import Controleur.AfficherListeContactsActivity;
 import Controleur.ExporterDonneesActivity;
+import Controleur.MainActivity;
 import Controleur.MesRepasActivity;
 import Controleur.MonProfilEtEvntActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
@@ -33,6 +38,8 @@ public class AccueilFragment extends Fragment {
     private CalendarPickerView mCalendarPickerView;
     private int mois, jour, annee;
     ImageButton menu;
+    ImageView deconnexion;
+    private FirebaseAuth mAuth;
 
     @Nullable
     @Override
@@ -48,6 +55,8 @@ public class AccueilFragment extends Fragment {
 
         mCalendarPickerView = (CalendarPickerView) view.findViewById(R.id.calendar);
         menu = (ImageButton) view.findViewById(R.id.menu);
+        deconnexion = view.findViewById(R.id.deconnexion);
+        mAuth=FirebaseAuth.getInstance();
 
         mCalendarPickerView.init(lastYear.getTime(), nextMonth.getTime())
                 .inMode(CalendarPickerView.SelectionMode.SINGLE).withSelectedDate(new Date());
@@ -99,6 +108,17 @@ public class AccueilFragment extends Fragment {
                 popupMenu.show();
             }
         });
+
+        // Déconnexion
+
+        deconnexion.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                @Override
+                public void onClick(View view) {
+                    mAuth.signOut();
+                    startActivity(new Intent(getActivity(), MainActivity.class));
+                }
+            });
 
          return view;
     }
