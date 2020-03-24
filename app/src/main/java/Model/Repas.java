@@ -4,15 +4,18 @@ package Model;
  * Gestion des objets de type Repas.
  */
 public class Repas {
-    private String duree, niveauFaim;
     private String typeRepas;
+    private String duree, niveauFaim, niveauEnvie, niveauSatiete, contexteRepas;
     private String description, mDate;
     private String heure;
 
-    public Repas (String date, String heure, String duree, String niveauFaim, String typeRepas, String description){
+    public Repas (String date, String heure, String duree, String niveauFaim, String typeRepas, String description, String niveauEnvie, String niveauSatiete, String contexteRepas){
         this.mDate = date;
         this.duree = duree;
-        this. niveauFaim = niveauFaim;
+        this.niveauFaim = niveauFaim;
+        this.niveauEnvie = niveauEnvie;
+        this.niveauSatiete = niveauSatiete;
+        this.contexteRepas = contexteRepas;
         this.typeRepas = typeRepas;
         this.description = description;
         this.heure = heure;
@@ -32,6 +35,18 @@ public class Repas {
 
     public String getNiveauFaim() {
         return niveauFaim;
+    }
+
+    public String getNiveauEnvie() {
+        return niveauEnvie;
+    }
+
+    public String getNiveauSatiete() {
+        return niveauSatiete;
+    }
+
+    public String getContexteRepas() {
+        return contexteRepas ;
     }
 
     public String getTypeRepas() {

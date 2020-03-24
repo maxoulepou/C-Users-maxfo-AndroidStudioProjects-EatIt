@@ -13,6 +13,9 @@ public class RepasViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.fragment_texte_typeRepas) TextView typeRepas;
     @BindView(R.id.fragment_heureRepas) TextView heureRepas;
     @BindView(R.id.fragment_NivFaim) TextView NivFaim;
+    @BindView(R.id.fragment_NivEnvie) TextView NivEnvie;
+    @BindView(R.id.fragment_NivSatiete) TextView NivSatiete;
+    @BindView(R.id.fragment_contexterepas) TextView Contexte;
     @BindView(R.id.fragment_dureeRepas) TextView duree;
     @BindView(R.id.fragment_commentaireRepas) TextView commentaire;
 
@@ -26,6 +29,9 @@ public class RepasViewHolder extends RecyclerView.ViewHolder {
         typeRepas.setAllCaps(true);
         heureRepas.setText(repas.getHeure());
         NivFaim.setText(repas.getNiveauFaim());
+        NivEnvie.setText(repas.getNiveauEnvie());
+        NivSatiete.setText(repas.getNiveauSatiete());
+        Contexte.setText(repas.getContexteRepas());
         duree.setText(repas.getDuree() + " minutes");
         commentaire.setText(repas.getDescription());
     }

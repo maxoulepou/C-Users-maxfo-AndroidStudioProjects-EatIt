@@ -57,7 +57,8 @@ public class MonActiviteFragment extends Fragment {
     Button trestresdifficile;
     Button maximal;
     Button enregistrer;
-
+    Spinner spinner;
+    
 //    Vibrator v = (Vibrator) getActivity().getSystemService(getContext().VIBRATOR_SERVICE);
 
     BD_Ressenti bdr;
@@ -74,8 +75,6 @@ public class MonActiviteFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_mon_activite, container, false);
 
         bdr = new BD_Ressenti(getContext());
-
-        activite_realisee = (EditText) view.findViewById(R.id.activite_realisee);
         duree_activite = (EditText) view.findViewById(R.id.duree_activite);
 
         aucuneffort = (Button) view.findViewById(R.id.aucun_effort);
@@ -89,10 +88,41 @@ public class MonActiviteFragment extends Fragment {
         tresdifficile = (Button) view.findViewById(R.id.tres_difficile);
         trestresdifficile = (Button) view.findViewById(R.id.tres_tres_difficile);
         maximal = (Button) view.findViewById(R.id.maximal);
-
         enregistrer = (Button) view.findViewById(R.id.bouton_enregistrer_activite);
-
         et_commentaire = (EditText) view.findViewById(R.id.commentaires);
+        spinner= view.findViewById(R.id.activite_realisee);
+
+        List<String> categories = new ArrayList<>();
+        categories.add(0, "Votre activité");
+        categories.add("Marche");
+        categories.add("Course");
+        categories.add("Vélo");
+        categories.add("Gym douce");
+        categories.add("Yoga");
+        categories.add("Sport collectif");
+        categories.add("Natation");
+        categories.add("Randonnée");
+        categories.add("Aquagym");
+
+        //Creating the ArrayAdapter instance having the list of options
+        ArrayAdapter aa = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, categories);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //setting the ArrayAdapter data on the Spinner
+        spinner.setAdapter(aa);
+
+        //spinner item click handler
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String text = parent.getItemAtPosition(position).toString();
+                Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         date_selectionne = getActivity().getIntent().getStringExtra("date_choisie");
 
@@ -124,7 +154,7 @@ public class MonActiviteFragment extends Fragment {
                     duree = Integer.parseInt(duree_activite.getText().toString());
                 }
 
-                activite = activite_realisee.getText().toString();
+                activite = spinner.getSelectedItem().toString();
 
                 boolean isInserted = bdr.insererRessentiActivite(date_selectionne, activite, commentaire, difficulte, duree);
 

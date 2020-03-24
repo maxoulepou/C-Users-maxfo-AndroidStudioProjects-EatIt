@@ -54,13 +54,13 @@ public class AjouterRepasActivity extends AppCompatActivity {
     private String typeRepas;
     private ImageView petitDej, dejeuner, collation, diner, autre;
     private EditText mDuree, mCommentaire;
-    private TextView mDate, mHeure, valeur_seekbar;
-    private SeekBar mNiveauFaim;
+    private TextView mDate, mHeure, valeur_seekbar, valeur_seekbar_envie, valeur_seekbar_satiete, valeur_seekbar_contexte;
+    private SeekBar mNiveauFaim, mNiveauEnvie, mNiveauSatiete, mContexteRepas;
     public BD_Repas mBD_repas;
     private boolean isEnregistre;
     private String datepicked;
     private String timepicked;
-    int valeurSB;
+    int valeurSB, valeurSB2, valeurSB3, valeurSB4;
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +80,13 @@ public class AjouterRepasActivity extends AppCompatActivity {
         mDuree = (EditText) findViewById(R.id.editTextDuree);
         mCommentaire = (EditText) findViewById(R.id.editTextComm);
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
+        mNiveauEnvie = (SeekBar) findViewById(R.id.seekBarEnvie);
+        mNiveauSatiete = (SeekBar) findViewById(R.id.seekBarSatiete);
+        mContexteRepas = (SeekBar) findViewById(R.id.seekBarContexte);
         valeur_seekbar = (TextView) findViewById(R.id.valeurSeekBar);
+        valeur_seekbar_envie = (TextView) findViewById(R.id.valeurSeekBarEnvie);
+        valeur_seekbar_satiete = (TextView) findViewById(R.id.valeurSeekBarSatiete);
+        valeur_seekbar_contexte = (TextView) findViewById(R.id.valeurSeekBarContexte);
 
 //        mButtonTakePhoto.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -278,6 +284,69 @@ public class AjouterRepasActivity extends AppCompatActivity {
             }
         });
 
+        mNiveauEnvie.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                // TODO Auto-generated method stub
+                valeur_seekbar_envie.setText(String.valueOf(progress));
+                valeurSB2 = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        mNiveauSatiete.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                // TODO Auto-generated method stub
+                valeur_seekbar_satiete.setText(String.valueOf(progress));
+                valeurSB3 = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        mContexteRepas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                // TODO Auto-generated method stub
+                valeur_seekbar_contexte.setText(String.valueOf(progress));
+                valeurSB4 = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+        });
+
       ajouterRepas();
     }
 
@@ -287,12 +356,15 @@ public void ajouterRepas (){
         @Override
         public void onClick(View v) {
             isEnregistre = mBD_repas.addRepas(mDate.getText().toString(), mHeure.getText().toString(),
-                    mDuree.getText().toString(), mNiveauFaim.getProgress(),
+                    mDuree.getText().toString(), mNiveauFaim.getProgress(), mNiveauEnvie.getProgress(), mNiveauSatiete.getProgress(), mContexteRepas.getProgress(),
                     mCommentaire.getText().toString(), typeRepas);
             System.out.println("enregistré");
             System.out.println(mDate.getText().toString());
             System.out.println(mDuree.getText().toString());
             System.out.println(mNiveauFaim.getProgress());
+            System.out.println(mNiveauEnvie.getProgress());
+            System.out.println(mNiveauSatiete.getProgress());
+            System.out.println(mContexteRepas.getProgress());
             System.out.println(mCommentaire.getText().toString());
             System.out.println(typeRepas);
             if (isEnregistre == true) {
@@ -312,6 +384,9 @@ public void ajouterRepas (){
     private void initializeVariables() {
         mNiveauFaim = (SeekBar) findViewById(R.id.seekBar2);
     }
+    private void initializeVariables2() { mNiveauEnvie = (SeekBar) findViewById(R.id.seekBarEnvie);}
+    private void initializeVariables3() { mNiveauSatiete = (SeekBar) findViewById(R.id.seekBarSatiete);}
+    private void initializeVariables4() { mContexteRepas = (SeekBar) findViewById(R.id.seekBarContexte);}
 
 
     public void addPhoto() {

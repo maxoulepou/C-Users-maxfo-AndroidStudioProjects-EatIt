@@ -88,15 +88,11 @@ public class MonCorpsFragment extends Fragment {
 
         List<String> categories = new ArrayList<>();
         categories.add(0, "Votre ressenti");
-        categories.add("Fatigué(e)");
-        categories.add("Plein d'énergie");
-        categories.add("Nausées");
-        categories.add("Migraine");
-        categories.add("Maux de ventre");
-        categories.add("Diarrhée");
-        categories.add("Constipé(e)");
-        categories.add("Balloné(e)");
-        categories.add("Douloureux(se)");
+        categories.add("Je suis gêné(e)");
+        categories.add("Je suis douloureux(se)");
+        categories.add("Je suis mal à l'aise");
+        categories.add("Je suis courbaturé(e)");
+        categories.add("Je suis plein(e) d'énergie");
         categories.add("Autre");
 
         //Creating the ArrayAdapter instance having the list of options

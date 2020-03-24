@@ -12,6 +12,8 @@ public class Poids {
     private double muscle;
     private double graisse;
     private double tt;
+    private String unitegraisse;
+    private String unitemuscle;
 
     /**
      * Constructeur initialisant tous les attributs de la classe.
@@ -31,6 +33,8 @@ public class Poids {
         this.muscle = muscle;
         this.graisse = graisse;
         this.tt = tt;
+        this.unitegraisse=unitegraisse;
+        this.unitemuscle=unitemuscle;
     }
 
 
@@ -73,5 +77,13 @@ public class Poids {
 
     public double getTt() {
         return tt;
+    }
+
+    public String getUniteGraisse() {
+        return unitegraisse;
+    }
+
+    public String getUniteMuscle() {
+        return unitemuscle;
     }
 }
