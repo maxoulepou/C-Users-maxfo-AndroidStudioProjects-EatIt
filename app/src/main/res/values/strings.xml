@@ -40,7 +40,7 @@
     <string name="bienvenue_sur_eatie">Bienvenue sur EATIE !</string>
     <string name="se_connecter">Se connecter</string>
     <string name="mdp_oublie">Mot de passe oublié ?</string>
-    <string name="creer_son_compte">Créer son compte</string>
+    <string name="creer_son_compte">Créer mon compte</string>
     <string name="identifiant">IDENTIFIANT</string>
     <string name="mdp">MOT DE PASSE</string>
     <string name="email">E-MAIL</string>
@@ -109,9 +109,9 @@
     <string name="départ">Données de départ du </string>
     <string name="actuel">Données actuelles du </string>
     <string name="poidsdepart">Poids de départ</string>
-    <string name="ttdepart">TT de départ</string>
+    <string name="ttdepart">Tour de taille de départ</string>
     <string name="poidsactuel">Poids actuel</string>
-    <string name="ttactuel">TT actuel</string>
+    <string name="ttactuel">Tour de taille actuel</string>
     <string name="tailleactuelle">Taille actuelle :</string>
     <string name="votreimc">VOTRE IMC :</string>
     <string name="echellenbre"><![CDATA[<18,5]]></string>
@@ -185,8 +185,6 @@
 
     <string name="modifier_objectif">Mettre à jour l\'objectif</string>
     <string name="supprimer_objectif"><u>Supprimer l\'objectif</u></string>
-
-
 
     <!-- AUTRES -->
 

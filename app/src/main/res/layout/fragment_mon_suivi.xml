@@ -51,7 +51,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:padding="10dp"
-                    android:layout_marginStart="7dp"/>
+                    android:layout_marginStart="18dp"/>
 
                 <TextView
                     android:id="@+id/textView24"
@@ -61,7 +61,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:padding="10dp"
-                    android:layout_marginStart="144dp"/>
+                    android:layout_marginStart="145dp"/>
 
                 <TextView
                     android:id="@+id/tv_poids_dep"
@@ -74,7 +74,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:layout_marginTop="43dp"
-                    android:layout_marginStart="27dp"/>
+                    android:layout_marginStart="40dp"/>
 
                 <TextView
                     android:id="@+id/tv_tt_dep"
@@ -87,7 +87,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:layout_marginTop="43dp"
-                    android:layout_marginStart="155dp"/>
+                    android:layout_marginStart="190dp"/>
 
             </RelativeLayout>
 
@@ -125,7 +125,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:padding="10dp"
-                    android:layout_marginStart="17dp"/>
+                    android:layout_marginStart="27dp"/>
 
                 <TextView
                     android:id="@+id/textView3"
@@ -135,7 +135,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:padding="10dp"
-                    android:layout_marginStart="155dp"/>
+                    android:layout_marginStart="153dp"/>
 
                 <TextView
                     android:id="@+id/tv_poids_act"
@@ -147,7 +147,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:layout_marginTop="43dp"
-                    android:layout_marginStart="27dp"
+                    android:layout_marginStart="40dp"
                     android:textAlignment="center"/>
 
                 <TextView
@@ -157,7 +157,7 @@
                     android:background="@drawable/rectanglejaune"
                     android:padding="6sp"
                     android:layout_marginTop="43dp"
-                    android:layout_marginStart="155dp"
+                    android:layout_marginStart="190dp"
                     android:text="TextView"
                     android:textAlignment="center"
                     android:textColor="@color/white"

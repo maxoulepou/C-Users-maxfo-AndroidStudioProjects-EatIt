@@ -103,6 +103,7 @@ public class MonActiviteFragment extends Fragment {
         categories.add("Natation");
         categories.add("Randonnée");
         categories.add("Aquagym");
+        categories.add("Autre");
 
         //Creating the ArrayAdapter instance having the list of options
         ArrayAdapter aa = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, categories);

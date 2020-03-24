@@ -81,7 +81,7 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="180dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10sp"
