@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment gérant les événements de santé accessibles à partir de "mon profil".
  */
 public class MesEvntsSanteFragment extends Fragment {
 

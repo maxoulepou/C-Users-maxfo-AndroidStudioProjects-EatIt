@@ -33,7 +33,7 @@ import Model.BD_Poids;
 /**
  * Activité qui gère l'ajout des données relatives au poids.
  */
-public class AjouterPoidsActivity extends AppCompatActivity {
+public class AjouterPoidsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
     String date_selectionnee;    //Nous sert à récupérer la date sélectionnée dans le calendrier

@@ -85,7 +85,7 @@
 
             <EditText
                 android:id="@+id/editObjectif"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
@@ -96,7 +96,7 @@
 
             <EditText
                 android:id="@+id/editAvec"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/fond_objectif_partage"
                 android:ems="10"
