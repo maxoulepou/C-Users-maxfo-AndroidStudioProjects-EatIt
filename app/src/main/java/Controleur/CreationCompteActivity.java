@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -66,11 +67,12 @@ public class CreationCompteActivity extends AppCompatActivity {
                 if (mBD.getId(textMail.getText().toString()).equals("Pas de mail trouve")){
                     Patient p = new Patient(textMail.getText().toString(), textMdp.getText().toString(), textNom.getText().toString(), textPrenom.getText().toString(), sexe, textDateNaissance.getText().toString());
                     mBD.creerCompte(p);
+                    Toast.makeText(CreationCompteActivity.this, "Votre compte a bien été créé", Toast.LENGTH_SHORT).show();
                     Intent ContactActivity = new Intent(CreationCompteActivity.this, MenuBasActivity.class);
                     startActivity(ContactActivity);
                 }
                 else {
-                    System.out.println("Ce compte existe deja");
+                    Toast.makeText(CreationCompteActivity.this, "Ce compte existe déjà.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

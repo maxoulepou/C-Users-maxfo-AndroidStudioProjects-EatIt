@@ -10,6 +10,9 @@
         android:maxSdkVersion="18" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
 
     <application
@@ -19,8 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="Controleur.AjouterPoidsActivity" />
-        <activity android:name="Controleur.MenuBasActivity">
+        <activity android:name="Controleur.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name="Controleur.Poids_SuiviActivity" />
+        <activity android:name="Controleur.AjouterPoidsActivity" />
         <activity android:name="Controleur.AfficherUnContactActivity" />
         <activity android:name="Controleur.AjouterContactActivity" />
         <activity android:name="Controleur.AjouterRepasActivity"/>
@@ -43,6 +46,14 @@
         <activity android:name="Controleur.AfficherEvenementsSanteActivity"/>
         <activity android:name="Controleur.AjouterObjectifPersoActivity"/>
         <activity android:name="Controleur.AjouterObjectifPartageActivity"/>
+        <activity android:name="Controleur.MenuBasActivity"/>
+        <activity android:name="Controleur.AfficherDonneesPoidsActivity"/>
+        <activity android:name="Controleur.MesObjectifsActivity"/>
+        <activity android:name="Controleur.MesRepasActivity"/>
+
+
+
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -116,6 +116,7 @@
 
             <EditText
                 android:id="@+id/editEchelle"
+                android:inputType="numberDecimal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -123,7 +124,8 @@
                 android:ems="10"
                 android:padding="6dp"
                 android:layout_gravity="center_horizontal"
-                android:drawableLeft="@drawable/echelle"/>
+                android:drawableLeft="@drawable/echelle"
+                android:hint="Note de 0 à 10."/>
 
     </LinearLayout>
 

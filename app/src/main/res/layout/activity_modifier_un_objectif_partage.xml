@@ -23,7 +23,7 @@
         android:id="@+id/ajout_objectifs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ajouter_un_objectif_partage"
+        android:text="@string/modifier_un_objectif_part"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="43dp"
                 android:layout_marginEnd="50dp"
-                android:text="Note de likert"/>
+                android:text="Note de likert (1)" />
 
         </LinearLayout>
 
@@ -136,6 +136,7 @@
 
             <EditText
                 android:id="@+id/editEchelle"
+                android:inputType="numberDecimal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -143,7 +144,8 @@
                 android:ems="10"
                 android:padding="6dp"
                 android:layout_gravity="center_horizontal"
-                android:drawableLeft="@drawable/echelle"/>
+                android:drawableLeft="@drawable/echelle"
+                android:hint="Note de 0 à 10"/>
 
             <!-- <EditText
                  android:id="@+id/editEchelle"
@@ -193,5 +195,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCommentaires" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="(1) Note de likert : 0 (pas du tout atteint) - 10 (complètement atteint)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_contact_enregistrer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

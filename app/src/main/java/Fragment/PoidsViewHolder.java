@@ -51,8 +51,8 @@ public class PoidsViewHolder extends RecyclerView.ViewHolder {
         muscle.setText(String.valueOf(df2.format(pds.getMuscle())));
         graisse.setText(String.valueOf(df2.format(pds.getGraisse())));
         tt.setText(String.valueOf(df2.format(pds.getTt())));
-        unitegraisse.setText(pds.getUniteGraisse());
-        unitemuscle.setText(pds.getUniteMuscle());
+        unitegraisse.setText("("+ pds.getUniteGraisse()+")");
+        unitemuscle.setText("("+pds.getUniteMuscle()+")");
         if(pds.getGraisse()==0){
             graisse.setText("---");
         }

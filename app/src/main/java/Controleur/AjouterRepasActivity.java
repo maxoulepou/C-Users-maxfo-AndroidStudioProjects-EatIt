@@ -368,14 +368,14 @@ public void ajouterRepas (){
             System.out.println(mCommentaire.getText().toString());
             System.out.println(typeRepas);
             if (isEnregistre == true) {
-                System.out.println("repas enregistré");
+                Toast.makeText(AjouterRepasActivity.this, "Votre repas a bien été ajouté", Toast.LENGTH_SHORT).show();
                  Intent MenuBas = new Intent(AjouterRepasActivity.this, MenuBasActivity.class);
                  startActivity(MenuBas);
 //                Intent intentforBackButton = NavUtils.getParentActivityIntent(getParent());
 //                intentforBackButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 //                NavUtils.navigateUpTo(getParent(), intentforBackButton);
             } else {
-                System.out.println("erreur lors de l'enregistrement du repas");
+                Toast.makeText(AjouterRepasActivity.this, "Vérifiez que vous avez renseigné toutes les informations.", Toast.LENGTH_SHORT).show();
             }
         }
     });

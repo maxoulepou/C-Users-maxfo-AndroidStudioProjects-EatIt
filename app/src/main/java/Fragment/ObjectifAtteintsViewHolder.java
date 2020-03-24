@@ -22,7 +22,7 @@ public class ObjectifAtteintsViewHolder extends RecyclerView.ViewHolder {
     public ObjectifAtteintsViewHolder(View itemView) {
         super(itemView);
         intitule = (TextView) itemView.findViewById(R.id.intitule);
-        reiterer = (ImageButton) itemView.findViewById(R.id.recommencerobj);
+        //reiterer = (ImageButton) itemView.findViewById(R.id.recommencerobj);
 
     }
 

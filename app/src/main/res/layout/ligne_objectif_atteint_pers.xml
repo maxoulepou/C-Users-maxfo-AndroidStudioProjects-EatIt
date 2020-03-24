@@ -25,17 +25,6 @@
             android:layout_alignParentLeft="true"/>
 
 
-        <ImageButton
-            android:id="@+id/recommencerobj"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:adjustViewBounds="true"
-            android:background="@drawable/refresh"
-            android:scaleType="centerInside"
-            android:text="Button"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
-
 
     </RelativeLayout>
 

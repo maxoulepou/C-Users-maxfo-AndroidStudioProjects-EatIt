@@ -186,7 +186,7 @@ public class MonCorpsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                liste_sensations = mOutputSpinnerTv.getText().toString() + mOutputSpinnerTv2.getText().toString() + mOutputSpinnerTv3.getText().toString();
+                liste_sensations = mOutputSpinnerTv.getText().toString() + " " + mOutputSpinnerTv2.getText().toString() + " " + mOutputSpinnerTv3.getText().toString();
 
                 if (liste_sensations.isEmpty()) {
                     liste_sensations = "Aucune";

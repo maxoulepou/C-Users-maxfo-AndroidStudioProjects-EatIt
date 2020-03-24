@@ -110,6 +110,7 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
 
                         }
 
+
                         boolean isModified = bd.modifierObjPartage(id_obj, intitule, "partage", datepicked_debut, datepicked_fin, commentaire, accomplissement,pro);
 
                         if (isModified == true) {

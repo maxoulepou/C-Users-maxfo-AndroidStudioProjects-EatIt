@@ -40,30 +40,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trophee">
 
-        <TextView
-            android:id="@+id/nbreobjectifs_atteints"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="/" />
-
-        <TextView
-            android:id="@+id/nbre_objectifs_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="objectifs atteints !" />
+            android:text="Vous avez atteint ces objectifs, bravo !" />
 
     </LinearLayout>
 

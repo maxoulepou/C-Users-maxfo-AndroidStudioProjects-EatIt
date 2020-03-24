@@ -48,7 +48,7 @@ public class ConnexionActivity extends AppCompatActivity {
                     startActivity(MenuBas);
                 }
                 else {
-                    System.out.println("MDP erroné");
+                    Toast.makeText(ConnexionActivity.this, "Votre identifiants sont erronés.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
