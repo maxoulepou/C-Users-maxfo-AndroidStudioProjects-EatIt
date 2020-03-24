@@ -148,7 +148,6 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:drawableLeft="@drawable/comment1"
                 android:text="Commentaire : "
                 android:textColor="@color/grey"
                 android:textStyle="bold" />

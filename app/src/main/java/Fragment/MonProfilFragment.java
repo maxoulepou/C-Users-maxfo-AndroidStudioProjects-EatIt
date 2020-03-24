@@ -59,6 +59,7 @@ public class MonProfilFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 sexe = "Femme";
+                System.out.println(sexe);
                 champMasculin.setHighlightColor(Color.GRAY);
             }
         });
@@ -67,6 +68,7 @@ public class MonProfilFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 sexe = "Homme";
+                System.out.println(sexe);
                 champFeminin.setHighlightColor(Color.GRAY);
             }
         });
@@ -74,6 +76,16 @@ public class MonProfilFragment extends Fragment {
         enregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(email.getText().toString());
+                System.out.println(champNom.getText().toString());
+                System.out.println(champPrenom.getText().toString());
+                System.out.println(sexe);
+                System.out.println(dateN.getText().toString());
+                System.out.println(ville.getText().toString());
+                System.out.println(champAdrresse.getText().toString());
+                System.out.println(codePostale.getText().toString());
+                System.out.println(contactDUrgence.getText().toString());
+
                 Patient p = new Patient(email.getText().toString(), champNom.getText().toString(),
                         champPrenom.getText().toString(), sexe, dateN.getText().toString(),
                         ville.getText().toString(), champAdrresse.getText().toString(),

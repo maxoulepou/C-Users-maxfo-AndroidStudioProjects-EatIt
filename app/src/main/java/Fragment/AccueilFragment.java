@@ -24,7 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Gère l'accueil constitué du calendrier.
+ * Fragment gérant l'affichage de la page d'accueil..
  */
 public class AccueilFragment extends Fragment {
 
@@ -37,74 +37,74 @@ public class AccueilFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_accueil, container, false);
-        nextYear = Calendar.getInstance();
-        nextYear.add(Calendar.YEAR, 1);
-        nextMonth = Calendar.getInstance();
-        nextMonth.add(Calendar.DAY_OF_MONTH, 1);
-        mDate = new Date();
-        lastYear = Calendar.getInstance();
-        lastYear.add(Calendar.YEAR, -1);
-
-        mCalendarPickerView = (CalendarPickerView) view.findViewById(R.id.calendar);
-        menu = (ImageButton) view.findViewById(R.id.menu);
-
-        mCalendarPickerView.init(lastYear.getTime(), nextMonth.getTime())
-                .inMode(CalendarPickerView.SelectionMode.SINGLE).withSelectedDate(new Date());
-
-        mCalendarPickerView.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
-            @Override
-            public void onDateSelected(Date date) {
-                //String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
-
-                Calendar calSelected = Calendar.getInstance();
-                calSelected.setTime(date);
-                mois = calSelected.get(Calendar.MONTH);
-                jour = calSelected.get(Calendar.DAY_OF_MONTH);
-                annee = calSelected.get(Calendar.YEAR);
-
-            }
-
-            @Override
-            public void onDateUnselected(Date date) {
-
-            }
-        });
-
-        menu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                PopupMenu popupMenu= new PopupMenu(getActivity().getApplicationContext(),menu);
-                popupMenu.getMenuInflater().inflate(R.menu.pop_up_menu,popupMenu.getMenu());
-
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        switch (menuItem.getItemId()) {
-                            case R.id.item1:
-                                openNewActivity(MonProfilEtEvntActivity.class);
-                                break;
-                            case R.id.item2:
-                                openNewActivity(AfficherListeContactsActivity.class);
-                                break;
-                            case R.id.item3:
-                                openNewActivity(ExporterDonneesActivity.class);
-                                break;
-                        }
-
-                        return false;
-                    }
-                });
-
-                popupMenu.show();
-            }
-        });
-
+        View view = inflater.inflate(R.layout.fragment_accueil_image, container, false);
+//        nextYear = Calendar.getInstance();
+//        nextYear.add(Calendar.YEAR, 1);
+//        nextMonth = Calendar.getInstance();
+//        nextMonth.add(Calendar.DAY_OF_MONTH, 1);
+//        mDate = new Date();
+//        lastYear = Calendar.getInstance();
+//        lastYear.add(Calendar.YEAR, -1);
+//
+//        mCalendarPickerView = (CalendarPickerView) view.findViewById(R.id.calendar);
+//        menu = (ImageButton) view.findViewById(R.id.menu);
+//
+//        mCalendarPickerView.init(lastYear.getTime(), nextMonth.getTime())
+//                .inMode(CalendarPickerView.SelectionMode.SINGLE).withSelectedDate(new Date());
+//
+//        mCalendarPickerView.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
+//            @Override
+//            public void onDateSelected(Date date) {
+//                //String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
+//
+//                Calendar calSelected = Calendar.getInstance();
+//                calSelected.setTime(date);
+//                mois = calSelected.get(Calendar.MONTH);
+//                jour = calSelected.get(Calendar.DAY_OF_MONTH);
+//                annee = calSelected.get(Calendar.YEAR);
+//
+//            }
+//
+//            @Override
+//            public void onDateUnselected(Date date) {
+//
+//            }
+//        });
+//
+//        menu.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//
+//                PopupMenu popupMenu= new PopupMenu(getActivity().getApplicationContext(),menu);
+//                popupMenu.getMenuInflater().inflate(R.menu.pop_up_menu,popupMenu.getMenu());
+//
+//                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                    @Override
+//                    public boolean onMenuItemClick(MenuItem menuItem) {
+//                        switch (menuItem.getItemId()) {
+//                            case R.id.item1:
+//                                openNewActivity(MonProfilEtEvntActivity.class);
+//                                break;
+//                            case R.id.item2:
+//                                openNewActivity(AfficherListeContactsActivity.class);
+//                                break;
+//                            case R.id.item3:
+//                                openNewActivity(ExporterDonneesActivity.class);
+//                                break;
+//                        }
+//
+//                        return false;
+//                    }
+//                });
+//
+//                popupMenu.show();
+//            }
+//        });
+//
          return view;
     }
-
-    public void openNewActivity(Class nouvelle_classe) {
-        Intent intent = new Intent(getContext(), nouvelle_classe);
-        startActivity(intent);
-    }
+//
+//    public void openNewActivity(Class nouvelle_classe) {
+//        Intent intent = new Intent(getContext(), nouvelle_classe);
+//        startActivity(intent);
+//    }
 }

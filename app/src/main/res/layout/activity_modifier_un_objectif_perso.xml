@@ -2,6 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -85,9 +86,9 @@
 
     <EditText
         android:id="@+id/editObjectif"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectanglebleu"
+        android:background="@drawable/fond_objectif_personnel"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -99,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:background="@drawable/rectanglebleu"
+        android:background="@drawable/fond_objectif_personnel"
         android:ems="10"
         android:drawableLeft="@drawable/sablier"
         android:padding="6dp"/>
@@ -109,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/rectanglebleu"
+                android:background="@drawable/fond_objectif_personnel"
                 android:ems="10"
                 android:drawableLeft="@drawable/sablier"
                 android:padding="6dp"/>
@@ -120,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/rectanglebleu"
+                android:background="@drawable/fond_objectif_personnel"
                 android:ems="10"
                 android:padding="6dp"
                 android:layout_gravity="center_horizontal"
@@ -179,9 +180,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="(1) Note de likert : 0 (pas du tout atteint) - 10 (complètement atteint)"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_supp_obj"
-        android:layout_marginTop="70dp"/>
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
