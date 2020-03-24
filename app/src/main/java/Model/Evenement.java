@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Gestion des objets de type Evenement.
+ */
 public class Evenement {
 
     private String date, evenement, commentaire;

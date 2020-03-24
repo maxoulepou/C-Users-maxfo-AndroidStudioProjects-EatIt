@@ -16,6 +16,9 @@ import Model.Poids;
 import Fragment.PoidsAdapter;
 
 
+/**
+ * Activité qui permet d'afficherr les données de poids sous forme de RecyclerView.
+ */
 public class AfficherDonneesPoids extends AppCompatActivity {
 
     private RecyclerView rv;
@@ -23,6 +26,10 @@ public class AfficherDonneesPoids extends AppCompatActivity {
     private PoidsAdapter adapter;
     private BD_Poids bdp;
 
+    /**
+     * Crée la page permettant d'afficher le recycler view contenant la liste des sifférents poids enregistrés dans la base de données.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

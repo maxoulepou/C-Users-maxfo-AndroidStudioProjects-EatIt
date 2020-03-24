@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Gestion des objets de types Objectifs. Cette classe a deux classes filles : ObjectifPartage et ObjectifPersonnel.
+ */
 public abstract class Objectifs {
 
     private int idObjectif;
@@ -9,9 +12,7 @@ public abstract class Objectifs {
     private String dateFin;
     private int accomplissement;
     private String commentaire;
-//    private String atteint;
 
-    // TypeObjet a voir
 
     public Objectifs(int idobjectif, String intitule, String type, String dateDebut,
                      String dateFin, String commentaire, int accomplissement){
@@ -32,14 +33,6 @@ public abstract class Objectifs {
         this.intitule = intitule;
     }
 
-//    public String getEtat() {
-//        return getAtteint();
-//    }
-//
-//    public void setEtat(String etat) {
-//        this.setAtteint(etat);
-//    }
-
     public int getId() {
         return getIdObjectif();
     }
@@ -51,14 +44,6 @@ public abstract class Objectifs {
     public void setType(String type) {
         this.type = type;
     }
-
-//    public String getAtteint() {
-//        return atteint;
-//    }
-//
-//    public void setAtteint(String atteint) {
-//        this.atteint = atteint;
-//    }
 
     public int getIdObjectif() {
         return idObjectif;

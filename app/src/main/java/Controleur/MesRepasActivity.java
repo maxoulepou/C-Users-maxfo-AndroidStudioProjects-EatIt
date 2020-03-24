@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import com.example.eatit.R;
 
+/**
+ * Gère l'activité des repas.
+ */
 public class MesRepasActivity extends AppCompatActivity {
 
     private static final String TAG="MesRepas";

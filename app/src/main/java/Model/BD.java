@@ -12,6 +12,9 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Gestion de la base de données de l'application.
+ */
 public class BD extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "dataBase.db";
@@ -41,12 +44,10 @@ public class BD extends SQLiteOpenHelper {
     public static String col_accomplissement = "Accomplissement";
     public static String col_Commentaire = "Commentaire";
     public static String col_professionnel = "Professionnel";
-    //public static String col_atteint = "ObjectifAtteint";
 
     private ArrayList<ObjectifPersonnel> liste_objectifs_perso;
     private ArrayList<ObjectifPartage> liste_objectifs_part;
-    private ArrayList<ObjectifPersonnel> liste_objectifs_perso_att;
-    private ArrayList<ObjectifPartage> liste_objectifs_part_att;
+
 
     public BD(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -170,6 +171,17 @@ public class BD extends SQLiteOpenHelper {
         } else return "Pas didentifiant de connecte";
     }
 
+    /**
+     * Ajoute un nouvel objectif à la base de données.
+     * @param intitule
+     * @param type
+     * @param dateDebut
+     * @param dateFin
+     * @param commentaire
+     * @param accomplissement
+     * @param professionnel
+     * @return
+     */
     public boolean addObjectifs(String intitule, String type, String dateDebut, String dateFin, String commentaire, int accomplissement, String professionnel) {
         ContentValues cv = new ContentValues();
 
@@ -218,11 +230,15 @@ public class BD extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * Récupère tous les objectifs partagés non-atteints de la base de données.
+     * @return
+     */
     public ArrayList<ObjectifPartage> getObjectifsPartages() {
 
         liste_objectifs_part = new ArrayList<>();
 
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'partage'", null);
+        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'partage'" + " and " + col_accomplissement + "<10 ", null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()) {
             int id = result.getInt(0);
@@ -244,11 +260,15 @@ public class BD extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Récupère tous les objectifs personnels non-atteints de la base de données.
+     * @return
+     */
     public ArrayList<ObjectifPersonnel> getObjectifsPersonnels() {
 
         liste_objectifs_perso = new ArrayList<>();
 
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'personnel'", null);
+        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'personnel'" + " and " + col_accomplissement + "<10 ", null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()) {
             int id = result.getInt(0);
@@ -268,55 +288,15 @@ public class BD extends SQLiteOpenHelper {
         return liste_objectifs_perso;
     }
 
-    public ArrayList<ObjectifPersonnel> getObjectifPersoAtteint() {
 
-        liste_objectifs_perso_att = new ArrayList<>();
 
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'personnel'" + " AND " + col_accomplissement + "=10 ", null);
 
-        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()) {
-            int id = result.getInt(0);
-            String intitule = result.getString(1);
-            String type = result.getString(2);
-            String dateDebut = result.getString(3);
-            String dateFin = result.getString(4);
-            int accomplissement = result.getInt(5);
-            String mCommentaire = result.getString(6);
 
-            ObjectifPersonnel obj = new ObjectifPersonnel(id, intitule, type, dateDebut, dateFin, mCommentaire, accomplissement);
-
-            liste_objectifs_perso_att.add(obj);
-        }
-
-        result.close();
-        return liste_objectifs_perso_att;
-    }
-
-    public ArrayList<ObjectifPartage> getObjectifsPartagesAtteint() {
-
-        liste_objectifs_part_att = new ArrayList<>();
-
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME_BD_OBJ + " where " + col_type_obj + " = 'partage'" + " AND " + col_accomplissement + "=10 ", null);
-
-        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()) {
-            int id = result.getInt(0);
-            String intitule = result.getString(1);
-            String type = result.getString(2);
-            String dateDebut = result.getString(3);
-            String dateFin = result.getString(4);
-            int accomplissement = result.getInt(5);
-            String mCommentaire = result.getString(6);
-            String pro = result.getString(7);
-
-            ObjectifPartage obj = new ObjectifPartage(id, intitule, type, dateDebut, dateFin, mCommentaire, accomplissement, pro);
-
-            liste_objectifs_part_att.add(obj);
-        }
-
-        result.close();
-        return liste_objectifs_part_att;
-    }
-
+    /**
+     * Récupère un objectif personnel dans la base de donné grâce à l'identifiant renseigné en paramètre.
+     * @param id
+     * @return
+     */
     public ObjectifPersonnel getObjectifPerso(int id) {
         String requete = "select * from " + TABLE_NAME_BD_OBJ + " where " + col_id_obj + " = " + id;
 
@@ -338,6 +318,17 @@ public class BD extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Permet de mettre à jour un objectif personnel déjà existant. L'id en paramètre correspond à l'id de l'objectif à modifier. Les autres paramètres correspondent aux nouvelles valeurs associés à cet objectif.
+     * @param id
+     * @param intitule
+     * @param type
+     * @param dateDebut
+     * @param dateFin
+     * @param commentaire
+     * @param accomplissement
+     * @return
+     */
     public boolean modifierObjPerso(int id, String intitule, String type, String dateDebut, String dateFin, String commentaire, int accomplissement) {
 
         ContentValues cv = new ContentValues();
@@ -380,6 +371,12 @@ public class BD extends SQLiteOpenHelper {
 
     }
 
+
+    /**
+     * Récupère un objectif partagé dans la base de donné grâce à l'identifiant renseigné en paramètre.
+     * @param id
+     * @return
+     */
     public ObjectifPartage getObjectifPartage(int id) {
         String requete = "select * from " + TABLE_NAME_BD_OBJ + " where " + col_id_obj + " = " + id;
 
@@ -401,6 +398,18 @@ public class BD extends SQLiteOpenHelper {
         return obj;
     }
 
+    /**
+     * Permet de mettre à jour un objectif  partagé déjà existant. L'id en paramètre correspond à l'id de l'objectif à modifier. Les autres paramètres correspondent aux nouvelles valeurs associés à cet objectif.
+     * @param id
+     * @param intitule
+     * @param type
+     * @param dateDebut
+     * @param dateFin
+     * @param commentaire
+     * @param accomplissement
+     * @param pro
+     * @return
+     */
     public boolean modifierObjPartage(int id, String intitule, String type, String dateDebut, String dateFin, String commentaire, int accomplissement, String pro) {
 
         ContentValues cv = new ContentValues();
@@ -448,7 +457,10 @@ public class BD extends SQLiteOpenHelper {
 
     }
 
-
+    /**
+     * Récupère tous les objectifs atteints de la base de données.
+     * @return
+     */
     public ArrayList<Objectifs> getObjectifsAtteints() {
 
         ArrayList<Objectifs> liste_objectifs_att = new ArrayList<Objectifs>();
@@ -480,9 +492,15 @@ public class BD extends SQLiteOpenHelper {
         return liste_objectifs_att;
     }
 
-    public boolean supprimerObj(int idContact) {
 
-        int nombre = this.getWritableDatabase().delete(TABLE_NAME_BD_OBJ, col_id_obj + "=?", new String[]{String.valueOf(idContact)});
+    /**
+     * Supprime de la base de données l'objectif dont l'id est renseigné en paramètre.
+     * @param idObj
+     * @return
+     */
+    public boolean supprimerObj(int idObj) {
+
+        int nombre = this.getWritableDatabase().delete(TABLE_NAME_BD_OBJ, col_id_obj + "=?", new String[]{String.valueOf(idObj)});
 
         if (nombre == 1) {
             return true;
@@ -490,6 +508,9 @@ public class BD extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
+
     public boolean modifierInfosUtilisateurs(Patient p){
         ContentValues cv = new ContentValues();
         cv.put(col_Email, p.getEmail());

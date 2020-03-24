@@ -10,6 +10,9 @@ import Fragment.PageAdapterRessenti;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+/**
+ * Activité gérant les ressentis. Contient tous les fragments associés (ma tête, mon corps, mon activité).
+ */
 public class MonRessentiActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;

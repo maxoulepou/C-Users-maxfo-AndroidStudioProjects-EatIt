@@ -14,6 +14,9 @@ import com.example.eatit.R;
 
 import java.util.ArrayList;
 
+/**
+ * Gère la RecyclerView gérant la liste des contacts.
+ */
 public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
 
     ArrayList<Contact> mes_contacts;
@@ -28,7 +31,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //Permet de chercher la vue
         LayoutInflater layoutinflater = LayoutInflater.from(parent.getContext());
         View view = layoutinflater.inflate(R.layout.ligne_contact, parent, false);
         return new ContactViewHolder(view, monContactListener);

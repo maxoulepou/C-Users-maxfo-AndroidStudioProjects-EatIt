@@ -24,6 +24,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+/**
+ * Gère l'affichage du fragment contnant les informations relatives au poids avec deux onglets : MonSuivi et MesDonnees.
+ */
 public class PoidsFragment extends Fragment {
 
     ImageButton menu;

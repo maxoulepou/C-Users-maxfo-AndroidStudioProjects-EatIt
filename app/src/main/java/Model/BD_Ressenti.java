@@ -105,6 +105,13 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
 //    ----------------- INSERTIONS DE RESSENTIS -----------------------------------
 
+    /**
+     * Insère un nouveau ressenti de type tête dans la base de données.
+     * @param date
+     * @param emotions
+     * @param commentaire
+     * @return
+     */
     public boolean insererRessentiTete(String date, String emotions, String commentaire) {
 
         ContentValues cv = new ContentValues();
@@ -129,6 +136,14 @@ public class BD_Ressenti extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * Insère un nouveau ressenti de type corps dans la base de données.
+     * @param date
+     * @param sensations
+     * @param commentaire
+     * @param bienetre
+     * @return
+     */
     public boolean insererRessentiCorps(String date, String sensations, String commentaire, int bienetre) {
 
         ContentValues cv = new ContentValues();
@@ -155,6 +170,15 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Insère un nouveau ressenti de type activité dans la base de données.
+     * @param date
+     * @param activite
+     * @param commentaire
+     * @param difficulte
+     * @param duree
+     * @return
+     */
     public boolean insererRessentiActivite(String date, String activite, String commentaire, int difficulte, int duree) {
 
         ContentValues cv = new ContentValues();
@@ -190,82 +214,16 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
     }
 
-//    -------------------- RECUPERATION DES TABLES SOUS FORME D ARRAYLISTS D'OBJETS ---------------
-
-
-    public ArrayList<RessentiTete> getTousLesRessentisTete() {
-
-        liste_ressentis_tete = new ArrayList<RessentiTete>();
-
-        String requete = "select " + col_idRessenti_tete + "," + col_date_tete + "," + col_emotions + "," + col_comm_tete + " from " + TABLE_RESSENTI_TETE + " order by " + col_date_tete + " desc";
-
-        Cursor touslesressentistete = this.getWritableDatabase().rawQuery(requete, null);
-
-        for (touslesressentistete.moveToFirst(); !touslesressentistete.isAfterLast(); touslesressentistete.moveToNext()) {
-
-            int idRessentiTete = touslesressentistete.getInt(0);
-            String date = touslesressentistete.getString(1);
-            String emotions = touslesressentistete.getString(2);
-            String comm = touslesressentistete.getString(3);
-
-            liste_ressentis_tete.add(new RessentiTete(idRessentiTete, date, comm, emotions));
-        }
-
-        return liste_ressentis_tete;
-
-    }
-
-
-    public ArrayList<RessentiCorps> getTousLesRessentisCorps() {
-
-        liste_ressentis_corps = new ArrayList<RessentiCorps>();
-
-        String requete = "select " + col_idRessenti_tete + "," + col_date_corps + "," + col_sensations + "," + col_comm_corps + "," + col_niveau_bienetre + " from " + TABLE_RESSENTI_CORPS + " order by " + col_date_corps + " desc";
-
-        Cursor touslesressentiscorps = this.getWritableDatabase().rawQuery(requete, null);
-
-        for (touslesressentiscorps.moveToFirst(); !touslesressentiscorps.isAfterLast(); touslesressentiscorps.moveToNext()) {
-
-            int idRessentiCorps = touslesressentiscorps.getInt(0);
-            String date = touslesressentiscorps.getString(1);
-            String sensation = touslesressentiscorps.getString(2);
-            String comm = touslesressentiscorps.getString(3);
-            int bienetre = touslesressentiscorps.getInt(4);
-
-            liste_ressentis_corps.add(new RessentiCorps(idRessentiCorps, date, comm, bienetre, sensation));
-        }
-
-        return liste_ressentis_corps;
-
-    }
-
-    public ArrayList<RessentiActivite> getTousLesRessentisActivite() {
-
-        liste_ressentis_activite = new ArrayList<RessentiActivite>();
-
-        String requete = "select " + col_idRessenti_activite + "," + col_date_activite + "," + col_activite + "," + col_duree_activite + "," + col_comm_activite + "," + col_difficulte + " from " + TABLE_RESSENTI_ACTIVITE + " order by " + col_date_corps + " desc";
-
-        Cursor touslesressentisactivite = this.getWritableDatabase().rawQuery(requete, null);
-
-        for (touslesressentisactivite.moveToFirst(); !touslesressentisactivite.isAfterLast(); touslesressentisactivite.moveToNext()) {
-
-            int idRessentiCorps = touslesressentisactivite.getInt(0);
-            String date = touslesressentisactivite.getString(1);
-            String activite = touslesressentisactivite.getString(2);
-            int duree = touslesressentisactivite.getInt(3);
-            String comm = touslesressentisactivite.getString(4);
-            int difficulte = touslesressentisactivite.getInt(5);
-
-            liste_ressentis_activite.add(new RessentiActivite(idRessentiCorps, date, comm, duree, difficulte, activite));
-        }
-
-        return liste_ressentis_activite;
-
-    }
 
 
 //    ------------------------------------- RETROUVER RESSENTI EN FONCTION DE DATE --------------
 
+
+    /**
+     * Récupère tous les ressentis de type tête d'une date donnée.
+     * @param date
+     * @return
+     */
     public ArrayList<RessentiTete> getTousLesRessentisTete(String date) {
 
         liste_ressentis_tete = new ArrayList<RessentiTete>();
@@ -288,6 +246,12 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
     }
 
+
+    /**
+     * Récupère tous les ressentis de type corps d'une date donnée.
+     * @param date
+     * @return
+     */
     public ArrayList<RessentiCorps> getTousLesRessentisCorps(String date) {
 
         liste_ressentis_corps = new ArrayList<RessentiCorps>();
@@ -311,6 +275,12 @@ public class BD_Ressenti extends SQLiteOpenHelper {
 
     }
 
+
+    /**
+     * Récupère tous les ressentis de type activité d'une date donnée.
+     * @param date
+     * @return
+     */
     public ArrayList<RessentiActivite> getTousLesRessentisActivite(String date) {
 
         liste_ressentis_activite = new ArrayList<RessentiActivite>();

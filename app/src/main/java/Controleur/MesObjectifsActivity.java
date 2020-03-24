@@ -10,6 +10,9 @@ import com.example.eatit.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+/**
+ * Activité qui contiendra tous les fragements relatives aux objectifs (partagés, peronnels, atteints).
+ */
 public class MesObjectifsActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;

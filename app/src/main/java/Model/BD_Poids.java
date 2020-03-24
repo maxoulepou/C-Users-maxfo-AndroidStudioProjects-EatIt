@@ -67,6 +67,17 @@ public class BD_Poids extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Enregistre de nouvelles données relatives au poids dans la base de données.
+     * @param date
+     * @param poids
+     * @param taille
+     * @param imc
+     * @param tt
+     * @param graisse
+     * @param muscle
+     * @return
+     */
     public boolean insererPoids(String date, double poids, double taille, double imc, double tt, double graisse, double muscle) {
 
         ContentValues cv = new ContentValues();
@@ -110,7 +121,10 @@ public class BD_Poids extends SQLiteOpenHelper {
 
     }
 
-
+    /**
+     * Récupère la dernière valeur de poids entrée dans la base de données.
+     * @return
+     */
     public double getPoidsActuel() {
         String requete = "select " + col_poids + " from " + TABLE_NAME + " where " + col_date + " in " + "(select max( " + col_date + ") " + " from " + TABLE_NAME + " where " + col_poids + " is not null) ";
         Cursor result = this.getWritableDatabase().rawQuery(requete, null);
@@ -124,7 +138,11 @@ public class BD_Poids extends SQLiteOpenHelper {
     }
 
 
-    public double getPoidsDépart() {
+    /**
+     * Récupère la première valeur de poids entrée dans la base de données.
+     * @return
+     */
+    public double getPoidsDepart() {
         String requete = "select " + col_poids + " from " + TABLE_NAME + " where " + col_date + " in " + "(select min( " + col_date + ") " + " from " + TABLE_NAME + " where " + col_poids + " is not null) ";
         Cursor result = this.getWritableDatabase().rawQuery(requete, null);
         double poids;
@@ -136,6 +154,10 @@ public class BD_Poids extends SQLiteOpenHelper {
         return poids;
     }
 
+    /**
+     * Récupère la dernière valeur d'IMC calculée dans la base de données.
+     * @return
+     */
     public double getIMC() {
         String requete = "select " + col_imc + " from " + TABLE_NAME + " where " + col_date + " in " + "(select max( " + col_date + ") " + " from " + TABLE_NAME + " where " + col_imc + " is not null) ";
         Cursor result = this.getWritableDatabase().rawQuery(requete, null);
@@ -148,6 +170,11 @@ public class BD_Poids extends SQLiteOpenHelper {
         return imc;
     }
 
+
+    /**
+     * Récupère la dernière valeur de tour de taille entrée dans la base de données.
+     * @return
+     */
     public double getTTActuel() {
         //select TT FROM table_poids where date in (select max(date) from table_poids where TT is not NULL)
         String requete = "select " + col_tt + " from " + TABLE_NAME + " where " + col_date + " in " + "(select max( " + col_date + ") " + " from " + TABLE_NAME + " where " + col_tt + " is not null) ";
@@ -161,6 +188,11 @@ public class BD_Poids extends SQLiteOpenHelper {
         return tt;
     }
 
+
+    /**
+     * Récupère la première valeur de tour de taille entrée dans la base de données.
+     * @return
+     */
     public double getTTDepart() {
         String requete = "select " + col_tt + " from " + TABLE_NAME + " where " + col_date + " in " + "(select min( " + col_date + ") " + " from " + TABLE_NAME + " where " + col_tt + " is not null) ";
         Cursor result = this.getWritableDatabase().rawQuery(requete, null);
@@ -173,6 +205,11 @@ public class BD_Poids extends SQLiteOpenHelper {
         return tt;
     }
 
+
+    /**
+     * Récupère la dernière valeur de tour de taille entrée dans la base de données.
+     * @return
+     */
     public double getTailleActuelle() {
         String requete = "select " + col_taille + " from " + TABLE_NAME + " where " + col_date + " in " + "(select max( " + col_date + ") " + " from " + TABLE_NAME + " where " + col_taille + " is not null) ";
         Cursor result = this.getWritableDatabase().rawQuery(requete, null);
@@ -186,6 +223,10 @@ public class BD_Poids extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Récupère une liste d'objets de type Poids contenant toutes les données relatives au poids de la base de données.
+     * @return
+     */
     public ArrayList<Poids> getTousLesPoids() {
 
         liste_poids = new ArrayList<Poids>();

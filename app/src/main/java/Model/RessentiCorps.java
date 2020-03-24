@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Gestion des objets de types RessentiCorps.
+ */
 public class RessentiCorps extends Ressenti {
 
     private int niveau_bienetre;

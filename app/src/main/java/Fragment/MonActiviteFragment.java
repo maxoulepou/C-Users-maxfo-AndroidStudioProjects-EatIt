@@ -30,7 +30,7 @@ import Model.BD_Ressenti;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Gère l'ajout des activités sportives.
  */
 public class MonActiviteFragment extends Fragment {
 
@@ -109,7 +109,9 @@ public class MonActiviteFragment extends Fragment {
         return view;
     }
 
-
+    /**
+     * Permet d'ajouter un nouveau ressenti d'activité dans la base de données.
+     */
     public void ajouterRessentiActivite() {
         enregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +142,9 @@ public class MonActiviteFragment extends Fragment {
 
     }
 
+    /**
+     * Attribue une valeur à l'attribut "difficulte" suivant le bouton sélectionné.
+     */
     public void setDifficulte() {
 
         aucuneffort.setOnClickListener(new View.OnClickListener() {

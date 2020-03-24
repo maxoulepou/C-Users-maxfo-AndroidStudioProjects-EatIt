@@ -26,7 +26,7 @@ import Model.UnItemListener;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment gérant la liste des objectifs partagés.
  */
 public class MesObjPartagesFragment extends Fragment implements UnItemListener {
 
@@ -72,12 +72,19 @@ public class MesObjPartagesFragment extends Fragment implements UnItemListener {
         return view;
     }
 
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_activite
+     */
     public void openNewActivity(Class nouvelle_activite) {
         Intent intent = new Intent(this.getActivity(), nouvelle_activite);
         startActivity(intent);
     }
 
-
+    /**
+     * Permet de modifier l'objectif personnel sélectionné dans la RecyclerView en l'affichant dans l'activité ModifierObjectifPerso.
+     * @param position
+     */
     @Override
     public void clicSurUnItem(int position) {
         Intent intent = new Intent(getActivity(), ModifierObjectifPartageActivity.class);

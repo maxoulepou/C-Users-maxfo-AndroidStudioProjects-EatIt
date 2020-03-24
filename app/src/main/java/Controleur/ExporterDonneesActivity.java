@@ -6,6 +6,9 @@ import com.example.eatit.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Activité gérant l'export des données.
+ */
 public class ExporterDonneesActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {

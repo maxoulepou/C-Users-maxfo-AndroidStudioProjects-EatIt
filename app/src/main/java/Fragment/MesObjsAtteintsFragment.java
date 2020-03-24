@@ -19,7 +19,7 @@ import Model.Objectifs;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment affichant la liste des objectifs atteints.
  */
 public class MesObjsAtteintsFragment extends Fragment {
 

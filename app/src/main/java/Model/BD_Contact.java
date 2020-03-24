@@ -72,6 +72,16 @@ public class BD_Contact extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Enregistre un nouveau contact dans la base de données.
+     * @param prenom
+     * @param nom
+     * @param profession
+     * @param email
+     * @param telephone
+     * @param adresse
+     * @return
+     */
     public boolean insererContact(String prenom, String nom, String profession, String email, String telephone, String adresse) {
 
         ContentValues cv = new ContentValues();
@@ -102,16 +112,6 @@ public class BD_Contact extends SQLiteOpenHelper {
 
         long result = this.getWritableDatabase().insert(TABLE_NAME, null, cv);
 
-//        En faisant this.getWritableDatabase, on récupère la base de données qu'on a créée. La
-//        méthode insert renvoie par défaut un numéro : -1 ou un autre truc. Quand c'est -1 ça
-//        veut dire que l'insertion ne s'est pas bien déroulée.
-
-//        String sql = "INSERT INTO " + TABLE_NAME + "(" + col_prenom + " , " + col_nom +" , " + col_profession + " , " + col_email + " , " + col_email + ")"
-//                   + "VALUES(" + "'" + prenom + "'," + "'" + nom + "'," + "'" + profession + "'," + "'" + email + "'," + "'" + telephone + "')" ;
-//
-//        this.getWritableDatabase().execSQL(sql);
-//        this.getWritableDatabase().close();
-
         if (result == -1) {
             return false;
         } else {
@@ -121,6 +121,10 @@ public class BD_Contact extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Récupère une liste d'objets de type Contact, correspondant à tous les contacts enregistrés dans la base de données.
+     * @return
+     */
     public ArrayList<Contact> getTousLesContacts() {
 
         liste_contacts = new ArrayList<Contact>();

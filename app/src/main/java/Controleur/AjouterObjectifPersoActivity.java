@@ -62,8 +62,10 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
 
                         boolean isInserted = bd.addObjectifs(intitule, "personnel", datepicked_debut, datepicked_fin, commentaire, 0, "");
 
-                        if (isInserted == true)
+                        if (isInserted == true) {
                             Toast.makeText(AjouterObjectifPersoActivity.this, "Objectif ajouté", Toast.LENGTH_SHORT).show();
+                            openNewActivity(MenuBasActivity.class);
+                        }
                         else
                             Toast.makeText(AjouterObjectifPersoActivity.this, "Tous les champs sont obligatoires à l'exception du commentaire", Toast.LENGTH_SHORT).show();
                     }

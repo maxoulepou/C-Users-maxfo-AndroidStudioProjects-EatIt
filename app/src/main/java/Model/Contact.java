@@ -3,6 +3,9 @@ package Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Gestion des objets de type Contact.
+ */
 public class Contact implements Parcelable {
 
     private String nom, prenom, profession, email, numTel, adresse;

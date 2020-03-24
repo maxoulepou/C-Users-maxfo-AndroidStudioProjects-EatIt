@@ -23,7 +23,7 @@ import Model.Poids;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment gérant l'affichage des données de poids.
  */
 public class MesDonneesFragment extends Fragment {
 
@@ -34,7 +34,6 @@ public class MesDonneesFragment extends Fragment {
     private Button bouton;
 
     public MesDonneesFragment() {
-        // Required empty public constructor
     }
 
 

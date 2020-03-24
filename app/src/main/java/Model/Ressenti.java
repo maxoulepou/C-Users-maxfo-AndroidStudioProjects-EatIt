@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Gestion des objets de types Ressenti. Cette classe a trois classes filles : RessentiActivite, RessentiTete et RessentiCorps.
+ */
 public abstract class Ressenti {
 
     private int idRessenti;
@@ -10,10 +13,6 @@ public abstract class Ressenti {
         this.idRessenti = id;
         this.date = date;
         this.commentaire = commentaire;
-    }
-
-    public int getIdRessenti() {
-        return idRessenti;
     }
 
     public String getDate() {

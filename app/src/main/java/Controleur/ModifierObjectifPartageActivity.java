@@ -1,6 +1,7 @@
 package Controleur;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,10 @@ import Model.BD;
 import Model.ObjectifPartage;
 import Model.ObjectifPersonnel;
 
+
+/**
+ * Gère la motification des objectifs partagés.
+ */
 public class ModifierObjectifPartageActivity extends AppCompatActivity {
 
     BD bd;
@@ -67,6 +72,9 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Méthode pour modifier un objectifs partagé déjà créé.
+     */
     public void modifierObjectifPerso() {
         boutonAjouter.setOnClickListener(
                 new View.OnClickListener() {
@@ -104,8 +112,10 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
 
                         boolean isModified = bd.modifierObjPartage(id_obj, intitule, "partage", datepicked_debut, datepicked_fin, commentaire, accomplissement,pro);
 
-                        if (isModified == true)
+                        if (isModified == true) {
                             Toast.makeText(ModifierObjectifPartageActivity.this, "Objectif modifié avec succès", Toast.LENGTH_SHORT).show();
+                            openNewActivity(MenuBasActivity.class);
+                        }
                         else
                             Toast.makeText(ModifierObjectifPartageActivity.this, "Il manque des informations", Toast.LENGTH_SHORT).show();
                     }
@@ -115,7 +125,10 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Récupère la date de début sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return
+     */
     public String getDateDebut() {
         editDateDebut.setOnClickListener(
                 new View.OnClickListener() {
@@ -156,6 +169,11 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
         return datepicked_debut;
     }
 
+
+    /**
+     * Récupère la date de fin sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return
+     */
     public String getDateFin() {
         editDateFin.setOnClickListener(
                 new View.OnClickListener() {
@@ -194,5 +212,13 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
         return datepicked_fin;
     }
 
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
+    public void openNewActivity(Class nouvelle_classe) {
+        Intent intent = new Intent(this, nouvelle_classe);
+        startActivity(intent);
+    }
 
 }

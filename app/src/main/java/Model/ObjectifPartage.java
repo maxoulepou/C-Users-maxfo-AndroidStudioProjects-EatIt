@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Gestion des objets de type ObjectifPartage.
+ */
 public class ObjectifPartage extends Objectifs {
 
     private String professionnel;

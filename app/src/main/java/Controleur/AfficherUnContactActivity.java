@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.eatit.R;
 
+/**
+ * Activité qui permet d'afficher les informations du contact sélectionné à partir de la liste de contacts (RecyclerView) générée dans l'activité AfficherListeContacts.
+ */
 public class AfficherUnContactActivity extends AppCompatActivity {
 
     EditText prenom, nom, profession, email, telephone, adresse;
@@ -91,6 +94,10 @@ public class AfficherUnContactActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Ouvre l'activité classe à partir de l'activité courante.
+     * @param classe
+     */
     public void openNewActivity(Class classe) {
         Intent intent = new Intent(this, classe);
         startActivity(intent);

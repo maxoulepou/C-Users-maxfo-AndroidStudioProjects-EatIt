@@ -20,7 +20,7 @@ import Model.Patient;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment gérant l'enregistrement du profil dans la base de données.
  */
 public class MonProfilFragment extends Fragment {
 

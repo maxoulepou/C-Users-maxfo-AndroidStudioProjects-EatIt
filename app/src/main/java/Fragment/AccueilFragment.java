@@ -23,6 +23,9 @@ import androidx.fragment.app.Fragment;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Gère l'accueil constitué du calendrier.
+ */
 public class AccueilFragment extends Fragment {
 
     private Date mDate;
@@ -59,13 +62,7 @@ public class AccueilFragment extends Fragment {
                 mois = calSelected.get(Calendar.MONTH);
                 jour = calSelected.get(Calendar.DAY_OF_MONTH);
                 annee = calSelected.get(Calendar.YEAR);
-//                String selectedDate = "" + Integer.toString(jour)
-//                        + " " + Integer.toString(mois + 1)
-//                        + " " + Integer.toString(annee);
 
-                //Toast.makeText(AccueilFragment.super.getContext(), selectedDate, Toast.LENGTH_SHORT).show();
-//                Intent MonRessenti = new Intent(AccueilFragment.super.getContext(), com.example.eatit.MonRessenti.class);
-//                startActivity(MonRessenti);
             }
 
             @Override

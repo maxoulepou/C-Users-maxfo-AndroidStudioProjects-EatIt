@@ -39,6 +39,9 @@ import Model.Repas;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Gère l'affichage des repas à une date donnée dans un RecyclerView.
+ */
 public class RepasFragment extends Fragment {
 
     @BindView(R.id.recyclerView_mesRepas) RecyclerView recyclerView;
@@ -178,7 +181,9 @@ public class RepasFragment extends Fragment {
         this.disposeWhenDestroy();
     }
 
-    //Configuration du recycler, adapter et layoutManager ensemble
+    /**
+     * Configuration du recycler, adapter et layoutManager ensemble
+     */
     public void configureRecyclerView(String date){
         this.mDate = date;
         this.lRepas = new ArrayList<>(); //Remet à zéro la liste

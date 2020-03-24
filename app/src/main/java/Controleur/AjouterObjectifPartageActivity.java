@@ -66,15 +66,16 @@ public class AjouterObjectifPartageActivity extends AppCompatActivity {
 
                         boolean isInserted = bd.addObjectifs(intitule, "partage", datepicked_debut, datepicked_fin,commentaire,0,prof);
 
-                        if (isInserted == true)
+                        if (isInserted == true) {
                             Toast.makeText(AjouterObjectifPartageActivity.this, "Objectif ajouté", Toast.LENGTH_SHORT).show();
+                            openNewActivity(MenuBasActivity.class);
+                        }
                         else
                             Toast.makeText(AjouterObjectifPartageActivity.this, "Tous les champs sont obligatoires à l'exception du commentaire", Toast.LENGTH_SHORT).show();
                     }
                 }
 
         );
-        //openNewActivity(AfficherListeContactsActivity.class);
 
     }
 

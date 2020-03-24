@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import com.example.eatit.R;
 
+/**
+ * Activité qui gère la première page de l'application (l'accueil de connnexion).
+ */
 public class MainActivity extends AppCompatActivity {
 
 
@@ -63,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Permet de générer le bouton de menu en haut à droite de l'écran. Ce menu est constitué de trois items.
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

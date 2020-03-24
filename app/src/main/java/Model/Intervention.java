@@ -2,6 +2,9 @@ package Model;
 
 import java.util.Date;
 
+/**
+ * Gestion des objets de type Intervention.
+ */
 public class Intervention {
 
     private String type;

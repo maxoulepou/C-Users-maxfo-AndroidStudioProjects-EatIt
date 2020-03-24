@@ -1,6 +1,8 @@
 package Model;
 
-
+/**
+ * Gestion des objets de type Poids.
+ */
 public class Poids {
 
     private double poids;

@@ -6,13 +6,9 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.eatit.R;
 
@@ -21,7 +17,7 @@ import java.text.DecimalFormat;
 import Model.BD_Poids;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment gérant l'affichage du suivi de poids.
  */
 public class MonSuiviFragment extends Fragment {
 
@@ -52,7 +48,7 @@ public class MonSuiviFragment extends Fragment {
         imc_act = (TextView) view.findViewById(R.id.tv_imc_act);
 
         poids_act.setText(String.valueOf(bdp.getPoidsActuel()));
-        poids_dep.setText(String.valueOf(bdp.getPoidsDépart()));
+        poids_dep.setText(String.valueOf(bdp.getPoidsDepart()));
         tt_act.setText(String.valueOf(bdp.getTTActuel()));
         tt_dep.setText(String.valueOf(bdp.getTTDepart()));
         taille_act.setText(String.valueOf(bdp.getTailleActuelle()) + " m ");

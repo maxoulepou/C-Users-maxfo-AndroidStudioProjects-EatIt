@@ -18,6 +18,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+/**
+ * Activité qui permet d'ajouter un contact à la base de données.
+ */
 public class AjouterContactActivity extends AppCompatActivity {
 
     BD_Contact bdc;
@@ -47,6 +50,9 @@ public class AjouterContactActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Méthode qui permet d'ajouter un contact à la base de données.
+     */
     public void ajouterContact() {
         boutonAjouter.setOnClickListener(
                 new View.OnClickListener() {
@@ -81,12 +87,13 @@ public class AjouterContactActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Ouvre l'activité nouvelle_classe à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(this, nouvelle_classe);
         startActivity(intent);
     }
 
-    public boolean isEmailValid(CharSequence email) {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
 }

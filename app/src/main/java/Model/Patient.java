@@ -3,6 +3,9 @@ package Model;
 import java.util.ArrayList;
 import java.util.Date; //possible import java.sql, à voir si il y a une différence
 
+/**
+ * Gestion des objets de type Patient.
+ */
 public class Patient {
 
     private long id;
@@ -14,12 +17,6 @@ public class Patient {
     private String adresse, ville, contactUrgence;
     private String mdp;
     private int codePostal;
-    private ArrayList<Repas> lCarnetRepas;
-    private ArrayList<Intervention> lIntervention;
-    private ArrayList<Contact> lContact;
-    private ArrayList<Objectifs> lObjectif;
-    private ArrayList<Ressenti> lCarnetEmotion;
-    private ArrayList<Poids> lPoids;
 
 
     public String getMdp() {
@@ -129,51 +126,5 @@ public class Patient {
         this.codePostal = codePostal;
     }
 
-    public ArrayList getlIntervention() {
-        return lIntervention;
-    }
 
-    public void setlIntervention(ArrayList<Intervention> lIntervention) {
-        this.lIntervention = lIntervention;
-    }
-
-    public ArrayList getlContact() {
-        return lContact;
-    }
-
-    public void setlContact(ArrayList<Contact> lContact) {
-        this.lContact = lContact;
-    }
-
-    public ArrayList getlObjectif() {
-        return lObjectif;
-    }
-
-    public void setlObjectif(ArrayList<Objectifs> lObjectif) {
-        this.lObjectif = lObjectif;
-    }
-
-    public ArrayList getlCarnetRepas() {
-        return lCarnetRepas;
-    }
-
-    public void setlCarnetRepas(ArrayList<Repas> lCarnetRepas) {
-        this.lCarnetRepas = lCarnetRepas;
-    }
-
-    public ArrayList getlCarnetEmotion() {
-        return lCarnetEmotion;
-    }
-
-    public void setlCarnetEmotion(ArrayList<Ressenti> lCarnetEmotion) {
-        this.lCarnetEmotion = lCarnetEmotion;
-    }
-
-    public ArrayList getlPoids() {
-        return lPoids;
-    }
-
-    public void setlPoids(ArrayList<Poids> lPoids) {
-        this.lPoids = lPoids;
-    }
 }

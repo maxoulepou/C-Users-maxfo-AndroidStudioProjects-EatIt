@@ -20,6 +20,9 @@ import java.util.Locale;
 
 import Model.BD_Ressenti;
 
+/**
+ * Gère le fragement "Ma Tête" contenu dans le fragment Ressenti Fragment.
+ */
 public class MaTeteFragment extends Fragment {
 
     private BD_Ressenti bdr;
@@ -334,6 +337,9 @@ public class MaTeteFragment extends Fragment {
     }
 
 
+    /**
+     * Permet d'ajouter un ressenti dans la base de donnée en fonction des informations entrées par l'utilisateur.
+     */
     public void ajouterRessentiTete() {
         enregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -345,10 +351,8 @@ public class MaTeteFragment extends Fragment {
 
                 if (isInserted == true) {
                     Toast.makeText(getActivity(), "Vos données ont été ajoutées", Toast.LENGTH_SHORT).show();
-                    System.out.println("HELLO WORLD");
                 } else {
                     Toast.makeText(getActivity(), "Vos données n'ont pas été ajoutées", Toast.LENGTH_SHORT).show();
-                    System.out.println("NOT WORLD");
                 }
             }
         });

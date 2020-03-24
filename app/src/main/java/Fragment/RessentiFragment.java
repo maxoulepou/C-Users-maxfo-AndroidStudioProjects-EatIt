@@ -36,7 +36,9 @@ import Model.RessentiActivite;
 import Model.RessentiCorps;
 import Model.RessentiTete;
 
-
+/**
+ * Gère l'affichage des ressentis à partir d'une date sélectionnée. Ce fragment contient 3 RecyclerView, un pour chaque type de ressenti.
+ */
 public class RessentiFragment extends Fragment {
 
     TextView et_date;
@@ -219,6 +221,10 @@ public class RessentiFragment extends Fragment {
     }
 
 
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(this.getActivity(), nouvelle_classe);
         intent.putExtra("date_choisie", datepicked);

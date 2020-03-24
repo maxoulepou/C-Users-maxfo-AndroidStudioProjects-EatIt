@@ -29,7 +29,7 @@ import Model.BD_Ressenti;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Gère l'ajout des ressentis corporels.
  */
 public class MonCorpsFragment extends Fragment {
 
@@ -182,7 +182,9 @@ public class MonCorpsFragment extends Fragment {
     }
 
 
-
+    /**
+     * Ajoute un nouveau ressenti corporel à la base de données.
+     */
     public void ajouterRessentiCorps() {
         enregistrer.setOnClickListener(new View.OnClickListener() {
             @Override

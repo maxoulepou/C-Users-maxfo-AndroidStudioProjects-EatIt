@@ -19,6 +19,9 @@ import com.example.eatit.R;
 
 import java.util.ArrayList;
 
+/**
+ * Activité qui permet d'afficher la liste des contacts de l'utilisateur.
+ */
 public class AfficherListeContactsActivity extends AppCompatActivity implements UnItemListener {
 
     private RecyclerView rv;
@@ -54,6 +57,10 @@ public class AfficherListeContactsActivity extends AppCompatActivity implements 
         );
     }
 
+    /**
+     * Méthode qui permet d'afficher le contact sur lequel l'utilisateur a cliqué (correspondant à la position de l'item de la recycler view sélectionné).
+     * @param position
+     */
     @Override
     public void clicSurUnItem(int position) {
         Intent intent = new Intent(this, AfficherUnContactActivity.class);

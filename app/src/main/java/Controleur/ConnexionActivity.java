@@ -16,6 +16,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import Model.BD;
 
+/**
+ * Activité qui gère la connexion.
+ */
 public class ConnexionActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;

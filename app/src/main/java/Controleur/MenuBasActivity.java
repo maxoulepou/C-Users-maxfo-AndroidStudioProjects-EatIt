@@ -11,6 +11,9 @@ import android.view.MenuItem;
 import com.example.eatit.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * Activité qui gère la barre de navigation de l'application.
+ */
 public class MenuBasActivity extends AppCompatActivity {
 
     private String fragmentActif;

@@ -42,6 +42,9 @@ import java.util.TimeZone;
 
 import Model.BD_Repas;
 
+/**
+ * Activité qui gère l'ajout de repas dans la base de données.
+ */
 public class AjouterRepasActivity extends AppCompatActivity {
 
     private String currentPhotoPath;

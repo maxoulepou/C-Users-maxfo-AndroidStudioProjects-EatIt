@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eatit.R;
 
-//Il s'agit du modèle pour toute nos vues.
-
+/**
+ * Cette classe permet de gérer les items du RecyclerView gérant la liste de contacts.
+ */
 public class ContactViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     private TextView profession;
@@ -28,9 +29,11 @@ public class ContactViewHolder extends RecyclerView.ViewHolder implements View.O
 
     }
 
-    //A chaque recyclage de cellule elle est appelée.
+    /**
+     * Permet d'initialiser les champs de texte d'un item du RecyclerView gérant les contacts en fonction de l'objet de type Contact entré en paramètre.
+      * @param pds
+     */
     public void display(Contact pds) {
-
         profession.setText(pds.getProfession());
         prenom.setText(pds.getPrenom());
         nom.setText(pds.getNom());

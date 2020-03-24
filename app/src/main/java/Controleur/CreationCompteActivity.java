@@ -16,6 +16,9 @@ import com.example.eatit.R;
 import Model.BD;
 import Model.Patient;
 
+/**
+ * Activité qui gère la création de compte.
+ */
 public class CreationCompteActivity extends AppCompatActivity {
 
     private Button mButtonCreationCompte;

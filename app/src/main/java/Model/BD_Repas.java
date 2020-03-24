@@ -51,9 +51,20 @@ public class BD_Repas extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+    /**
+     * Ajoute un repas à la base de données.
+     * @param date
+     * @param heure
+     * @param duree
+     * @param nivFaim
+     * @param commentaire
+     * @param repas
+     * @return
+     */
     public boolean addRepas (String date, String heure, String duree, int nivFaim, String commentaire, String repas){
+
         ContentValues cv = new ContentValues();
-//        formatedDate = sdf.format(date);
 
         cv.put(col_Date, date);
         cv.put(col_Heure, heure);
@@ -78,31 +89,32 @@ public class BD_Repas extends SQLiteOpenHelper {
         }
     }
 
-    public int getNombre(){
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
-        return result.getCount();
-    }
 
-    public ArrayList<Repas> getlRepas(){
-        lRepas = new ArrayList<>();
-        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
-        while (!result.isAfterLast()) {
-            String mRepas = result.getString(1);
-            String mDate = result.getString(2);
-            String mHeure = result.getString(3);
-            String mDuree = result.getString(4);
-            String mNivFaim = result.getString(5);
-            String mCommentaire = result.getString(6);
+//    public ArrayList<Repas> getlRepas(){
+//        lRepas = new ArrayList<>();
+//        Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME, null);
+//        while (!result.isAfterLast()) {
+//            String mRepas = result.getString(1);
+//            String mDate = result.getString(2);
+//            String mHeure = result.getString(3);
+//            String mDuree = result.getString(4);
+//            String mNivFaim = result.getString(5);
+//            String mCommentaire = result.getString(6);
+//
+//            Repas r = new Repas(mDate, mHeure, mDuree,  mNivFaim, mRepas, mCommentaire);
+//
+//            lRepas.add(r);
+//            result.moveToNext();
+//        }
+//        result.close();
+//        return lRepas;
+//    }
 
-            Repas r = new Repas(mDate, mHeure, mDuree,  mNivFaim, mRepas, mCommentaire);
-
-            lRepas.add(r);
-            result.moveToNext();
-        }
-        result.close();
-        return lRepas;
-    }
-
+    /**
+     * Récupère une liste d'objet de type Repas dont la date est placée en paramètre.
+     * @param date
+     * @return
+     */
     public ArrayList<Repas> getlRepasDate(String date){
         lRepas = new ArrayList<>();
         Cursor result = this.getWritableDatabase().rawQuery("select * from " + TABLE_NAME + " where " + col_Date + " = '" + date +"'", null);

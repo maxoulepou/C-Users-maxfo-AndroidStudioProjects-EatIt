@@ -1,6 +1,8 @@
 package Model;
 
-
+/**
+ * Gestion des objets de types RessentiActivite.
+ */
 public class RessentiActivite extends Ressenti {
 
     private String activite;

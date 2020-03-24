@@ -23,6 +23,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+/**
+ * Gère l'affichage du fragment des objectifs avec affichage des onglets ma tête, mon corps, mon activité.
+ */
 public class ObjectifsFragment extends Fragment {
 
     ImageButton menu;
@@ -115,6 +118,10 @@ public class ObjectifsFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(getContext(), nouvelle_classe);
         startActivity(intent);

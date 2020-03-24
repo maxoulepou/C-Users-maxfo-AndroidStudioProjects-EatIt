@@ -1,11 +1,13 @@
 package Model;
 
+/**
+ * Gestion des objets de type Repas.
+ */
 public class Repas {
     private String duree, niveauFaim;
-    private String typeRepas; // a modifier
+    private String typeRepas;
     private String description, mDate;
     private String heure;
-    //photo
 
     public Repas (String date, String heure, String duree, String niveauFaim, String typeRepas, String description){
         this.mDate = date;

@@ -26,6 +26,10 @@ import java.util.Locale;
 
 import Model.BD_Poids;
 
+
+/**
+ * Activité qui gère l'ajout des données relatives au poids.
+ */
 public class AjouterPoidsActivity extends AppCompatActivity {
 
 
@@ -111,6 +115,9 @@ public class AjouterPoidsActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Méthode qui ajoute des données relatives au poids dans la base de données.
+     */
     public void ajouterPoids() {
 
         boutonAjouter.setOnClickListener(new View.OnClickListener() {
@@ -178,6 +185,10 @@ public class AjouterPoidsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Ouvre l'activité nouvelle_classe à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(this, nouvelle_classe);
         startActivity(intent);

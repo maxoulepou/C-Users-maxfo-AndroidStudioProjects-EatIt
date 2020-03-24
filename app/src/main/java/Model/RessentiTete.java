@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Gestion des objets de types RessentiTete.
+ */
 public class RessentiTete extends Ressenti {
 
     private String emotions;

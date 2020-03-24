@@ -17,12 +17,11 @@ public class Poids_SuiviActivity extends AppCompatActivity {
     TextView poids_act, poids_dep, tt_act, tt_dep, taille_act, imc_act;
 
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("hello world");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_mon_suivi);
         bdp = new BD_Poids(this);
 
-        // On cast les variables EditText et Button en recherchant les edittext et boutons grâce à leur ID
+        //On cast les variables EditText et Button en recherchant les edittext et boutons grâce à leur ID
 
         poids_act = (TextView) findViewById(R.id.tv_poids_act);
         poids_dep = (TextView) findViewById(R.id.tv_poids_dep);
@@ -33,7 +32,7 @@ public class Poids_SuiviActivity extends AppCompatActivity {
 
         // On utilise les fonctions de BD_Poids qui permettent de récupérer les données dans la BD
         poids_act.setText(String.valueOf(bdp.getPoidsActuel()));
-        poids_dep.setText(String.valueOf(bdp.getPoidsDépart()));
+        poids_dep.setText(String.valueOf(bdp.getPoidsDepart()));
         tt_act.setText(String.valueOf(bdp.getTTActuel()));
         tt_dep.setText(String.valueOf(bdp.getTTDepart()));
         taille_act.setText(String.valueOf(bdp.getTailleActuelle()));

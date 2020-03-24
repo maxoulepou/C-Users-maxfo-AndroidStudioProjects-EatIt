@@ -1,6 +1,7 @@
 package Controleur;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,19 +9,18 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.eatit.R;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-
 import Model.BD;
 import Model.ObjectifPersonnel;
 
+/**
+ * Gère la motification des objectifs partagés.
+ */
 public class ModifierObjectifPersoActivity extends AppCompatActivity {
 
     BD bd;
@@ -76,6 +76,9 @@ public class ModifierObjectifPersoActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Méthode pour modifier un objectifs personnel déjà créé.
+     */
     public void modifierObjectifPerso() {
         boutonAjouter.setOnClickListener(
                 new View.OnClickListener() {
@@ -105,8 +108,10 @@ public class ModifierObjectifPersoActivity extends AppCompatActivity {
 
                         boolean isModified = bd.modifierObjPerso(id_obj, intitule, "personnel", datepicked_debut, datepicked_fin, commentaire, accomplissement);
 
-                        if (isModified == true)
+                        if (isModified == true) {
                             Toast.makeText(ModifierObjectifPersoActivity.this, "Objectif modifié avec succès", Toast.LENGTH_SHORT).show();
+                            openNewActivity(MenuBasActivity.class);
+                        }
                         else
                             Toast.makeText(ModifierObjectifPersoActivity.this, "Il manque des informations", Toast.LENGTH_SHORT).show();
                     }
@@ -118,7 +123,10 @@ public class ModifierObjectifPersoActivity extends AppCompatActivity {
 
 
 
-
+    /**
+     * Récupère la date de début sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return
+     */
     public String getDateDebut() {
         editDateDebut.setOnClickListener(
                 new View.OnClickListener() {
@@ -160,6 +168,10 @@ public class ModifierObjectifPersoActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Récupère la date de fin sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return
+     */
     public String getDateFin() {
         editDateFin.setOnClickListener(
                 new View.OnClickListener() {
@@ -196,6 +208,15 @@ public class ModifierObjectifPersoActivity extends AppCompatActivity {
 
         );
         return datepicked_fin;
+    }
+
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
+    public void openNewActivity(Class nouvelle_classe) {
+        Intent intent = new Intent(this, nouvelle_classe);
+        startActivity(intent);
     }
 
 }
