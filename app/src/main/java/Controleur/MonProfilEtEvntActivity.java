@@ -10,6 +10,9 @@ import Fragment.PageAdapterProfil;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+/**
+ * Activité gérant le profil ainsi que les événements de santé.
+ */
 public class MonProfilEtEvntActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;

@@ -21,6 +21,9 @@ import java.util.Locale;
 
 import Model.BD;
 
+/**
+ * Activité permettant d'ajouter un nouvel objectif partagé.
+ */
 public class AjouterObjectifPartageActivity extends AppCompatActivity {
 
     BD bd;
@@ -54,6 +57,9 @@ public class AjouterObjectifPartageActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Méthode permettant d'ajouter un nouveal objectif partagé à la base de données.
+     */
     public void ajouterObjPartage() {
         boutonAjouter.setOnClickListener(
                 new View.OnClickListener() {
@@ -79,7 +85,10 @@ public class AjouterObjectifPartageActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Récupère la date de début sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return un String contenant la date sélectionnée avec le date picker.
+     */
     public String getDateDebut() {
         editDateDebut.setOnClickListener(
                 new View.OnClickListener() {
@@ -118,7 +127,10 @@ public class AjouterObjectifPartageActivity extends AppCompatActivity {
         return datepicked_debut;
     }
 
-
+    /**
+     * Récupère la date de fin sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return un String contenant la date sélectionnée avec le date picker.
+     */
     public String getDateFin() {
         editDateFin.setOnClickListener(
                 new View.OnClickListener() {
@@ -158,7 +170,10 @@ public class AjouterObjectifPartageActivity extends AppCompatActivity {
         return datepicked_fin;
     }
 
-
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(this, nouvelle_classe);
         startActivity(intent);

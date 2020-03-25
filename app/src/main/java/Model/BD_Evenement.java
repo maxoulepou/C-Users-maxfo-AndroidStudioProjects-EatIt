@@ -10,6 +10,9 @@ import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Gestion de la base de données des événements de santé.
+ */
 public class BD_Evenement extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "evenementsante.db";

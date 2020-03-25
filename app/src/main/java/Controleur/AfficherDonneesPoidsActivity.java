@@ -27,7 +27,7 @@ public class AfficherDonneesPoidsActivity extends AppCompatActivity {
     private BD_Poids bdp;
 
     /**
-     * Crée la page permettant d'afficher le recycler view contenant la liste des sifférents poids enregistrés dans la base de données.
+     * Crée la page permettant d'afficher le recycler view contenant la liste des différents poids enregistrés dans la base de données.
      * @param savedInstanceState
      */
     @Override

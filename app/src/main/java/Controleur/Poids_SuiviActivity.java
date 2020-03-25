@@ -11,6 +11,9 @@ import com.example.eatit.R;
 import Model.BD_Poids;
 
 
+/**
+ * Activité gérant le suivi du poids.
+ */
 public class Poids_SuiviActivity extends AppCompatActivity {
 
     BD_Poids bdp;

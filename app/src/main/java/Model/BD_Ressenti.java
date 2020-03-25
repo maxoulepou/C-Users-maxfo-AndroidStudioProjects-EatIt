@@ -10,6 +10,9 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+/**
+ * Gestion de la base de données des ressentis.
+ */
 public class BD_Ressenti extends SQLiteOpenHelper {
 
 

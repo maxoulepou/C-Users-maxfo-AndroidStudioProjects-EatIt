@@ -13,7 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * Gestion de la base de données de l'application.
+ * Gestion de la base de données de l'application pour les utilisateurs ainsi que les objectifs et le profil.
  */
 public class BD extends SQLiteOpenHelper {
 

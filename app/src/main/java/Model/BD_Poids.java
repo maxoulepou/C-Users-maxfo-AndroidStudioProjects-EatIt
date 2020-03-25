@@ -10,6 +10,9 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+/**
+ * Gestion de la base de données du poids.
+ */
 public class BD_Poids extends SQLiteOpenHelper {
 
 //    -------------- NOM DE LA BD ET DE LA TABLE DANS CETTE BD ---------------------

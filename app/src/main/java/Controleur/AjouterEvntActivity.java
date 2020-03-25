@@ -22,6 +22,9 @@ import java.util.Locale;
 import Model.BD_Evenement;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Activité permettant l'ajout d'un nouvel événement de santé.
+ */
 public class AjouterEvntActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String date_selectionnee;
@@ -91,6 +94,9 @@ public class AjouterEvntActivity extends AppCompatActivity implements AdapterVie
         ajouterEvenement();
     }
 
+    /**
+     * Ajoute un nouvel événement de santé à la base de données.
+     */
     private void ajouterEvenement() {
         boutonAjouter.setOnClickListener(new View.OnClickListener() {
 
@@ -118,6 +124,10 @@ public class AjouterEvntActivity extends AppCompatActivity implements AdapterVie
             });
     }
 
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(this, nouvelle_classe);
         startActivity(intent);

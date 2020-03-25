@@ -128,7 +128,7 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
 
     /**
      * Récupère la date de début sélectionnée avec un date picker et affiche la date dans le textview associé.
-     * @return
+     * @return un String contenant la date sélectionnée avec le date picker.
      */
     public String getDateDebut() {
         editDateDebut.setOnClickListener(
@@ -173,7 +173,7 @@ public class ModifierObjectifPartageActivity extends AppCompatActivity {
 
     /**
      * Récupère la date de fin sélectionnée avec un date picker et affiche la date dans le textview associé.
-     * @return
+     * @return un String contenant la date sélectionnée avec le date picker.
      */
     public String getDateFin() {
         editDateFin.setOnClickListener(

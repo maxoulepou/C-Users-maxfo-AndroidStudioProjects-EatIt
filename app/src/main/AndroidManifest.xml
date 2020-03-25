@@ -22,7 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="Controleur.MenuBasActivity">
+        <activity android:name="Controleur.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,13 +46,10 @@
         <activity android:name="Controleur.AfficherEvenementsSanteActivity"/>
         <activity android:name="Controleur.AjouterObjectifPersoActivity"/>
         <activity android:name="Controleur.AjouterObjectifPartageActivity"/>
-        <activity android:name="Controleur.MainActivity"/>
+        <activity android:name="Controleur.MenuBasActivity"/>
         <activity android:name="Controleur.AfficherDonneesPoidsActivity"/>
         <activity android:name="Controleur.MesObjectifsActivity"/>
         <activity android:name="Controleur.MesRepasActivity"/>
-
-
-
 
         <provider
             android:name="androidx.core.content.FileProvider"

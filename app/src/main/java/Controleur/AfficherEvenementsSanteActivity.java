@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * Activité gérant l'affichage des événements de santé dans le RecyclerView d'intérêt.
+ */
 public class AfficherEvenementsSanteActivity extends AppCompatActivity {
 
     private RecyclerView rv;

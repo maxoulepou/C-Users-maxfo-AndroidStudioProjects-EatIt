@@ -10,6 +10,9 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+/**
+ * Gestion de la base de données des contacts.
+ */
 public class BD_Contact extends SQLiteOpenHelper {
 
 
@@ -151,6 +154,17 @@ public class BD_Contact extends SQLiteOpenHelper {
     }
 
 
+    /**
+     * Modifie le contact dont l'id est renseigné en paramètre.
+     * @param idContact
+     * @param prenom
+     * @param nom
+     * @param profession
+     * @param email
+     * @param telephone
+     * @param adresse
+     * @return true si l'update s'est fait, false dans le cas contraire.
+     */
     public boolean modifierContact(int idContact, String prenom, String nom, String profession, String email, String telephone, String adresse) {
 
         ContentValues cv = new ContentValues();
@@ -171,6 +185,11 @@ public class BD_Contact extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Supprime un contact.
+     * @param idContact
+     * @return true si la délétion s'est ocrrectement faire, false dans le cas contraire.
+     */
     public boolean supprimerContact(int idContact) {
 
         int nombre = this.getWritableDatabase().delete(TABLE_NAME, col_idContact + "=?", new String[]{String.valueOf(idContact)});

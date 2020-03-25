@@ -12,9 +12,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Gestion de la base de données des repas.
+ */
 public class BD_Repas extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "mesRepas.bd";
+    public static final String DATABASE_NAME = "mesRepas.db";
     public static final String TABLE_NAME = "table_repas";
     public static final String col_idRepas = "idRepas";
     public static final String col_Date = "Date";

@@ -21,6 +21,9 @@ import java.util.Locale;
 
 import Model.BD;
 
+/**
+ * Activité permettant d'ajouter un nouvel objectif personnel.
+ */
 public class AjouterObjectifPersoActivity extends AppCompatActivity {
 
     BD bd;
@@ -50,6 +53,9 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Méthode permettant d'ajouter un nouvel objectif personnel dans la base de données.
+     */
     public void ajouterObjPerso() {
         boutonAjouter.setOnClickListener(
                 new View.OnClickListener() {
@@ -76,7 +82,10 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Récupère la date de début sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return un String contenant la date sélectionnée avec le date picker.
+     */
     public String getDateDebut() {
         editDateDebut.setOnClickListener(
                 new View.OnClickListener() {
@@ -115,7 +124,10 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
         return datepicked_debut;
     }
 
-
+    /**
+     * Récupère la date de fin sélectionnée avec un date picker et affiche la date dans le textview associé.
+     * @return un String contenant la date sélectionnée avec le date picker.
+     */
     public String getDateFin() {
         editDateFin.setOnClickListener(
                 new View.OnClickListener() {
@@ -155,6 +167,10 @@ public class AjouterObjectifPersoActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Ouvre une nouvelle activité à partir de l'activité courante.
+     * @param nouvelle_classe
+     */
     public void openNewActivity(Class nouvelle_classe) {
         Intent intent = new Intent(this, nouvelle_classe);
         startActivity(intent);
