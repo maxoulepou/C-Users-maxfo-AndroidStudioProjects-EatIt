@@ -1,4 +1,4 @@
-package Model;
+package com.example.eatit.Model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
