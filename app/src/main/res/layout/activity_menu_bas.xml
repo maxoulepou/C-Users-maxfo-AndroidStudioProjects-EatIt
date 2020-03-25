@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Controleur.MenuBasActivity">
+    tools:context="com.example.eatit.Controleur.MenuBasActivity">
 
     <FrameLayout
         android:id="@+id/fragment_layout_menuBas"

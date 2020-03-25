@@ -22,34 +22,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="Controleur.MainActivity">
+        <activity android:name="com.example.eatit.Controleur.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Controleur.Poids_SuiviActivity" />
-        <activity android:name="Controleur.AjouterPoidsActivity" />
-        <activity android:name="Controleur.AfficherUnContactActivity" />
-        <activity android:name="Controleur.AjouterContactActivity" />
-        <activity android:name="Controleur.AjouterRepasActivity"/>
-        <activity android:name="Controleur.AfficherListeContactsActivity"/>
-        <activity android:name="Controleur.MonProfilEtEvntActivity"/>
-        <activity android:name="Controleur.MonRessentiActivity"/>
-        <activity android:name="Controleur.CreationCompteActivity"/>
-        <activity android:name="Controleur.ConnexionActivity"/>
-        <activity android:name="Controleur.ExporterDonneesActivity"/>
-        <activity android:name="Controleur.ModifierObjectifPersoActivity"/>
-        <activity android:name="Controleur.ModifierObjectifPartageActivity"/>
-        <activity android:name="Controleur.AjouterEvntActivity"/>
-        <activity android:name="Controleur.AfficherEvenementsSanteActivity"/>
-        <activity android:name="Controleur.AjouterObjectifPersoActivity"/>
-        <activity android:name="Controleur.AjouterObjectifPartageActivity"/>
-        <activity android:name="Controleur.MenuBasActivity"/>
-        <activity android:name="Controleur.AfficherDonneesPoidsActivity"/>
-        <activity android:name="Controleur.MesObjectifsActivity"/>
-        <activity android:name="Controleur.MesRepasActivity"/>
+        <activity android:name="com.example.eatit.Controleur.Poids_SuiviActivity" />
+        <activity android:name="com.example.eatit.Controleur.AjouterPoidsActivity" />
+        <activity android:name="com.example.eatit.Controleur.AfficherUnContactActivity" />
+        <activity android:name="com.example.eatit.Controleur.AjouterContactActivity" />
+        <activity android:name="com.example.eatit.Controleur.AjouterRepasActivity"/>
+        <activity android:name="com.example.eatit.Controleur.AfficherListeContactsActivity"/>
+        <activity android:name="com.example.eatit.Controleur.MonProfilEtEvntActivity"/>
+        <activity android:name="com.example.eatit.Controleur.MonRessentiActivity"/>
+        <activity android:name="com.example.eatit.Controleur.CreationCompteActivity"/>
+        <activity android:name="com.example.eatit.Controleur.ConnexionActivity"/>
+        <activity android:name="com.example.eatit.Controleur.ExporterDonneesActivity"/>
+        <activity android:name="com.example.eatit.Controleur.ModifierObjectifPersoActivity"/>
+        <activity android:name="com.example.eatit.Controleur.ModifierObjectifPartageActivity"/>
+        <activity android:name="com.example.eatit.Controleur.AjouterEvntActivity"/>
+        <activity android:name="com.example.eatit.Controleur.AfficherEvenementsSanteActivity"/>
+        <activity android:name="com.example.eatit.Controleur.AjouterObjectifPersoActivity"/>
+        <activity android:name="com.example.eatit.Controleur.AjouterObjectifPartageActivity"/>
+        <activity android:name="com.example.eatit.Controleur.MenuBasActivity"/>
+        <activity android:name="com.example.eatit.Controleur.AfficherDonneesPoidsActivity"/>
+        <activity android:name="com.example.eatit.Controleur.MesObjectifsActivity"/>
+        <activity android:name="com.example.eatit.Controleur.MesRepasActivity"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
